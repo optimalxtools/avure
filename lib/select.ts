@@ -1,0 +1,2 @@
+export const LOCKED_SELECT_TRIGGER_CLASS =
+  "border-2 border-solid !border-emerald-600 focus:ring-0 focus:ring-offset-0 disabled:border-2 disabled:border-solid disabled:!border-emerald-600 disabled:opacity-100 aria-[disabled=true]:border-2 aria-[disabled=true]:border-solid aria-[disabled=true]:!border-emerald-600 aria-[disabled=true]:opacity-100 data-[disabled]:border-2 data-[disabled]:border-solid data-[disabled]:!border-emerald-600 data-[disabled]:opacity-100";

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "vera-insights"
+  },
+  "targets": {
+    "vera-insights": {
+      "hosting": {
+        "default": [
+          "vera-insights"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

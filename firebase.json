@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "site": "vera-insights",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

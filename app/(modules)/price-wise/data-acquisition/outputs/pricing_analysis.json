@@ -1,0 +1,67 @@
+{
+  "generated_at": "2025-11-03T22:32:24.830853",
+  "reference_property": "Ukanyi Luxury Villa",
+  "mode": "OCCUPANCY TRACKING",
+  "pricing_metrics": [
+    {
+      "hotel_name": "Moditlo River Lodge",
+      "avg_price_per_night": 17134.41925925926,
+      "min_price": 14175.36,
+      "max_price": 18810.0,
+      "median_price": 17334.0,
+      "std_price": 1453.868421520249,
+      "discount_frequency": 37.03703703703704,
+      "avg_discount": 19.72,
+      "avg_rating": null,
+      "sample_size": 54,
+      "avg_min_room_price": 17134.41925925926,
+      "avg_max_room_price": 17134.41925925926,
+      "avg_room_price_avg": 17134.41925925926,
+      "room_price_range": 0.0
+    }
+  ],
+  "occupancy_metrics": [
+    {
+      "hotel_name": "Ukanyi Luxury Villa",
+      "total_checks": 101,
+      "available": 29,
+      "sold_out": 66,
+      "occupancy_rate": 65.34653465346535,
+      "availability_rate": 28.71287128712871,
+      "avg_total_room_types": 0.0,
+      "avg_available_room_types": 0.0,
+      "avg_sold_out_room_types": 0.0,
+      "avg_room_occupancy_rate": 0.0
+    },
+    {
+      "hotel_name": "Moditlo River Lodge",
+      "total_checks": 90,
+      "available": 54,
+      "sold_out": 31,
+      "occupancy_rate": 34.44444444444444,
+      "availability_rate": 60.0,
+      "avg_total_room_types": 1.8518518518518519,
+      "avg_available_room_types": 1.8518518518518519,
+      "avg_sold_out_room_types": 0.0,
+      "avg_room_occupancy_rate": 0.0
+    }
+  ],
+  "comparison": [],
+  "room_inventory": [
+    {
+      "hotel_name": "Moditlo River Lodge",
+      "avg_total_room_types": 1.8518518518518519,
+      "avg_available_room_types": 1.8518518518518519,
+      "avg_sold_out_room_types": 0.0,
+      "avg_room_occupancy_rate": 0.0,
+      "low_inventory_pct": 0.0,
+      "avg_min_room_price": 17134.41925925926,
+      "avg_max_room_price": 17134.41925925926,
+      "avg_room_price": 17134.41925925926,
+      "room_price_spread": 0.0,
+      "room_price_spread_pct": 0.0,
+      "uses_room_tiering": false,
+      "sample_size": 54
+    }
+  ]
+}

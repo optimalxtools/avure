@@ -1,0 +1,19 @@
+[
+    { "name": "Ukanyi Luxury Villa",               "slug": "ukanyi-luxury-villa-hoedspruit",          "cc": "za" },
+    { "name": "Moditlo River Lodge",               "slug": "moditlo-river-lodge",                    "cc": "za" },
+    { "name": "MILIMA Big 5 Safari Lodge",         "slug": "elephant-hills-big-5-safari-lodge-phalaborwa", "cc": "za" },
+    { "name": "Maroelani Lodge – Greater Kruger",  "slug": "maroelani-lodge",                        "cc": "za" },
+    { "name": "Oase by 7 Star Lodges",             "slug": "7-star-lodges",                          "cc": "za" },
+    { "name": "Phelwana Game Lodge",               "slug": "phelwana-game-lodge",                    "cc": "za" },
+    { "name": "Nyati Safari Lodge",                "slug": "nyati-safari-lodge-parblowa",            "cc": "za" },
+    { "name": "Khaya Ndlovu Safari Manor",         "slug": "khaya-ndlovu-manor-house",               "cc": "za" },
+    { "name": "AM Lodge – Hoedspruit",             "slug": "am-luxury-villa",                        "cc": "za" },
+    { "name": "Rhino's Rest Private Luxury Villa", "slug": "rhinos-rest-luxury-self-catering-home",  "cc": "za" },
+    { "name": "Simbavati River Lodge",             "slug": "timbavati-river-lodge",                  "cc": "za" },
+    { "name": "Thornybush Game Lodge",             "slug": "thornybush-game-lodge",                 "cc": "za" },
+  
+    { "name": "Kapama River Lodge",                "slug": "kapama-river-lodge",                     "cc": "za" },
+    { "name": "Kapama Buffalo Camp",               "slug": "kapama-buffalo-camp",                    "cc": "za" },
+    { "name": "Kapama Main Lodge",                 "slug": "kapama-private-game-reserve",            "cc": "za" },
+    { "name": "Kapama Karula Lodge",               "slug": "lodge-kapama-karula",                    "cc": "za" }
+  ]
