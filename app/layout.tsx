@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Vera Insights",
+  title: "Avure Insights",
   description: "See Your Data, Grow Your Future",
 };
 

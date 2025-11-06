@@ -1,5 +1,5 @@
 /**
- * PDF Export Utility for Vera Insights
+ * PDF Export Utility for Avure Insights
  * Generates professional, well-formatted PDF reports with charts and data
  */
 
@@ -315,7 +315,7 @@ export class PDFExporter {
     const footerY = this.pageHeight - 10
     this.pdf.setFontSize(8)
     this.pdf.setTextColor(...COLORS.textLight)
-    this.pdf.text('Vera Insights - Confidential', this.pageWidth / 2, footerY, { align: 'center' })
+    this.pdf.text('Avure Insights - Confidential', this.pageWidth / 2, footerY, { align: 'center' })
   }
 
   /**

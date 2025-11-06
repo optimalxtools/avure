@@ -86,7 +86,7 @@ function LoginInner() {
     <div className="min-h-screen flex items-center justify-center bg-sidebar">
       <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm text-center">
         <div className="mx-auto mb-6 w-full h-40 relative">
-          <Image src="/logo_vera.png" alt="Vera Insights" fill className="object-contain object-center" />
+          <Image src="/logo_avure.png" alt="Avure Insights" fill className="object-contain object-center" />
         </div>
         {error && (
           <div className="mb-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded p-2">

@@ -13,7 +13,7 @@ The PDF export feature is fully functional on the Packhouse Performance page onl
 When you click **"Export Report"** on Packhouse > Performance:
 
 ### Header Section:
-- ✅ **Vera Insights Logo** (with correct aspect ratio)
+- ✅ **Avure Insights Logo** (with correct aspect ratio)
 - ✅ **Client Name** (from your account)
 - ✅ **Module:** "Packhouse"
 - ✅ **Page:** "Performance"
