@@ -274,7 +274,7 @@ export default function Page() {
 
   return (
     <>
-      <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 bg-[#fffef9]">
+      <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 bg-white">
         <div className="flex items-center gap-2 px-4">
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mr-2 h-4" />
@@ -287,7 +287,7 @@ export default function Page() {
           </Breadcrumb>
         </div>
       </header>
-      <div className="flex flex-1 flex-col gap-6 p-4 pt-0 bg-[#fffef9]">
+      <div className="flex flex-1 flex-col gap-6 p-4 pt-0 bg-white">
         <div className="container max-w-6xl mx-auto flex flex-col">
           {/* Centered hero + module grid */}
           <div className="flex justify-center py-6 sm:py-8">
@@ -319,14 +319,15 @@ export default function Page() {
                   <div className="flex flex-col gap-4 sm:hidden">
                     {renderedModules.map(({ key, href, label, icon: Icon, isAllowed, category }) => {
                       const isDisabled = modulesLoaded && !isAllowed
+                      const isOrganisation = key === 'organisation'
                       return (
                       <Button
                         key={key}
                         asChild
                           className={cn(
                             '!h-[7rem] w-full text-xl',
-                            key === 'organisation'
-                              ? 'bg-neutral-900 text-white hover:bg-neutral-800'
+                            isOrganisation
+                              ? 'bg-[#181818] text-[#f2a007] hover:bg-neutral-800'
                               : 'bg-sidebar text-sidebar-foreground hover:bg-sidebar-accent',
                             isDisabled && 'opacity-40 pointer-events-none'
                           )}
@@ -337,7 +338,7 @@ export default function Page() {
                             aria-disabled={isDisabled || undefined}
                             tabIndex={isDisabled ? -1 : undefined}
                         >
-                          <Icon className="!h-10 !w-10" />
+                          <Icon className={cn("!h-10 !w-10", isOrganisation && "text-[#f2a007]")} />
                           <span>{label}</span>
                           {overrideToDataOnly && category === 'main' ? (
                             <span className="text-xs text-muted-foreground">Data Acquisition</span>
@@ -352,14 +353,15 @@ export default function Page() {
                   <div className="hidden w-full justify-center gap-4 md:gap-5 lg:gap-6 px-2 sm:flex sm:flex-nowrap sm:px-0">
                     {renderedModules.map(({ key, href, label, icon: Icon, isAllowed, category }) => {
                       const isDisabled = modulesLoaded && !isAllowed
+                      const isOrganisation = key === 'organisation'
                       return (
                       <Button
                         key={key}
                         asChild
                           className={cn(
                             'h-32 w-32 flex-none text-base md:h-40 md:w-40 md:text-lg',
-                            key === 'organisation'
-                              ? 'bg-neutral-900 text-white hover:bg-neutral-800'
+                            isOrganisation
+                              ? 'bg-[#181818] text-[#f2a007] hover:bg-neutral-800'
                               : 'bg-sidebar text-sidebar-foreground hover:bg-sidebar-accent',
                             isDisabled && 'opacity-40 pointer-events-none'
                           )}
@@ -370,7 +372,7 @@ export default function Page() {
                             aria-disabled={isDisabled || undefined}
                             tabIndex={isDisabled ? -1 : undefined}
                         >
-                          <Icon className="!h-12 !w-12 md:!h-16 md:!w-16" />
+                          <Icon className={cn("!h-12 !w-12 md:!h-16 md:!w-16", isOrganisation && "text-[#f2a007]")} />
                           <span>{label}</span>
                           {overrideToDataOnly && category === 'main' ? (
                             <span className="text-xs text-muted-foreground">Data Acquisition</span>

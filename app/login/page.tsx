@@ -84,7 +84,7 @@ function LoginInner() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-sidebar">
-      <div className="bg-[#fffef9] p-8 rounded-xl shadow-md w-full max-w-sm text-center">
+      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm text-center">
         <div className="mx-auto mb-6 w-full h-40 relative">
           <Image src="/logo_vera.png" alt="Vera Insights" fill className="object-contain object-center" />
         </div>
@@ -101,7 +101,7 @@ function LoginInner() {
           placeholder="Email"
           type="email"
           autoComplete="email"
-          className="block w-4/5 mx-auto mb-4 p-3 border border-neutral-300 rounded-md text-base focus:outline-none focus:ring-1 focus:ring-emerald-700"
+          className="block w-4/5 mx-auto mb-4 p-3 border border-neutral-300 rounded-md text-base focus:outline-none focus:ring-1 focus:ring-neutral-700"
         />
 
         <input
@@ -111,7 +111,7 @@ function LoginInner() {
           placeholder="Password"
           type="password"
           autoComplete="current-password"
-          className="block w-4/5 mx-auto mb-4 p-3 border border-neutral-300 rounded-md text-base focus:outline-none focus:ring-1 focus:ring-emerald-700"
+          className="block w-4/5 mx-auto mb-4 p-3 border border-neutral-300 rounded-md text-base focus:outline-none focus:ring-1 focus:ring-neutral-700"
         />
 
         <div className="flex items-center gap-2 mb-4 w-4/5 mx-auto">
@@ -120,7 +120,7 @@ function LoginInner() {
             type="checkbox"
             checked={rememberMe}
             onChange={(e) => setRememberMe(e.target.checked)}
-            className="h-4 w-4 accent-emerald-800 border-gray-300 rounded focus:ring-emerald-800"
+            className="h-4 w-4 accent-neutral-800 border-gray-300 rounded focus:ring-neutral-800"
           />
           <label htmlFor="rememberMe" className="text-sm text-gray-700 cursor-pointer">
             Remember me
