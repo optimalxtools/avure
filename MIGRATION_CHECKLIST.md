@@ -1,4 +1,4 @@
-# Avure Migration Checklist
+# Avure Insights Migration Checklist
 
 ## ✅ Immediate Tasks
 - [x] Create new Firebase project and update `.env.local`
@@ -6,7 +6,7 @@
 - [x] Run dev server on alternate port: `npm run dev -- -p 3001`
 - [x] Replace sessionStorage/localStorage keys with `STORAGE_KEYS`
 - [x] Configure git remote: `git remote add origin <your-repo>`
-- [x] Initial commit: `git add . && git commit -m "Initial Avure fork"`
+- [x] Initial commit: `git add . && git commit -m "Initial Avure Insights fork"`
 
 ## 🏗️ Optional Follow-ups
 - [ ] Update branding assets (logos, colors)

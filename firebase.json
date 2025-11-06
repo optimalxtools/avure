@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "site": "vera-insights",
+      "site": "avure-insights",
       "source": ".",
       "frameworksBackend": {}
     }
