@@ -94,7 +94,7 @@ function LoginInner() {
           backgroundRepeat: 'no-repeat'
         }}
       />
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm text-center relative z-10">
+      <div className="bg-transparent md:backdrop-blur-sm p-8 rounded-xl border border-transparent md:border-neutral-600 w-full max-w-sm text-center relative z-10">
         <div className="mx-auto mb-6 w-full h-40 relative">
           <Image src="/logo_avure.png" alt="Avure Insights" fill className="object-contain object-center" />
         </div>
@@ -111,7 +111,7 @@ function LoginInner() {
           placeholder="Email"
           type="email"
           autoComplete="email"
-          className="block w-4/5 mx-auto mb-4 p-3 border border-neutral-300 rounded-md text-base focus:outline-none focus:ring-1 focus:ring-neutral-700"
+          className="block w-4/5 mx-auto mb-4 p-3 bg-transparent border border-neutral-500 rounded-md text-base text-white placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-400"
         />
 
         <input
@@ -121,7 +121,7 @@ function LoginInner() {
           placeholder="Password"
           type="password"
           autoComplete="current-password"
-          className="block w-4/5 mx-auto mb-4 p-3 border border-neutral-300 rounded-md text-base focus:outline-none focus:ring-1 focus:ring-neutral-700"
+          className="block w-4/5 mx-auto mb-4 p-3 bg-transparent border border-neutral-500 rounded-md text-base text-white placeholder:text-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-400"
         />
 
         <div className="flex items-center gap-2 mb-4 w-4/5 mx-auto">
@@ -130,9 +130,9 @@ function LoginInner() {
             type="checkbox"
             checked={rememberMe}
             onChange={(e) => setRememberMe(e.target.checked)}
-            className="h-4 w-4 accent-neutral-800 border-gray-300 rounded focus:ring-neutral-800"
+            className="h-4 w-4 accent-neutral-400 border-neutral-500 rounded focus:ring-neutral-400"
           />
-          <label htmlFor="rememberMe" className="text-sm text-gray-700 cursor-pointer">
+          <label htmlFor="rememberMe" className="text-sm text-neutral-300 cursor-pointer">
             Remember me
           </label>
         </div>
@@ -140,7 +140,7 @@ function LoginInner() {
         <button
           onClick={checkLogin}
           disabled={loading}
-          className="block w-40 mx-auto mt-2 p-3 rounded-md text-white bg-sidebar hover:bg-sidebar disabled:opacity-60"
+          className="block w-40 mx-auto mt-2 p-3 rounded-md text-white bg-transparent border border-neutral-500 hover:bg-neutral-800 hover:border-neutral-400 disabled:opacity-60"
         >
           {loading ? 'Signing in…' : 'Login'}
         </button>
