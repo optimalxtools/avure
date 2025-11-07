@@ -83,8 +83,18 @@ function LoginInner() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-sidebar">
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm text-center">
+    <div className="min-h-screen flex items-center justify-center bg-[#181818] relative overflow-hidden">
+      {/* SVG Background Pattern */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: 'url(/13164433_5180058.svg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-sm text-center relative z-10">
         <div className="mx-auto mb-6 w-full h-40 relative">
           <Image src="/logo_avure.png" alt="Avure Insights" fill className="object-contain object-center" />
         </div>

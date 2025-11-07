@@ -327,7 +327,7 @@ export default function Page() {
                           className={cn(
                             '!h-[7rem] w-full text-xl',
                             isOrganisation
-                              ? 'bg-[#181818] text-[#f2a007] hover:bg-neutral-800'
+                              ? 'bg-[#181818] text-neutral-400 hover:bg-neutral-800'
                               : 'bg-sidebar text-sidebar-foreground hover:bg-sidebar-accent',
                             isDisabled && 'opacity-40 pointer-events-none'
                           )}
@@ -338,7 +338,7 @@ export default function Page() {
                             aria-disabled={isDisabled || undefined}
                             tabIndex={isDisabled ? -1 : undefined}
                         >
-                          <Icon className={cn("!h-10 !w-10", isOrganisation && "text-[#f2a007]")} />
+                          <Icon className="!h-10 !w-10" />
                           <span>{label}</span>
                           {overrideToDataOnly && category === 'main' ? (
                             <span className="text-xs text-muted-foreground">Data Acquisition</span>
@@ -361,7 +361,7 @@ export default function Page() {
                           className={cn(
                             'h-32 w-32 flex-none text-base md:h-40 md:w-40 md:text-lg',
                             isOrganisation
-                              ? 'bg-[#181818] text-[#f2a007] hover:bg-neutral-800'
+                              ? 'bg-[#181818] text-neutral-400 hover:bg-neutral-800'
                               : 'bg-sidebar text-sidebar-foreground hover:bg-sidebar-accent',
                             isDisabled && 'opacity-40 pointer-events-none'
                           )}
@@ -372,7 +372,7 @@ export default function Page() {
                             aria-disabled={isDisabled || undefined}
                             tabIndex={isDisabled ? -1 : undefined}
                         >
-                          <Icon className={cn("!h-12 !w-12 md:!h-16 md:!w-16", isOrganisation && "text-[#f2a007]")} />
+                          <Icon className="!h-12 !w-12 md:!h-16 md:!w-16" />
                           <span>{label}</span>
                           {overrideToDataOnly && category === 'main' ? (
                             <span className="text-xs text-muted-foreground">Data Acquisition</span>

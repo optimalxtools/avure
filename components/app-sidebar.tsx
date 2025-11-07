@@ -516,7 +516,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         )}
       </SidebarContent>
 
-      <SidebarFooter className="sticky bottom-0 z-10 bg-sidebar shrink-0">
+      <SidebarFooter className="sticky bottom-0 z-10 shrink-0">
         <NavUser user={fallbackUser} />
       </SidebarFooter>
       <SidebarRail />
