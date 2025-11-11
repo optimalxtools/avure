@@ -398,15 +398,18 @@ export default function Page() {
                   <span>All rights reserved</span>
                 </div>
                 <div className="flex justify-center pt-4">
-                  <Image
-                    src="/logo_avure.png"
-                    alt="Avure Insights"
-                    width={460}
-                    height={124}
-                    priority={false}
-                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 380px, 460px"
-                    style={{ width: 'auto', height: 'auto', maxHeight: '124px', maxWidth: '460px' }}
-                  />
+                  <div className="h-20 md:h-28 w-auto flex items-center" style={{ minHeight: '5rem' }}>
+                    <Image
+                      src="/logo_avure.png"
+                      alt="Avure Insights"
+                      width={460}
+                      height={124}
+                      priority={true}
+                      sizes="(max-width: 640px) 280px, (max-width: 1024px) 380px, 460px"
+                      className="h-full w-auto"
+                      style={{ maxHeight: '7rem' }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
