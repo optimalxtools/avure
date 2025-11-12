@@ -28,8 +28,8 @@ import {
 } from "@/components/ui/table"
 import { getScraperAnalysis } from "@/lib/price-wise/scraper"
 import { RefreshButton } from "@/components/price-wise-refresh-button"
-import { PriceDifferenceChart, PriceRangeChart, OccupancyComparisonChart as MetricsOccupancyChart, RoomInventoryChart } from "@/components/price-wise/breakdown-charts"
-import { PriceComparisonChart, OpportunityCostChart } from "@/components/price-wise/insights-charts"
+import { PriceDifferenceChart, PriceRangeChart, OccupancyComparisonChart as MetricsOccupancyChart, RoomInventoryChart } from "@/components/price-wise/breakdown-metrics-charts"
+import { PriceComparisonChart, OpportunityCostChart } from "@/components/price-wise/breakdown-insights-charts"
 
 function toNumber(value: unknown): number | null {
   if (typeof value === "number" && Number.isFinite(value)) return value
