@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell, ReferenceLine, Scatter, ScatterChart, ZAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell, ReferenceLine, Scatter, ScatterChart, ZAxis, LabelList } from "recharts"
+import type { LabelProps } from "recharts"
 import {
   Card,
   CardContent,
@@ -42,6 +43,26 @@ const toNumber = (value: unknown): number | null => {
     if (Number.isFinite(parsed)) return parsed
   }
   return null
+}
+
+const splitPropertyLabel = (name: string): { line1: string; line2: string } => {
+  const trimmed = name.trim()
+  if (trimmed === "") return { line1: "", line2: "" }
+
+  const words = trimmed.split(/\s+/)
+  if (words.length === 1) {
+    return { line1: words[0], line2: "" }
+  }
+
+  if (words.length === 2) {
+    return { line1: words[0], line2: words[1] }
+  }
+
+  const midpoint = Math.ceil(words.length / 2)
+  return {
+    line1: words.slice(0, midpoint).join(" "),
+    line2: words.slice(midpoint).join(" "),
+  }
 }
 
 interface PriceDifferenceChartProps {
@@ -669,6 +690,7 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
         return occupancyRaw > 1 ? occupancyRaw : occupancyRaw * 100
       })()
       const priceSpreadPct = toNumber(item.room_price_spread_pct)
+      const { line1, line2 } = splitPropertyLabel(item.hotel_name)
 
       return {
         property: item.hotel_name,
@@ -678,6 +700,8 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
         priceSpreadPct: priceSpreadPct ?? null,
         hasTiering: Boolean(item.uses_room_tiering),
         isReference: item.hotel_name === referenceProperty,
+        labelLine1: line1,
+        labelLine2: line2,
       }
     })
     .filter((item) => item.property && item.totalRooms !== null && item.totalRooms > 0 && item.avgRoomPrice !== null && item.avgRoomPrice > 0)
@@ -687,7 +711,9 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
   }
 
   const maxRooms = Math.ceil(Math.max(...chartData.map((item) => Number(item.totalRooms ?? 0))))
-  const roomDomain: [number, number] = [0, Math.max(maxRooms, 2)]
+  const maxTickValue = Math.max(maxRooms, 2)
+  const roomDomain: [number, number] = [0, maxTickValue]
+  const roomTicks = Array.from({ length: maxTickValue }, (_, index) => index + 1)
   const maxPrice = Math.max(...chartData.map((item) => Number(item.avgRoomPrice ?? 0)))
   const priceDomain: [number, number] = [0, Math.ceil(maxPrice / 5000) * 5000]
 
@@ -770,6 +796,8 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
               label={{ value: "Total room types", position: "bottom", offset: 0, style: { fontSize: 12 } }}
               tick={{ fontSize: 11 }}
               allowDecimals={false}
+              ticks={roomTicks}
+              interval={0}
             />
             <YAxis
               type="number"
@@ -841,6 +869,33 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
                   />
                 )
               })}
+              <LabelList
+                dataKey="property"
+                content={(props) => {
+                  const { x, y } = props
+                  const datum = (props as LabelProps & { payload?: typeof chartData[number] }).payload
+                  if (typeof x !== "number" || typeof y !== "number" || !datum) {
+                    return null
+                  }
+
+                  const line1 = datum.labelLine1 || datum.property
+                  const line2 = datum.labelLine2
+                  const labelX = x + 12
+
+                  return (
+                    <text
+                      x={labelX}
+                      y={y}
+                      fontSize={9}
+                      fill="currentColor"
+                      textAnchor="start"
+                    >
+                      <tspan x={labelX} dy={-4}>{line1}</tspan>
+                      {line2 ? <tspan x={labelX} dy={10}>{line2}</tspan> : null}
+                    </text>
+                  )
+                }}
+              />
             </Scatter>
           </ScatterChart>
         </ChartContainer>
