@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell, ReferenceLine, Scatter, ScatterChart, ZAxis, Line, ComposedChart } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell, ReferenceLine, Scatter, ScatterChart, ZAxis } from "recharts"
 import {
   Card,
   CardContent,
@@ -35,6 +35,15 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const toNumber = (value: unknown): number | null => {
+  if (typeof value === "number" && Number.isFinite(value)) return value
+  if (typeof value === "string" && value.trim() !== "") {
+    const parsed = Number(value)
+    if (Number.isFinite(parsed)) return parsed
+  }
+  return null
+}
+
 interface PriceDifferenceChartProps {
   comparisonData: Array<{
     hotel_name: string
@@ -45,23 +54,36 @@ interface PriceDifferenceChartProps {
     position: string
   }>
   referenceProperty: string
+  className?: string
 }
 
-export function PriceDifferenceChart({ comparisonData, referenceProperty }: PriceDifferenceChartProps) {
+export function PriceDifferenceChart({ comparisonData, referenceProperty, className }: PriceDifferenceChartProps) {
   const [showTable, setShowTable] = useState(false)
   
-  const chartData = comparisonData.map((item) => ({
-    property: item.hotel_name,
-    priceDiff: Number(item.price_vs_ref || 0),
-    priceDiffPct: Number(item.price_vs_ref_pct || 0),
-    isReference: item.hotel_name === referenceProperty,
-  }))
+  const chartData = comparisonData
+    .map((item) => {
+      const priceDiff = toNumber(item.price_vs_ref) ?? 0
+      const priceDiffPct = toNumber(item.price_vs_ref_pct) ?? 0
 
-  const maxAbsDiff = Math.max(...chartData.map(d => Math.abs(d.priceDiff)))
+      return {
+        property: item.hotel_name,
+        priceDiff,
+        priceDiffPct,
+        isReference: item.hotel_name === referenceProperty,
+      }
+    })
+
+  const maxAbsDiff = chartData.length
+    ? Math.max(...chartData.map(d => Math.abs(d.priceDiff)))
+    : 0
+  const axisExtent = Math.max(maxAbsDiff * 1.1, 10)
+  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""} ${className ?? ""}`
+    .replace(/\s+/g, " ")
+    .trim()
   
   return (
-    <Card>
-      <CardHeader>
+    <Card className={cardClasses}>
+      <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div>
             <CardTitle>Price Difference Analysis</CardTitle>
@@ -92,10 +114,10 @@ export function PriceDifferenceChart({ comparisonData, referenceProperty }: Pric
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="p-0">
+      <CardContent className="flex flex-1 flex-col p-0">
         {!showTable ? (
           <>
-            <ChartContainer config={chartConfig} className="aspect-[4/3] w-full">
+            <ChartContainer config={chartConfig} className="h-[380px] w-full sm:h-[440px]">
           <BarChart
             data={chartData}
             layout="vertical"
@@ -105,7 +127,7 @@ export function PriceDifferenceChart({ comparisonData, referenceProperty }: Pric
             <XAxis 
               type="number"
               tickFormatter={(value) => `R${value.toLocaleString()}`}
-              domain={[-maxAbsDiff * 1.1, maxAbsDiff * 1.1]}
+              domain={[-axisExtent, axisExtent]}
             />
             <YAxis 
               type="category" 
@@ -177,7 +199,8 @@ export function PriceDifferenceChart({ comparisonData, referenceProperty }: Pric
         </div>
           </>
         ) : (
-          <Table>
+          <div className="flex-1 overflow-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Property</TableHead>
@@ -189,8 +212,8 @@ export function PriceDifferenceChart({ comparisonData, referenceProperty }: Pric
             </TableHeader>
             <TableBody>
               {comparisonData.map((row, index) => {
-                const priceDiff = Number(row.price_vs_ref || 0)
-                const priceDiffPct = Number(row.price_vs_ref_pct || 0)
+                const priceDiff = toNumber(row.price_vs_ref) ?? 0
+                const priceDiffPct = toNumber(row.price_vs_ref_pct) ?? 0
                 const isLower = priceDiff < 0
                 const isReference = row.hotel_name === referenceProperty
                 
@@ -200,19 +223,20 @@ export function PriceDifferenceChart({ comparisonData, referenceProperty }: Pric
                       {row.hotel_name}
                       {isReference && " ⭐"}
                     </TableCell>
-                    <TableCell className="text-right">R {Number(row.avg_price || 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                    <TableCell className="text-right">R {(toNumber(row.avg_price) ?? 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
                     <TableCell className={`text-right ${isReference ? '' : isLower ? 'text-green-600' : 'text-red-600'}`}>
                       {priceDiff === 0 ? '—' : `R ${priceDiff > 0 ? '+' : ''}${priceDiff.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
                     </TableCell>
                     <TableCell className={`text-right ${isReference ? '' : isLower ? 'text-green-600' : 'text-red-600'}`}>
                       {priceDiffPct === 0 ? '—' : `${priceDiffPct > 0 ? '+' : ''}${priceDiffPct.toFixed(1)}%`}
                     </TableCell>
-                    <TableCell className="text-right">{Number(row.occupancy || 0).toFixed(1)}%</TableCell>
+                    <TableCell className="text-right">{(toNumber(row.occupancy) ?? 0).toFixed(1)}%</TableCell>
                   </TableRow>
                 )
               })}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
         )}
       </CardContent>
     </Card>
@@ -227,30 +251,36 @@ interface PriceRangeChartProps {
     max_price: number
   }>
   referenceProperty: string
+  className?: string
 }
 
-export function PriceRangeChart({ pricingData, referenceProperty }: PriceRangeChartProps) {
+export function PriceRangeChart({ pricingData, referenceProperty, className }: PriceRangeChartProps) {
   const [showTable, setShowTable] = useState(false)
   
-  const chartData = pricingData.map((item) => ({
-    property: item.hotel_name,
-    average: Number(item.avg_price_per_night || 0),
-    min: Number(item.min_price || 0),
-    max: Number(item.max_price || 0),
-    range: Number(item.max_price || 0) - Number(item.min_price || 0),
-    isReference: item.hotel_name === referenceProperty,
-  })).sort((a, b) => b.average - a.average)
+  const chartData = pricingData
+    .map((item) => {
+      const min = toNumber(item.min_price) ?? 0
+      const max = toNumber(item.max_price) ?? 0
+      const average = toNumber(item.avg_price_per_night) ?? 0
 
-  // Create data points for each property with min, avg, max
-  const scatterData = chartData.flatMap((item, index) => [
-    { property: item.property, value: item.min, type: 'min', propertyIndex: index, isReference: item.isReference },
-    { property: item.property, value: item.average, type: 'avg', propertyIndex: index, isReference: item.isReference },
-    { property: item.property, value: item.max, type: 'max', propertyIndex: index, isReference: item.isReference },
-  ])
+      return {
+        property: item.hotel_name,
+        average,
+        min,
+        max,
+        range: Math.max(max - min, 0),
+        isReference: item.hotel_name === referenceProperty,
+      }
+    })
+    .sort((a, b) => b.average - a.average)
+
+  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""} ${className ?? ""}`
+    .replace(/\s+/g, " ")
+    .trim()
 
   return (
-    <Card>
-      <CardHeader>
+    <Card className={cardClasses}>
+      <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div>
             <CardTitle>Price Range Comparison</CardTitle>
@@ -281,10 +311,10 @@ export function PriceRangeChart({ pricingData, referenceProperty }: PriceRangeCh
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="p-0">
+      <CardContent className="flex flex-1 flex-col p-0">
         {!showTable ? (
           <>
-            <ChartContainer config={chartConfig} className="min-h-[600px] w-full">
+            <ChartContainer config={chartConfig} className="h-[380px] w-full sm:h-[440px]">
           <BarChart
             data={chartData}
             layout="vertical"
@@ -341,57 +371,31 @@ export function PriceRangeChart({ pricingData, referenceProperty }: PriceRangeCh
               stackId="range"
               shape={(props: any) => {
                 const { x, y, width, height, payload } = props
-                if (!payload || !x || !y || width <= 0) return <g />
-                
-                // x is where min starts, width is the range (max - min)
+
+                if (!payload || typeof x !== "number" || typeof y !== "number" || width <= 0) {
+                  return <></>
+                }
+
+                const range = Number(payload.range) || 0
+                const minValue = typeof payload.min === "number" ? payload.min : 0
+                const averageValue = typeof payload.average === "number" ? payload.average : minValue
+
                 const minX = x
                 const maxX = x + width
-                const avgX = x + (width * (payload.average - payload.min) / payload.range)
+                const avgX = range === 0 ? x : x + (width * (averageValue - minValue)) / Math.max(range, 1)
                 const centerY = y + height / 2
-                
-                const lineColor = payload.isReference ? 'hsl(var(--chart-2))' : 'hsl(var(--chart-1))'
-                const minColor = payload.isReference ? 'hsl(var(--chart-2))' : 'hsl(var(--chart-4))'
-                const avgColor = payload.isReference ? 'hsl(var(--chart-2))' : 'hsl(var(--chart-3))'
-                const maxColor = payload.isReference ? 'hsl(var(--chart-2))' : 'hsl(var(--chart-1))'
-                
+
+                const lineColor = payload.isReference ? "hsl(var(--chart-2))" : "hsl(var(--chart-1))"
+                const minColor = payload.isReference ? "hsl(var(--chart-2))" : "hsl(var(--chart-4))"
+                const avgColor = payload.isReference ? "hsl(var(--chart-2))" : "hsl(var(--chart-3))"
+                const maxColor = payload.isReference ? "hsl(var(--chart-2))" : "hsl(var(--chart-1))"
+
                 return (
                   <g>
-                    {/* Line from min to max */}
-                    <line
-                      x1={minX}
-                      y1={centerY}
-                      x2={maxX}
-                      y2={centerY}
-                      stroke={lineColor}
-                      strokeWidth={2}
-                    />
-                    {/* Min dot */}
-                    <circle
-                      cx={minX}
-                      cy={centerY}
-                      r={6}
-                      fill={minColor}
-                      stroke="white"
-                      strokeWidth={1}
-                    />
-                    {/* Average dot (larger) */}
-                    <circle
-                      cx={avgX}
-                      cy={centerY}
-                      r={8}
-                      fill={avgColor}
-                      stroke="white"
-                      strokeWidth={1}
-                    />
-                    {/* Max dot */}
-                    <circle
-                      cx={maxX}
-                      cy={centerY}
-                      r={6}
-                      fill={maxColor}
-                      stroke="white"
-                      strokeWidth={1}
-                    />
+                    <line x1={minX} y1={centerY} x2={maxX} y2={centerY} stroke={lineColor} strokeWidth={2} />
+                    <circle cx={minX} cy={centerY} r={6} fill={minColor} stroke="white" strokeWidth={1} />
+                    <circle cx={avgX} cy={centerY} r={8} fill={avgColor} stroke="white" strokeWidth={1} />
+                    <circle cx={maxX} cy={centerY} r={6} fill={maxColor} stroke="white" strokeWidth={1} />
                   </g>
                 )
               }}
@@ -418,7 +422,8 @@ export function PriceRangeChart({ pricingData, referenceProperty }: PriceRangeCh
         </div>
           </>
         ) : (
-          <Table>
+          <div className="flex-1 overflow-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Property</TableHead>
@@ -436,14 +441,15 @@ export function PriceRangeChart({ pricingData, referenceProperty }: PriceRangeCh
                       {row.hotel_name}
                       {isReference && " ⭐"}
                     </TableCell>
-                    <TableCell>R {Number(row.avg_price_per_night || 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
-                    <TableCell>R {Number(row.min_price || 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
-                    <TableCell>R {Number(row.max_price || 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                    <TableCell>R {(toNumber(row.avg_price_per_night) ?? 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                    <TableCell>R {(toNumber(row.min_price) ?? 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                    <TableCell>R {(toNumber(row.max_price) ?? 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
                   </TableRow>
                 )
               })}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
         )}
       </CardContent>
     </Card>
@@ -458,19 +464,20 @@ interface OccupancyChartProps {
     available: number
   }>
   referenceProperty: string
+  className?: string
 }
 
-export function OccupancyComparisonChart({ data, referenceProperty }: OccupancyChartProps) {
+export function OccupancyComparisonChart({ data, referenceProperty, className }: OccupancyChartProps) {
   const [showTable, setShowTable] = useState(false)
   
   // Sort by occupancy descending
   const sortedData = [...data]
-    .sort((a, b) => (b.occupancy_rate || 0) - (a.occupancy_rate || 0))
+    .sort((a, b) => (toNumber(b.occupancy_rate) ?? 0) - (toNumber(a.occupancy_rate) ?? 0))
     .map(item => ({
       name: item.hotel_name,
-      soldOut: Number(item.sold_out || 0),
-      available: Number(item.available || 0),
-      occupancyRate: Number((item.occupancy_rate || 0).toFixed(1)),
+      soldOut: toNumber(item.sold_out) ?? 0,
+      available: toNumber(item.available) ?? 0,
+      occupancyRate: Number((toNumber(item.occupancy_rate) ?? 0).toFixed(1)),
       isReference: item.hotel_name === referenceProperty
     }))
 
@@ -485,9 +492,13 @@ export function OccupancyComparisonChart({ data, referenceProperty }: OccupancyC
     },
   } satisfies ChartConfig
 
+  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""} ${className ?? ""}`
+    .replace(/\s+/g, " ")
+    .trim()
+
   return (
-    <Card>
-      <CardHeader>
+    <Card className={cardClasses}>
+      <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div>
             <CardTitle>Occupancy Analysis</CardTitle>
@@ -516,10 +527,10 @@ export function OccupancyComparisonChart({ data, referenceProperty }: OccupancyC
           </Button>
         </div>
       </CardHeader>
-      <CardContent className="p-0">
+      <CardContent className="flex flex-1 flex-col p-0">
         {!showTable ? (
           <>
-            <ChartContainer config={stackedChartConfig} className="aspect-[4/3] w-full">
+            <ChartContainer config={stackedChartConfig} className="h-[380px] w-full sm:h-[440px]">
               <BarChart data={sortedData} layout="vertical" margin={{ top: 0, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" horizontal={false} />
                 <XAxis
@@ -588,7 +599,8 @@ export function OccupancyComparisonChart({ data, referenceProperty }: OccupancyC
             </div>
           </>
         ) : (
-          <Table>
+          <div className="flex-1 overflow-auto">
+            <Table>
             <TableHeader>
               <TableRow>
                 <TableHead>Rank</TableHead>
@@ -600,7 +612,8 @@ export function OccupancyComparisonChart({ data, referenceProperty }: OccupancyC
             </TableHeader>
             <TableBody>
               {data
-                .sort((a, b) => (b.occupancy_rate || 0) - (a.occupancy_rate || 0))
+                .slice()
+                .sort((a, b) => (toNumber(b.occupancy_rate) ?? 0) - (toNumber(a.occupancy_rate) ?? 0))
                 .map((row, index) => {
                   const isReference = row.hotel_name === referenceProperty
                   return (
@@ -610,14 +623,335 @@ export function OccupancyComparisonChart({ data, referenceProperty }: OccupancyC
                         {row.hotel_name}
                         {isReference && " ⭐"}
                       </TableCell>
-                      <TableCell className="text-right">{Number(row.occupancy_rate || 0).toFixed(1)}%</TableCell>
-                      <TableCell className="text-right">{row.sold_out || 0}</TableCell>
-                      <TableCell className="text-right">{row.available || 0}</TableCell>
+                      <TableCell className="text-right">{(toNumber(row.occupancy_rate) ?? 0).toFixed(1)}%</TableCell>
+                      <TableCell className="text-right">{toNumber(row.sold_out) ?? 0}</TableCell>
+                      <TableCell className="text-right">{toNumber(row.available) ?? 0}</TableCell>
                     </TableRow>
                   )
                 })}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
+
+interface RoomInventoryChartProps {
+  data: Array<Record<string, string | number | boolean | null | undefined>>
+  referenceProperty: string
+  className?: string
+}
+
+const toPercent = (value: unknown): number | null => {
+  const numeric = toNumber(value)
+  if (numeric === null) return null
+  return numeric <= 1 ? numeric * 100 : numeric
+}
+
+const formatNumber = (value: number | null, options?: Intl.NumberFormatOptions) => {
+  if (value === null || Number.isNaN(value)) return "—"
+  return new Intl.NumberFormat("en-ZA", options).format(value)
+}
+
+export function RoomInventoryChart({ data, referenceProperty, className }: RoomInventoryChartProps) {
+  const [showTable, setShowTable] = useState(false)
+
+  const propertyMap = new Map<
+    string,
+    {
+      property: string
+      occupancySum: number
+      occupancyCount: number
+      availableSum: number
+      availableCount: number
+      totalSum: number
+      totalCount: number
+      soldOutSum: number
+      soldOutCount: number
+      avgRateSum: number
+      avgRateCount: number
+      minRate: number | null
+      maxRate: number | null
+      roomTypesTracked: number | null
+      roomTypes: Set<string>
+    }
+  >()
+
+  data.forEach((item) => {
+    const property = String(item.hotel_name ?? item.property ?? "Unknown")
+    const occupancy = toPercent(item.avg_room_occupancy_rate ?? item.occupancy_rate)
+    const available = toNumber(item.avg_available_room_types ?? item.available_room_types ?? item.available)
+    const total = toNumber(item.avg_total_room_types ?? item.total_room_types ?? item.total)
+    const soldOut = toNumber(item.avg_sold_out_room_types ?? item.sold_out)
+    const avgRate = toNumber(item.avg_room_rate ?? item.avg_price_per_night ?? item.avg_room_price)
+    const minRate = toNumber(item.min_room_rate ?? item.min_price ?? item.avg_min_room_price)
+    const maxRate = toNumber(item.max_room_rate ?? item.max_price ?? item.avg_max_room_price)
+    const roomTypesEstimate = toNumber(item.room_type_count_estimate ?? item.total_room_types)
+    const roomType = typeof item.room_type === "string" ? item.room_type : null
+
+    const current = propertyMap.get(property) ?? {
+      property,
+      occupancySum: 0,
+      occupancyCount: 0,
+      availableSum: 0,
+      availableCount: 0,
+      totalSum: 0,
+      totalCount: 0,
+      soldOutSum: 0,
+      soldOutCount: 0,
+      avgRateSum: 0,
+      avgRateCount: 0,
+      minRate: null,
+      maxRate: null,
+      roomTypesTracked: roomTypesEstimate ?? null,
+      roomTypes: new Set<string>(),
+    }
+
+    if (occupancy !== null) {
+      current.occupancySum += occupancy
+      current.occupancyCount += 1
+    }
+
+    if (available !== null) {
+      current.availableSum += available
+      current.availableCount += 1
+    }
+
+    if (total !== null) {
+      current.totalSum += total
+      current.totalCount += 1
+    }
+
+    if (soldOut !== null) {
+      current.soldOutSum += soldOut
+      current.soldOutCount += 1
+    }
+
+    if (avgRate !== null) {
+      current.avgRateSum += avgRate
+      current.avgRateCount += 1
+    }
+
+    if (typeof minRate === "number") {
+      current.minRate = current.minRate === null ? minRate : Math.min(current.minRate, minRate)
+    }
+
+    if (typeof maxRate === "number") {
+      current.maxRate = current.maxRate === null ? maxRate : Math.max(current.maxRate, maxRate)
+    }
+
+    if (roomTypesEstimate !== null) {
+      current.roomTypesTracked = roomTypesEstimate
+    }
+
+    if (roomType) {
+      current.roomTypes.add(roomType)
+    }
+
+    propertyMap.set(property, current)
+  })
+
+  const chartData = Array.from(propertyMap.values())
+    .map((entry) => {
+      const occupancy = entry.occupancyCount > 0 ? entry.occupancySum / entry.occupancyCount : 0
+      const available = entry.availableCount > 0 ? entry.availableSum / entry.availableCount : 0
+      const total = entry.totalCount > 0 ? entry.totalSum / entry.totalCount : entry.roomTypesTracked ?? available
+      const soldOut = entry.soldOutCount > 0 ? entry.soldOutSum / entry.soldOutCount : Math.max((total ?? 0) - (available ?? 0), 0)
+      const avgRate = entry.avgRateCount > 0 ? entry.avgRateSum / entry.avgRateCount : null
+      const bubbleSize = Math.max(total ?? available ?? 0, 1)
+
+      return {
+        property: entry.property,
+        occupancy,
+        available,
+        total,
+        soldOut,
+        avgRate,
+        minRate: entry.minRate,
+        maxRate: entry.maxRate,
+        roomTypesTracked: entry.roomTypesTracked ?? total ?? null,
+        roomTypes: Array.from(entry.roomTypes),
+        bubbleSize,
+        isReference: entry.property === referenceProperty,
+      }
+    })
+    .sort((a, b) => b.occupancy - a.occupancy)
+
+  const maxAvailable = chartData.length ? Math.max(...chartData.map((item) => (item.total ?? item.available ?? 0))) : 0
+  const maxBubbleSize = chartData.length ? Math.max(...chartData.map((item) => item.bubbleSize)) : 1
+  const maxTick = Math.max(Math.ceil(maxAvailable), 0)
+  const roomTypeTicks = Array.from({ length: maxTick + 1 }, (_, index) => index)
+  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""} ${className ?? ""}`
+    .replace(/\s+/g, " ")
+    .trim()
+
+  return (
+    <Card className={cardClasses}>
+      <CardHeader className="pb-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle>Room Inventory Mix</CardTitle>
+            <CardDescription>Room availability vs occupancy across the portfolio</CardDescription>
+          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setShowTable((prev) => !prev)}
+            className="ml-auto"
+          >
+            {showTable ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M3 9h18" />
+                <path d="M3 15h18" />
+                <path d="M9 3v18" />
+              </svg>
+            )}
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="flex flex-1 flex-col p-0">
+        {!showTable ? (
+          <>
+            <ChartContainer config={chartConfig} className="h-[380px] w-full sm:h-[440px]">
+              <ScatterChart margin={{ top: 16, right: 24, bottom: 24, left: 24 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis
+                  type="number"
+                  dataKey="available"
+                  name="Avg Available Room Types"
+                  domain={[0, Math.max(roomTypeTicks[roomTypeTicks.length - 1] ?? 0, maxAvailable) + 0.5]}
+                  ticks={roomTypeTicks}
+                  tickFormatter={(value) => {
+                    const rounded = Math.round(Number(value))
+                    const suffix = rounded === 1 ? " room" : " rooms"
+                    return `${rounded}${suffix}`
+                  }}
+                />
+                <YAxis
+                  type="number"
+                  dataKey="occupancy"
+                  name="Room Occupancy %"
+                  domain={[0, 100]}
+                  tickFormatter={(value) => `${formatNumber(Number(value), { maximumFractionDigits: 0 })}%`}
+                />
+                <ZAxis
+                  type="number"
+                  dataKey="bubbleSize"
+                  range={[60, 220]}
+                  domain={[1, Math.max(maxBubbleSize, 1)]}
+                  name="Total Room Types"
+                />
+                <ChartTooltip
+                  cursor={{ strokeDasharray: "3 3" }}
+                  content={({ active, payload }) => {
+                    if (!active || !payload || !payload.length) return null
+
+                    const dataPoint = payload[0].payload as typeof chartData[number]
+
+                    return (
+                      <div className="rounded-lg border bg-background p-3 shadow-sm">
+                        <div className="flex flex-col gap-1">
+                          <span className="text-xs font-semibold">
+                            {dataPoint.property}
+                            {dataPoint.isReference && " ⭐"}
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            Occupancy: {formatNumber(Number(dataPoint.occupancy), { maximumFractionDigits: 1 })}%
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            Available room types: {formatNumber(Number(dataPoint.available), { maximumFractionDigits: 1 })}
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            Total mix: {formatNumber(Number(dataPoint.total), { maximumFractionDigits: 1 })}
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            Sold out: {formatNumber(Number(dataPoint.soldOut), { maximumFractionDigits: 1 })}
+                          </span>
+                          {dataPoint.avgRate !== null && (
+                            <span className="text-xs text-muted-foreground">
+                              Avg room rate: R {formatNumber(Number(dataPoint.avgRate), { maximumFractionDigits: 0 })}
+                            </span>
+                          )}
+                          {(dataPoint.minRate !== null || dataPoint.maxRate !== null) && (
+                            <span className="text-xs text-muted-foreground">
+                              Rate range: R {formatNumber(dataPoint.minRate, { maximumFractionDigits: 0 })} - R {formatNumber(dataPoint.maxRate, { maximumFractionDigits: 0 })}
+                            </span>
+                          )}
+                          {dataPoint.roomTypes.length > 0 && (
+                            <span className="text-xs text-muted-foreground">
+                              Types: {dataPoint.roomTypes.join(", ")}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    )
+                  }}
+                />
+                <Scatter data={chartData}>
+                  {chartData.map((entry, index) => (
+                    <Cell
+                      key={`bubble-${entry.property}-${index}`}
+                      fill={entry.isReference ? "hsl(var(--chart-2))" : "hsl(var(--chart-1))"}
+                      stroke="hsl(var(--background))"
+                      strokeWidth={1.5}
+                    />
+                  ))}
+                </Scatter>
+              </ScatterChart>
+            </ChartContainer>
+            <div className="mt-0 mb-2 flex items-center justify-center gap-4 text-xs text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[hsl(var(--chart-1))]" />
+                Portfolio mix
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[hsl(var(--chart-2))]" />
+                Reference
+              </span>
+              <span className="flex items-center gap-1.5">
+                Bubble size = total room types
+              </span>
+            </div>
+          </>
+        ) : (
+          <div className="flex-1 overflow-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Property</TableHead>
+                  <TableHead className="text-right">Occupancy %</TableHead>
+                  <TableHead className="text-right">Available Types</TableHead>
+                  <TableHead className="text-right">Total Types</TableHead>
+                  <TableHead className="text-right">Sold Out</TableHead>
+                  <TableHead className="text-right">Avg Rate</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {chartData.map((row) => (
+                  <TableRow key={row.property} className={row.isReference ? "bg-muted/50" : ""}>
+                    <TableCell className="font-medium">
+                      {row.property}
+                      {row.isReference && " ⭐"}
+                    </TableCell>
+                    <TableCell className="text-right">{formatNumber(Number(row.occupancy), { maximumFractionDigits: 1 })}%</TableCell>
+                    <TableCell className="text-right">{formatNumber(Number(row.available), { maximumFractionDigits: 1 })}</TableCell>
+                    <TableCell className="text-right">{formatNumber(Number(row.total), { maximumFractionDigits: 1 })}</TableCell>
+                    <TableCell className="text-right">{formatNumber(Number(row.soldOut), { maximumFractionDigits: 1 })}</TableCell>
+                    <TableCell className="text-right">{row.avgRate !== null ? `R ${formatNumber(Number(row.avgRate), { maximumFractionDigits: 0 })}` : "—"}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         )}
       </CardContent>
     </Card>
