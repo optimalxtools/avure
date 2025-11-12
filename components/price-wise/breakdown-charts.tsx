@@ -133,7 +133,7 @@ export function PriceDifferenceChart({ comparisonData, referenceProperty, classN
               type="category" 
               dataKey="property" 
               width={90}
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: 10 }}
             />
             <ChartTooltip 
               content={({ active, payload }) => {
@@ -329,7 +329,7 @@ export function PriceRangeChart({ pricingData, referenceProperty, className }: P
               type="category" 
               dataKey="property" 
               width={90}
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: 10 }}
             />
             <ChartTooltip 
               content={({ active, payload }) => {
@@ -541,7 +541,7 @@ export function OccupancyComparisonChart({ data, referenceProperty, className }:
                   type="category"
                   dataKey="name"
                   width={90}
-                  tick={{ fontSize: 12 }}
+                  tick={{ fontSize: 10 }}
                 />
                 <ChartTooltip
                   content={({ active, payload }) => {
