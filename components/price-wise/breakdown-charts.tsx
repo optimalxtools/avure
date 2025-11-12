@@ -77,7 +77,7 @@ export function PriceDifferenceChart({ comparisonData, referenceProperty, classN
     ? Math.max(...chartData.map(d => Math.abs(d.priceDiff)))
     : 0
   const axisExtent = Math.max(maxAbsDiff * 1.1, 10)
-  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""} ${className ?? ""}`
+  const cardClasses = `flex w-full flex-col ${className ?? ""}`
     .replace(/\s+/g, " ")
     .trim()
   
@@ -274,7 +274,7 @@ export function PriceRangeChart({ pricingData, referenceProperty, className }: P
     })
     .sort((a, b) => b.average - a.average)
 
-  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""} ${className ?? ""}`
+  const cardClasses = `flex w-full flex-col ${className ?? ""}`
     .replace(/\s+/g, " ")
     .trim()
 
@@ -492,7 +492,7 @@ export function OccupancyComparisonChart({ data, referenceProperty, className }:
     },
   } satisfies ChartConfig
 
-  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""} ${className ?? ""}`
+  const cardClasses = `flex w-full flex-col ${className ?? ""}`
     .replace(/\s+/g, " ")
     .trim()
 
@@ -722,7 +722,7 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
     },
   } satisfies ChartConfig
 
-  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""}`
+  const cardClasses = `flex w-full flex-col`
     .replace(/\s+/g, " ")
     .trim()
 
