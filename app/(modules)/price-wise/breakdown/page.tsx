@@ -124,30 +124,35 @@ export default async function Page() {
           <TabsList>
             <TabsTrigger value="metrics">Metrics</TabsTrigger>
             <TabsTrigger value="insights">Insights</TabsTrigger>
-            <TabsTrigger value="rooms">Rooms</TabsTrigger>
+            <TabsTrigger value="compare">Compare</TabsTrigger>
           </TabsList>
 
           <TabsContent value="metrics">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <div className="space-y-4">
-                {comparisonWithRef.length > 0 && (
-                  <PriceDifferenceChart
-                    comparisonData={comparisonWithRef as any}
-                    referenceProperty={referenceProperty}
-                  />
-                )}
-
-                {occupancyMetrics.length > 0 && (
-                  <MetricsOccupancyChart
-                    data={occupancyMetrics as any}
-                    referenceProperty={referenceProperty}
-                  />
-                )}
-              </div>
+              {comparisonWithRef.length > 0 && (
+                <PriceDifferenceChart
+                  comparisonData={comparisonWithRef as any}
+                  referenceProperty={referenceProperty}
+                />
+              )}
 
               {pricingMetrics.length > 0 && (
                 <PriceRangeChart
                   pricingData={pricingMetrics as any}
+                  referenceProperty={referenceProperty}
+                />
+              )}
+
+              {occupancyMetrics.length > 0 && (
+                <MetricsOccupancyChart
+                  data={occupancyMetrics as any}
+                  referenceProperty={referenceProperty}
+                />
+              )}
+
+              {roomInventory.length > 0 && (
+                <RoomInventoryChart 
+                  data={sortedRoomInventory as any} 
                   referenceProperty={referenceProperty}
                 />
               )}
@@ -170,76 +175,10 @@ export default async function Page() {
             </div>
           </TabsContent>
 
-          <TabsContent value="rooms">
-            {/* Room Inventory Analysis */}
-            {roomInventory.length > 0 ? (
-              <div className="space-y-4">
-                <RoomInventoryChart data={roomInventory as any} referenceProperty={referenceProperty} />
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Room Inventory & Pricing Strategy</CardTitle>
-                    <CardDescription>Room-level insights showing inventory management and tiered pricing</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead>Property</TableHead>
-                          <TableHead className="text-right">Total Rooms</TableHead>
-                          <TableHead className="text-right">Room Occupancy</TableHead>
-                          <TableHead className="text-right">Avg Room Price</TableHead>
-                          <TableHead className="text-right">Price Spread</TableHead>
-                          <TableHead>Price Tiering</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {sortedRoomInventory.map((row: any, index: number) => {
-                          const isReference = row.hotel_name === analysis?.reference_property
-                          const priceSpread = Number(row.room_price_spread_pct || 0)
-                          const usesTiering = row.uses_room_tiering || false
-                          const totalRooms = toNumber(row.room_type_count_estimate ?? row.avg_total_room_types) ?? 0
-
-                          return (
-                            <TableRow key={index} className={isReference ? "bg-muted/50" : ""}>
-                              <TableCell className="font-medium">
-                                {row.hotel_name}
-                                {isReference && " ⭐"}
-                              </TableCell>
-                              <TableCell className="text-right">{totalRooms > 0 ? totalRooms.toFixed(0) : "—"}</TableCell>
-                              <TableCell className="text-right">{Number(row.avg_room_occupancy_rate || 0).toFixed(1)}%</TableCell>
-                              <TableCell className="text-right">
-                                {row.avg_room_price ? `R ${Number(row.avg_room_price).toLocaleString('en-ZA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}` : "—"}
-                              </TableCell>
-                              <TableCell className="text-right">
-                                {priceSpread > 0 ? `${priceSpread.toFixed(1)}%` : "—"}
-                              </TableCell>
-                              <TableCell>
-                                <span className={usesTiering ? "text-green-600 font-medium" : "text-muted-foreground"}>
-                                  {usesTiering ? "Yes" : "No"}
-                                </span>
-                              </TableCell>
-                            </TableRow>
-                          )
-                        })}
-                      </TableBody>
-                    </Table>
-                    <div className="mt-4 space-y-1 text-sm text-muted-foreground">
-                      <p><strong>Total Rooms:</strong> Estimated number of distinct room types being tracked for each property</p>
-                      <p><strong>Room Occupancy:</strong> Percentage of room types that are sold out</p>
-                      <p><strong>Price Spread:</strong> Difference between the cheapest and most expensive room as a percentage</p>
-                      <p><strong>Price Tiering:</strong> Highlights properties using multiple room tiers at different price points</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ) : (
-              <Card>
-                <CardContent className="py-8">
-                  <p className="text-sm text-muted-foreground text-center">No room inventory data available.</p>
-                </CardContent>
-              </Card>
-            )}
+          <TabsContent value="compare" className="space-y-4">
+            <div className="rounded-md border p-6 text-sm text-muted-foreground">
+              Comparisons coming soon
+            </div>
           </TabsContent>
         </Tabs>
       </div>

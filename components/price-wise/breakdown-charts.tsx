@@ -656,6 +656,8 @@ interface RoomInventoryChartProps {
 }
 
 export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryChartProps) {
+  const [showTable, setShowTable] = useState(false)
+  
   const chartData = data
     .map((item) => {
       const totalRoomsRaw = toNumber(item.room_type_count_estimate) ?? toNumber(item.avg_total_room_types)
@@ -697,7 +699,7 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
   const bubbleRange: [number, number] = [120, 420]
 
   const chartLegend = (
-    <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+    <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs text-muted-foreground">
       <div className="flex items-center gap-1.5">
         <div className="h-2.5 w-2.5 rounded" style={{ backgroundColor: "hsl(var(--chart-1))" }} />
         <span>Tiered pricing</span>
@@ -720,14 +722,45 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
     },
   } satisfies ChartConfig
 
+  const cardClasses = `flex w-full flex-col ${showTable ? "lg:col-span-2" : ""}`
+    .replace(/\s+/g, " ")
+    .trim()
+
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Room Inventory Mix</CardTitle>
-        <CardDescription>Total room types vs. room pricing with occupancy bubble size</CardDescription>
+    <Card className={cardClasses}>
+      <CardHeader className="pb-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle>Room Inventory Mix</CardTitle>
+            <CardDescription>Total room types vs. room pricing with occupancy bubble size</CardDescription>
+          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setShowTable(!showTable)}
+            className="ml-auto"
+          >
+            {showTable ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2"/>
+                <path d="M3 9h18"/>
+                <path d="M3 15h18"/>
+                <path d="M9 3v18"/>
+              </svg>
+            )}
+          </Button>
+        </div>
       </CardHeader>
-      <CardContent>
-        <ChartContainer config={config} className="h-[360px] w-full">
+      <CardContent className="flex flex-1 flex-col p-0">
+        {!showTable ? (
+          <>
+            <ChartContainer config={config} className="h-[380px] w-full sm:h-[440px]">{/* Adjust height if needed */}
           <ScatterChart margin={{ top: 20, right: 30, left: 10, bottom: 20 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
@@ -812,9 +845,62 @@ export function RoomInventoryChart({ data, referenceProperty }: RoomInventoryCha
           </ScatterChart>
         </ChartContainer>
         {chartLegend}
-        <div className="mt-3 text-xs text-muted-foreground">
+        <div className="mt-3 text-xs text-muted-foreground text-center">
           Bubble size reflects room-level occupancy; larger bubbles indicate higher sold-through rates.
         </div>
+          </>
+        ) : (
+          <div className="flex-1 overflow-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Property</TableHead>
+                  <TableHead className="text-right">Total Rooms</TableHead>
+                  <TableHead className="text-right">Room Occupancy</TableHead>
+                  <TableHead className="text-right">Avg Room Price</TableHead>
+                  <TableHead className="text-right">Price Spread</TableHead>
+                  <TableHead>Price Tiering</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {data.map((row, index) => {
+                  const isReference = row.hotel_name === referenceProperty
+                  const priceSpread = Number(row.room_price_spread_pct || 0)
+                  const usesTiering = row.uses_room_tiering || false
+                  const totalRooms = toNumber(row.room_type_count_estimate ?? row.avg_total_room_types) ?? 0
+
+                  return (
+                    <TableRow key={index} className={isReference ? "bg-muted/50" : ""}>
+                      <TableCell className="font-medium">
+                        {row.hotel_name}
+                        {isReference && " ⭐"}
+                      </TableCell>
+                      <TableCell className="text-right">{totalRooms > 0 ? totalRooms.toFixed(0) : "—"}</TableCell>
+                      <TableCell className="text-right">{Number(row.avg_room_occupancy_rate || 0).toFixed(1)}%</TableCell>
+                      <TableCell className="text-right">
+                        {row.avg_room_price ? `R ${Number(row.avg_room_price).toLocaleString('en-ZA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}` : "—"}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {priceSpread > 0 ? `${priceSpread.toFixed(1)}%` : "—"}
+                      </TableCell>
+                      <TableCell>
+                        <span className={usesTiering ? "text-green-600 font-medium" : "text-muted-foreground"}>
+                          {usesTiering ? "Yes" : "No"}
+                        </span>
+                      </TableCell>
+                    </TableRow>
+                  )
+                })}
+              </TableBody>
+            </Table>
+            <div className="mt-4 space-y-1 text-sm text-muted-foreground px-6 pb-4">
+              <p><strong>Total Rooms:</strong> Estimated number of distinct room types being tracked for each property</p>
+              <p><strong>Room Occupancy:</strong> Percentage of room types that are sold out</p>
+              <p><strong>Price Spread:</strong> Difference between the cheapest and most expensive room as a percentage</p>
+              <p><strong>Price Tiering:</strong> Highlights properties using multiple room tiers at different price points</p>
+            </div>
+          </div>
+        )}
       </CardContent>
     </Card>
   )
