@@ -16,6 +16,26 @@ export function RefreshButton({ lastUpdated }: RefreshButtonProps) {
   const [needsRefresh, setNeedsRefresh] = React.useState(false)
   const [errorMessage, setErrorMessage] = React.useState<string | null>(null)
 
+  const handleRefresh = React.useCallback(async () => {
+    setIsRefreshing(true)
+    setErrorMessage(null)
+    try {
+      const response = await fetch("/api/price-wise/analyzer/run", { method: "POST" })
+      if (!response.ok) {
+        const error = await response.json()
+        setErrorMessage(error.error || "Failed to refresh analysis")
+        return
+      }
+      setNeedsRefresh(false)
+      router.refresh()
+    } catch (error) {
+      console.error("Failed to refresh:", error)
+      setErrorMessage("Failed to refresh analysis. Please try again.")
+    } finally {
+      setIsRefreshing(false)
+    }
+  }, [router])
+
   React.useEffect(() => {
     setHydrated(true)
   }, [])
@@ -47,27 +67,7 @@ export function RefreshButton({ lastUpdated }: RefreshButtonProps) {
       }
     }
     checkStatus()
-  }, [])
-
-  const handleRefresh = async () => {
-    setIsRefreshing(true)
-    setErrorMessage(null)
-    try {
-      const response = await fetch("/api/price-wise/analyzer/run", { method: "POST" })
-      if (!response.ok) {
-        const error = await response.json()
-        setErrorMessage(error.error || "Failed to refresh analysis")
-        return
-      }
-      setNeedsRefresh(false)
-      router.refresh()
-    } catch (error) {
-      console.error("Failed to refresh:", error)
-      setErrorMessage("Failed to refresh analysis. Please try again.")
-    } finally {
-      setIsRefreshing(false)
-    }
-  }
+  }, [handleRefresh])
 
   const refreshStatus = React.useMemo(() => {
     if (!hydrated) {

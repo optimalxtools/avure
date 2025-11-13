@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -45,7 +44,6 @@ import {
 
 import type {
   PriceWiseConfig,
-  PriceWiseHistoryEntry,
   PriceWiseStatusPayload,
 } from "@/lib/price-wise/types"
 
@@ -76,11 +74,6 @@ function formatDateTime(value?: string) {
 function buildArrayLabel(values: number[]) {
   if (!values.length) return "—"
   return values.join(", ")
-}
-
-function getRunSummary(history: PriceWiseHistoryEntry[] | undefined) {
-  if (!history?.length) return undefined
-  return history[0]
 }
 
 export default function Page() {
@@ -295,8 +288,6 @@ export default function Page() {
   }, [configDraft, fetchStatus])
 
   const isRunning = status?.runState.status === "running"
-  const lastRun = React.useMemo(() => getRunSummary(status?.history), [status?.history])
-
   return (
     <>
       <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">

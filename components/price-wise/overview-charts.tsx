@@ -1,7 +1,6 @@
 "use client"
 
-import { useState } from "react"
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell, Line, LineChart, Area, AreaChart } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell } from "recharts"
 import {
   Card,
   CardContent,
@@ -14,14 +13,6 @@ import {
   ChartContainer,
   ChartTooltip,
 } from "@/components/ui/chart"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
 
 const toNumber = (value: unknown): number | null => {
   if (typeof value === "number" && Number.isFinite(value)) return value
@@ -629,7 +620,7 @@ export function DailyBookingStatusChart({ dailyData, referenceProperty, roomInve
 
   const availabilityMap = new Map<string, AvailabilityCell>()
   accumulators.forEach((accumulator, key) => {
-    let totalRooms = accumulator.bestPair?.total
+    const totalRooms = accumulator.bestPair?.total
       ?? accumulator.fallbackTotal
       ?? accumulator.inventoryTotal
       ?? null
@@ -776,7 +767,7 @@ export function DailyBookingStatusChart({ dailyData, referenceProperty, roomInve
     const soldPercent = cell?.soldPercent != null ? Math.round(cell.soldPercent) : null
 
     // Build a cleaner, multi-line title
-    let lines = [
+    const lines = [
       `${hotel}${hotel === referenceProperty ? ' ⭐' : ''}`,
       `${date} (Day +${offset})`,
       `Status: ${status}`

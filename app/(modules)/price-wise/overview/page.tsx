@@ -6,8 +6,7 @@ import { ExportButton } from "@/components/export-button"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { AIButton } from "@/components/ai-button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
+import { Card, CardContent } from "@/components/ui/card"
 import { getScraperAnalysis, getDailyPricingData } from "@/lib/price-wise/scraper"
 import { RefreshButton } from "@/components/price-wise-refresh-button"
 import { SimplePriceChart, SimpleOccupancyChart, DailyBookingStatusChart, DailyAvailabilityChart } from "@/components/price-wise/overview-charts"
@@ -20,22 +19,100 @@ export default async function Page() {
     ? `Generated at ${new Date(analysis.generated_at).toLocaleString()}`
     : "No analysis has been produced yet"
 
-  // Parse data from analysis
-  const pricingMetrics = analysis?.pricing_metrics || []
-  const occupancyMetrics = analysis?.occupancy_metrics || []
-  const comparison = analysis?.comparison || []
-  const roomInventory = analysis?.room_inventory || []
-  
+  const toNullableNumber = (value: unknown): number | null => {
+    if (typeof value === "number" && Number.isFinite(value)) return value
+    if (typeof value === "string" && value.trim() !== "") {
+      const parsed = Number(value)
+      return Number.isFinite(parsed) ? parsed : null
+    }
+    return null
+  }
+
+  const toNumberOrZero = (value: unknown): number => toNullableNumber(value) ?? 0
+
+  const toHotelName = (value: unknown): string => {
+    if (typeof value === "string") return value.trim()
+    if (typeof value === "number") return value.toString()
+    return ""
+  }
+
+  type PricingMetric = {
+    hotel_name?: string
+    avg_price_per_night?: number | string | null
+    min_price?: number | string | null
+    max_price?: number | string | null
+    discount_frequency?: number | string | null
+    preferred_price_per_night?: number | string | null
+    preferred_price_source?: string | null
+    property_avg_price_per_night?: number | string | null
+    avg_room_price_avg?: number | string | null
+    room_type_count_estimate?: number | string | null
+  }
+
+  type OccupancyMetric = {
+    hotel_name?: string
+    occupancy_rate?: number | string | null
+    preferred_occupancy_rate?: number | string | null
+    preferred_occupancy_source?: string | null
+    property_occupancy_rate?: number | string | null
+    avg_room_occupancy_rate?: number | string | null
+    sold_out?: number | string | null
+    available?: number | string | null
+    room_type_count_estimate?: number | string | null
+  }
+
+  type RoomInventoryMetric = {
+    hotel_name?: string
+    avg_room_occupancy_rate?: number | string | null
+    avg_total_room_types?: number | string | null
+    avg_available_room_types?: number | string | null
+    avg_sold_out_room_types?: number | string | null
+    room_type_count_estimate?: number | string | null
+  }
+
+  const pricingMetrics = ((analysis?.pricing_metrics as PricingMetric[] | undefined) ?? [])
+    .map((entry) => ({
+      hotel_name: toHotelName(entry.hotel_name),
+      avg_price_per_night: toNumberOrZero(entry.avg_price_per_night),
+      min_price: toNumberOrZero(entry.min_price),
+      max_price: toNumberOrZero(entry.max_price),
+      discount_frequency: toNumberOrZero(entry.discount_frequency),
+      preferred_price_per_night: toNullableNumber(entry.preferred_price_per_night),
+      preferred_price_source: entry.preferred_price_source ?? null,
+      property_avg_price_per_night: toNullableNumber(entry.property_avg_price_per_night),
+      avg_room_price_avg: toNullableNumber(entry.avg_room_price_avg),
+      room_type_count_estimate: toNullableNumber(entry.room_type_count_estimate),
+    }))
+    .filter((entry) => entry.hotel_name.length > 0)
+
+  const occupancyMetrics = ((analysis?.occupancy_metrics as OccupancyMetric[] | undefined) ?? [])
+    .map((entry) => ({
+      hotel_name: toHotelName(entry.hotel_name),
+      occupancy_rate: toNumberOrZero(entry.occupancy_rate),
+      preferred_occupancy_rate: toNullableNumber(entry.preferred_occupancy_rate),
+      preferred_occupancy_source: entry.preferred_occupancy_source ?? null,
+      property_occupancy_rate: toNullableNumber(entry.property_occupancy_rate),
+      avg_room_occupancy_rate: toNullableNumber(entry.avg_room_occupancy_rate),
+      sold_out: toNumberOrZero(entry.sold_out),
+      available: toNumberOrZero(entry.available),
+      room_type_count_estimate: toNullableNumber(entry.room_type_count_estimate),
+    }))
+    .filter((entry) => entry.hotel_name.length > 0)
+
+  const roomInventoryMetrics = ((analysis?.room_inventory as RoomInventoryMetric[] | undefined) ?? [])
+    .map((entry) => ({
+      hotel_name: toHotelName(entry.hotel_name),
+      avg_room_occupancy_rate: toNullableNumber(entry.avg_room_occupancy_rate),
+      avg_total_room_types: toNullableNumber(entry.avg_total_room_types),
+      avg_available_room_types: toNullableNumber(entry.avg_available_room_types),
+      avg_sold_out_room_types: toNullableNumber(entry.avg_sold_out_room_types),
+      room_type_count_estimate: toNullableNumber(entry.room_type_count_estimate),
+    }))
+    .filter((entry) => entry.hotel_name.length > 0)
+
   // Find reference property data
-  const refPricing = pricingMetrics.find((p: any) => p.hotel_name === analysis?.reference_property)
-  const refOccupancy = occupancyMetrics.find((o: any) => o.hotel_name === analysis?.reference_property)
-  const refRoomInventory = roomInventory.find((r: any) => r.hotel_name === analysis?.reference_property)
-  
-  // Sort occupancy by rate (descending)
-  const sortedOccupancy = [...occupancyMetrics].sort((a: any, b: any) => (b.occupancy_rate || 0) - (a.occupancy_rate || 0))
-  
-  // Sort comparison by price difference
-  const sortedComparison = [...comparison].sort((a: any, b: any) => (a.price_vs_ref_pct || 0) - (b.price_vs_ref_pct || 0))
+  const refPricing = pricingMetrics.find((p) => p.hotel_name === analysis?.reference_property)
+  const refOccupancy = occupancyMetrics.find((o) => o.hotel_name === analysis?.reference_property)
 
   return (
     <>
@@ -185,14 +262,14 @@ export default async function Page() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {pricingMetrics.length > 0 && (
                 <SimplePriceChart 
-                  pricingData={pricingMetrics as any}
+                  pricingData={pricingMetrics}
                   referenceProperty={analysis.reference_property}
                 />
               )}
               {occupancyMetrics.length > 0 && (
                 <SimpleOccupancyChart 
-                  occupancyData={occupancyMetrics as any}
-                  roomInventoryData={roomInventory as any}
+                  occupancyData={occupancyMetrics}
+                  roomInventoryData={roomInventoryMetrics}
                   referenceProperty={analysis.reference_property}
                 />
               )}
@@ -203,7 +280,7 @@ export default async function Page() {
               <DailyBookingStatusChart 
                 dailyData={dailyData}
                 referenceProperty={analysis.reference_property}
-                roomInventoryData={roomInventory as any}
+                roomInventoryData={roomInventoryMetrics}
               />
             )}
 

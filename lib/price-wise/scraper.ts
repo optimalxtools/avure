@@ -141,17 +141,7 @@ async function readJsonFile<T>(filePath: string, fallback: T): Promise<T> {
   try {
     const raw = await fs.readFile(filePath, "utf-8")
     return JSON.parse(raw) as T
-  } catch (error) {
-    return fallback
-  }
-}
-
-async function readJsonFileTolerant<T>(filePath: string, fallback: T): Promise<T> {
-  try {
-    const raw = await fs.readFile(filePath, "utf-8")
-    const sanitized = raw.replace(/\bNaN\b/g, "null").replace(/\bInfinity\b/g, "null").replace(/\b-?Infinity\b/g, "null")
-    return JSON.parse(sanitized) as T
-  } catch (error) {
+  } catch {
     return fallback
   }
 }
@@ -352,7 +342,8 @@ export async function getScraperStatus(): Promise<PriceWiseStatusPayload> {
   
   const logTail = logFilePath ? await tailFile(logFilePath, LOG_LINES) : undefined
 
-  const { logFile, ...restState } = runStateRaw
+  const { logFile: _logFile, ...restState } = runStateRaw
+  void _logFile
 
   return {
     runState: restState,
@@ -551,15 +542,6 @@ export async function isAnalysisOutdated(): Promise<boolean> {
   } catch {
     return false
   }
-}
-
-/**
- * Get the latest successful scrape from history
- * Returns the most recent entry where scrape_success is true
- */
-async function getLatestSuccessfulScrape(): Promise<PriceWiseHistoryEntry | undefined> {
-  const history = await getScraperHistory()
-  return history.find(entry => entry.scrape_success === true)
 }
 
 /**

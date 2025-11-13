@@ -275,6 +275,30 @@ interface PriceRangeChartProps {
   className?: string
 }
 
+type PriceRangeShapeProps = {
+  x: number
+  y: number
+  width: number
+  height: number
+  payload?: {
+    range?: number | string | null
+    min?: number | string | null
+    average?: number | string | null
+    isReference?: boolean
+  }
+}
+
+function isPriceRangeShapeProps(value: unknown): value is PriceRangeShapeProps {
+  if (!value || typeof value !== "object") return false
+  const candidate = value as { x?: unknown; y?: unknown; width?: unknown; height?: unknown }
+  return (
+    typeof candidate.x === "number" &&
+    typeof candidate.y === "number" &&
+    typeof candidate.width === "number" &&
+    typeof candidate.height === "number"
+  )
+}
+
 export function PriceRangeChart({ pricingData, referenceProperty, className }: PriceRangeChartProps) {
   const [showTable, setShowTable] = useState(false)
   
@@ -390,16 +414,20 @@ export function PriceRangeChart({ pricingData, referenceProperty, className }: P
             <Bar 
               dataKey="range" 
               stackId="range"
-              shape={(props: any) => {
-                const { x, y, width, height, payload } = props
-
-                if (!payload || typeof x !== "number" || typeof y !== "number" || width <= 0) {
+              shape={(rawProps: unknown) => {
+                if (!isPriceRangeShapeProps(rawProps)) {
                   return <></>
                 }
 
-                const range = Number(payload.range) || 0
-                const minValue = typeof payload.min === "number" ? payload.min : 0
-                const averageValue = typeof payload.average === "number" ? payload.average : minValue
+                const { x, y, width, height, payload } = rawProps
+
+                if (!payload || width <= 0) {
+                  return <></>
+                }
+
+                const range = Number(payload.range ?? 0) || 0
+                const minValue = Number(payload.min ?? 0) || 0
+                const averageValue = Number(payload.average ?? minValue) || minValue
 
                 const minX = x
                 const maxX = x + width

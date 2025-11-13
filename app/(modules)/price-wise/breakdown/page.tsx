@@ -17,15 +17,6 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
 import { getScraperAnalysis } from "@/lib/price-wise/scraper"
 import { RefreshButton } from "@/components/price-wise-refresh-button"
 import { PriceDifferenceChart, PriceRangeChart, OccupancyComparisonChart as MetricsOccupancyChart, RoomInventoryChart } from "@/components/price-wise/breakdown-metrics-charts"
@@ -40,47 +31,126 @@ function toNumber(value: unknown): number | null {
   return null
 }
 
+const toStringValue = (value: unknown): string => (typeof value === "string" ? value : "")
+
+type PricingMetric = {
+  hotel_name?: string
+  avg_price_per_night?: number | string | null
+  min_price?: number | string | null
+  max_price?: number | string | null
+}
+
+type OccupancyMetric = {
+  hotel_name?: string
+  occupancy_rate?: number | string | null
+  sold_out?: number | string | null
+  available?: number | string | null
+}
+
+type ComparisonMetric = {
+  hotel_name?: string
+  avg_price?: number | string | null
+  price_vs_ref?: number | string | null
+  price_vs_ref_pct?: number | string | null
+  occupancy?: number | string | null
+  position?: string | null
+}
+
+type RoomInventoryMetric = {
+  hotel_name?: string
+  avg_room_occupancy_rate?: number | string | null
+  avg_total_room_types?: number | string | null
+  avg_available_room_types?: number | string | null
+  avg_sold_out_room_types?: number | string | null
+  room_type_count_estimate?: number | string | null
+  avg_room_price?: number | string | null
+  avg_room_price_avg?: number | string | null
+  room_price_spread?: number | string | null
+  room_price_spread_pct?: number | string | null
+  uses_room_tiering?: boolean | null
+}
+
 export default async function Page() {
   const analysis = await getScraperAnalysis()
 
-  // Parse additional data for new sections
-  const pricingMetrics = analysis?.pricing_metrics || []
-  const occupancyMetrics = analysis?.occupancy_metrics || []
-  const comparison = analysis?.comparison || []
-  const roomInventory = analysis?.room_inventory || []
-  
-  // Sort occupancy by rate (descending)
-  const sortedOccupancy = [...occupancyMetrics].sort((a: any, b: any) => (b.occupancy_rate || 0) - (a.occupancy_rate || 0))
-  
-  // Sort comparison by price difference
-  const sortedComparison = [...comparison].sort((a: any, b: any) => (a.price_vs_ref_pct || 0) - (b.price_vs_ref_pct || 0))
-  
-  // Sort room inventory by room occupancy rate
-  const sortedRoomInventory = [...roomInventory].sort((a: any, b: any) => (b.avg_room_occupancy_rate || 0) - (a.avg_room_occupancy_rate || 0))
-  
-  // Add reference property to comparison if it's not there
-  const refPricing = pricingMetrics.find((p: any) => p.hotel_name === analysis?.reference_property)
-  const refOccupancy = occupancyMetrics.find((o: any) => o.hotel_name === analysis?.reference_property)
-  const comparisonWithRef = [...sortedComparison]
-  if (analysis && refPricing && !comparisonWithRef.find((c: any) => c.hotel_name === analysis.reference_property)) {
-    // Add reference property with 0 difference
-    comparisonWithRef.push({
-      hotel_name: analysis.reference_property,
-      avg_price: refPricing.avg_price_per_night,
-      price_vs_ref: 0,
-      price_vs_ref_pct: 0,
-      occupancy: refOccupancy?.occupancy_rate || 0,
-      position: 'Reference'
-    })
-    comparisonWithRef.sort((a: any, b: any) => (a.price_vs_ref_pct || 0) - (b.price_vs_ref_pct || 0))
-  }
+  const rawPricing = (analysis?.pricing_metrics as PricingMetric[] | undefined) ?? []
+  const rawOccupancy = (analysis?.occupancy_metrics as OccupancyMetric[] | undefined) ?? []
+  const rawComparison = (analysis?.comparison as ComparisonMetric[] | undefined) ?? []
+  const rawRoomInventory = (analysis?.room_inventory as RoomInventoryMetric[] | undefined) ?? []
+
+  const pricingMetrics = rawPricing
+    .map((entry) => ({
+      hotel_name: toStringValue(entry.hotel_name),
+      avg_price_per_night: toNumber(entry.avg_price_per_night) ?? 0,
+      min_price: toNumber(entry.min_price) ?? 0,
+      max_price: toNumber(entry.max_price) ?? 0,
+    }))
+    .filter((entry) => entry.hotel_name)
+
+  const occupancyMetrics = rawOccupancy
+    .map((entry) => ({
+      hotel_name: toStringValue(entry.hotel_name),
+      occupancy_rate: toNumber(entry.occupancy_rate) ?? 0,
+      sold_out: toNumber(entry.sold_out) ?? 0,
+      available: toNumber(entry.available) ?? 0,
+    }))
+    .filter((entry) => entry.hotel_name)
+
+  const comparisonMetrics = rawComparison
+    .map((entry) => ({
+      hotel_name: toStringValue(entry.hotel_name),
+      avg_price: toNumber(entry.avg_price) ?? 0,
+      price_vs_ref: toNumber(entry.price_vs_ref) ?? 0,
+      price_vs_ref_pct: toNumber(entry.price_vs_ref_pct) ?? 0,
+      occupancy: toNumber(entry.occupancy) ?? 0,
+      position: toStringValue(entry.position),
+    }))
+    .filter((entry) => entry.hotel_name)
+
+  const roomInventoryMetrics = rawRoomInventory
+    .map((entry) => ({
+      hotel_name: toStringValue(entry.hotel_name),
+      avg_room_occupancy_rate: toNumber(entry.avg_room_occupancy_rate),
+      avg_total_room_types: toNumber(entry.avg_total_room_types),
+      avg_available_room_types: toNumber(entry.avg_available_room_types),
+      avg_sold_out_room_types: toNumber(entry.avg_sold_out_room_types),
+      room_type_count_estimate: toNumber(entry.room_type_count_estimate),
+      avg_room_price: toNumber(entry.avg_room_price),
+      avg_room_price_avg: toNumber(entry.avg_room_price_avg),
+      room_price_spread: toNumber(entry.room_price_spread),
+      room_price_spread_pct: toNumber(entry.room_price_spread_pct),
+      uses_room_tiering: entry.uses_room_tiering === true,
+    }))
+    .filter((entry) => entry.hotel_name)
+
+  const sortedComparison = [...comparisonMetrics].sort((a, b) => a.price_vs_ref_pct - b.price_vs_ref_pct)
+  const sortedRoomInventory = [...roomInventoryMetrics].sort(
+    (a, b) => (b.avg_room_occupancy_rate ?? 0) - (a.avg_room_occupancy_rate ?? 0),
+  )
 
   const referenceProperty = analysis?.reference_property || ""
-  const referencePricingMetric = pricingMetrics.find((entry: any) => entry.hotel_name === referenceProperty)
-  const referenceOccupancyMetric = occupancyMetrics.find((entry: any) => entry.hotel_name === referenceProperty)
+  const referencePricingMetric = pricingMetrics.find((entry) => entry.hotel_name === referenceProperty)
+  const referenceOccupancyMetric = occupancyMetrics.find((entry) => entry.hotel_name === referenceProperty)
 
-  const currentReferencePrice = toNumber(referencePricingMetric?.avg_price_per_night) ?? 0
-  const currentReferenceOccupancy = toNumber(referenceOccupancyMetric?.occupancy_rate) ?? 0
+  const comparisonWithRef = [...sortedComparison]
+  if (
+    analysis &&
+    referencePricingMetric &&
+    !comparisonWithRef.some((entry) => entry.hotel_name === analysis.reference_property)
+  ) {
+    comparisonWithRef.push({
+      hotel_name: analysis.reference_property,
+      avg_price: referencePricingMetric.avg_price_per_night,
+      price_vs_ref: 0,
+      price_vs_ref_pct: 0,
+      occupancy: referenceOccupancyMetric?.occupancy_rate ?? 0,
+      position: "Reference",
+    })
+    comparisonWithRef.sort((a, b) => a.price_vs_ref_pct - b.price_vs_ref_pct)
+  }
+
+  const currentReferencePrice = referencePricingMetric?.avg_price_per_night ?? 0
+  const currentReferenceOccupancy = referenceOccupancyMetric?.occupancy_rate ?? 0
 
   return (
     <>
@@ -131,28 +201,28 @@ export default async function Page() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {comparisonWithRef.length > 0 && (
                 <PriceDifferenceChart
-                  comparisonData={comparisonWithRef as any}
+                  comparisonData={comparisonWithRef}
                   referenceProperty={referenceProperty}
                 />
               )}
 
               {pricingMetrics.length > 0 && (
                 <PriceRangeChart
-                  pricingData={pricingMetrics as any}
+                  pricingData={pricingMetrics}
                   referenceProperty={referenceProperty}
                 />
               )}
 
               {occupancyMetrics.length > 0 && (
                 <MetricsOccupancyChart
-                  data={occupancyMetrics as any}
+                  data={occupancyMetrics}
                   referenceProperty={referenceProperty}
                 />
               )}
 
-              {roomInventory.length > 0 && (
+              {roomInventoryMetrics.length > 0 && (
                 <RoomInventoryChart 
-                  data={sortedRoomInventory as any} 
+                  data={sortedRoomInventory} 
                   referenceProperty={referenceProperty}
                 />
               )}
@@ -162,8 +232,8 @@ export default async function Page() {
           <TabsContent value="insights" className="space-y-4">
             <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
               <PriceComparisonChart
-                pricingData={pricingMetrics as any}
-                occupancyData={occupancyMetrics as any}
+                pricingData={pricingMetrics}
+                occupancyData={occupancyMetrics}
                 referenceProperty={referenceProperty}
               />
 

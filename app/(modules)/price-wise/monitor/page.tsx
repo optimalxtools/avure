@@ -45,11 +45,6 @@ const currencyFormatter = new Intl.NumberFormat("en-ZA", {
   maximumFractionDigits: 0,
 })
 
-const percentFormatter = new Intl.NumberFormat("en-US", {
-  style: "percent",
-  maximumFractionDigits: 1,
-})
-
 const numberFormatter = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 0,
 })
@@ -58,12 +53,6 @@ function formatCurrency(value: unknown) {
   const num = toNumber(value)
   if (num === null) return "—"
   return currencyFormatter.format(num)
-}
-
-function formatPercent(value: unknown) {
-  const num = toNumber(value)
-  if (num === null) return "—"
-  return percentFormatter.format(num / 100)
 }
 
 function formatNumber(value: unknown) {
@@ -82,31 +71,51 @@ function buildPricingRows(analysis?: PriceWiseAnalysis) {
   }))
 }
 
-function buildOccupancyRows(analysis?: PriceWiseAnalysis) {
-  return analysis?.occupancy_metrics?.map((entry) => ({
-    hotel: String(entry.hotel_name ?? "Unknown"),
-    occupancy: formatPercent(entry.occupancy_rate),
-    soldOut: formatNumber(entry.sold_out),
-    available: formatNumber(entry.available),
-  }))
+type ComparisonMetric = {
+  hotel_name?: string
+  avg_price?: number | string | null
+  price_vs_ref?: number | string | null
+  price_vs_ref_pct?: number | string | null
+  occupancy?: number | string | null
+  position?: string | null
+}
+
+type OccupancyMetric = {
+  hotel_name?: string
+  occupancy_rate?: number | string | null
+  sold_out?: number | string | null
+  available?: number | string | null
 }
 
 export default async function Page() {
   const analysis = await getScraperAnalysis()
 
   const pricingRows = buildPricingRows(analysis)
-  const occupancyRows = buildOccupancyRows(analysis)
+  const occupancyMetricsRaw = (analysis?.occupancy_metrics as OccupancyMetric[] | undefined) ?? []
+  const comparisonMetricsRaw = (analysis?.comparison as ComparisonMetric[] | undefined) ?? []
 
-  // Parse additional data for new sections
-  const pricingMetrics = analysis?.pricing_metrics || []
-  const occupancyMetrics = analysis?.occupancy_metrics || []
-  const comparison = analysis?.comparison || []
-  
-  // Sort occupancy by rate (descending)
-  const sortedOccupancy = [...occupancyMetrics].sort((a: any, b: any) => (b.occupancy_rate || 0) - (a.occupancy_rate || 0))
-  
-  // Sort comparison by price difference
-  const sortedComparison = [...comparison].sort((a: any, b: any) => (a.price_vs_ref_pct || 0) - (b.price_vs_ref_pct || 0))
+  const occupancyMetrics = occupancyMetricsRaw
+    .map((entry) => ({
+      hotel_name: String(entry.hotel_name ?? ""),
+      occupancy_rate: toNumber(entry.occupancy_rate) ?? 0,
+      sold_out: toNumber(entry.sold_out) ?? 0,
+      available: toNumber(entry.available) ?? 0,
+    }))
+    .filter((entry) => entry.hotel_name)
+
+  const comparisonMetrics = comparisonMetricsRaw
+    .map((entry) => ({
+      hotel_name: String(entry.hotel_name ?? ""),
+      avg_price: toNumber(entry.avg_price) ?? 0,
+      price_vs_ref: toNumber(entry.price_vs_ref) ?? 0,
+      price_vs_ref_pct: toNumber(entry.price_vs_ref_pct) ?? 0,
+      occupancy: toNumber(entry.occupancy) ?? 0,
+      position: entry.position ?? "",
+    }))
+    .filter((entry) => entry.hotel_name)
+
+  const sortedOccupancy = [...occupancyMetrics].sort((a, b) => b.occupancy_rate - a.occupancy_rate)
+  const sortedComparison = [...comparisonMetrics].sort((a, b) => a.price_vs_ref_pct - b.price_vs_ref_pct)
 
   return (
     <>
@@ -154,7 +163,7 @@ export default async function Page() {
 
           <TabsContent value="pricing">
             {/* Price Comparison */}
-            {comparison.length > 0 && (
+            {comparisonMetrics.length > 0 && (
               <Card className="mb-4">
                 <CardHeader>
                   <CardTitle>Price Difference</CardTitle>
@@ -173,22 +182,22 @@ export default async function Page() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {sortedComparison.map((row: any, index: number) => {
-                        const priceDiff = Number(row.price_vs_ref || 0)
-                        const priceDiffPct = Number(row.price_vs_ref_pct || 0)
+                      {sortedComparison.map((row, index) => {
+                        const priceDiff = row.price_vs_ref
+                        const priceDiffPct = row.price_vs_ref_pct
                         const isLower = priceDiff < 0
                         
                         return (
                           <TableRow key={index}>
                             <TableCell className="font-medium">{row.hotel_name}</TableCell>
-                            <TableCell className="text-right">R {Number(row.avg_price || 0).toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                            <TableCell className="text-right">R {row.avg_price.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
                             <TableCell className={`text-right ${isLower ? 'text-green-600' : 'text-red-600'}`}>
                               R {priceDiff > 0 ? '+' : ''}{priceDiff.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                             </TableCell>
                             <TableCell className={`text-right ${isLower ? 'text-green-600' : 'text-red-600'}`}>
                               {priceDiffPct > 0 ? '+' : ''}{priceDiffPct.toFixed(1)}%
                             </TableCell>
-                            <TableCell className="text-right">{Number(row.occupancy || 0).toFixed(1)}%</TableCell>
+                              <TableCell className="text-right">{row.occupancy.toFixed(1)}%</TableCell>
                             <TableCell>{row.position}</TableCell>
                           </TableRow>
                         )
@@ -255,16 +264,16 @@ export default async function Page() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {sortedOccupancy.map((row: any, index: number) => (
-                        <TableRow key={index} className={row.hotel_name === analysis?.reference_property ? "bg-muted/50" : ""}>
+                      {sortedOccupancy.map((row, index) => (
+                        <TableRow key={row.hotel_name} className={row.hotel_name === analysis?.reference_property ? "bg-muted/50" : ""}>
                           <TableCell>{index + 1}</TableCell>
                           <TableCell className="font-medium">
                             {row.hotel_name}
                             {row.hotel_name === analysis?.reference_property && " ⭐"}
                           </TableCell>
-                          <TableCell className="text-right">{Number(row.occupancy_rate || 0).toFixed(1)}%</TableCell>
-                          <TableCell className="text-right">{row.sold_out || 0}</TableCell>
-                          <TableCell className="text-right">{row.available || 0}</TableCell>
+                          <TableCell className="text-right">{row.occupancy_rate.toFixed(1)}%</TableCell>
+                          <TableCell className="text-right">{row.sold_out}</TableCell>
+                          <TableCell className="text-right">{row.available}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>

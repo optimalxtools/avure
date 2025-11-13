@@ -49,7 +49,7 @@ function hasModulePermission(path: string, allowedModules: string[]): boolean {
 
 export function ModuleAccessGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const { allowedModules, clientId, clientSlug, dataOnly, dataVisible, ready } = useModuleAccess()
+  const { allowedModules, dataOnly, dataVisible, ready } = useModuleAccess()
   const [isAllowed, setIsAllowed] = React.useState<boolean | null>(null)
 
   const normalized = React.useMemo(() => normalizePath(pathname), [pathname])

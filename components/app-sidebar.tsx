@@ -130,8 +130,6 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   const [loadingClient, setLoadingClient] = React.useState<boolean>(true)
   const [showUnsubscribedModules, setShowUnsubscribedModules] =
     React.useState<boolean>(false)
-  const [clientId, setClientId] = React.useState<string | null>(null)
-  const [clientSlugValue, setClientSlugValue] = React.useState<string | null>(null)
   const [dataVisible, setDataVisible] = React.useState<"yes" | "no">("yes")
   const [dataOnly, setDataOnly] = React.useState<"yes" | "no">("no")
 
@@ -154,8 +152,6 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         setTeams([])
         setAllowedModules([])
         setShowUnsubscribedModules(false)
-        setClientId(null)
-        setClientSlugValue(null)
         setDataVisible("yes")
         setDataOnly("no")
         setLoadingClient(false)
@@ -181,8 +177,6 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         clientIdFromUser = cached.clientId ?? clientIdFromUser
         clientSlug = cached.clientSlug ?? clientSlug
         cachedLogo = cached.clientLogo ?? cachedLogo
-        setClientId(cached.clientId ?? null)
-        setClientSlugValue(cached.clientSlug ?? null)
         nextDataVisible = cached.dataVisible ?? "yes"
         nextDataOnly = cached.dataOnly ?? "no"
       }
@@ -345,9 +339,6 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         cLogo = `/data/${clientSlug}/logo.png`
         setClientLogo(cLogo)
       }
-
-      setClientId(clientIdFromUser ?? null)
-      setClientSlugValue(clientSlug ?? null)
 
       const info = {
         name: `${firstName.trim()} ${lastName.trim()}`.trim() || "Unknown User",

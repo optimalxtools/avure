@@ -25,6 +25,7 @@ export async function POST(req: Request) {
     return res;
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
+    console.error("[sessionLogin] Failed to create session cookie:", err);
     return NextResponse.json({ error: msg }, { status: 401 });
   }
 }

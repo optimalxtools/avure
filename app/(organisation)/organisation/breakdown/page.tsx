@@ -10,22 +10,11 @@ import {
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Lock, Unlock, RotateCcw } from "lucide-react"
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select"
-import { cn } from "@/lib/utils"
-import { LOCKED_SELECT_TRIGGER_CLASS } from "@/lib/select"
 
 import { MetricsPage } from "./components/pages/metrics"
 import { InsightsPage } from "./components/pages/insights"
 import { SectionTitle } from "@/components/section-title"
 import { useMasterConfigFilters } from "@/lib/hooks/useMasterConfigFilters"
-import { FILTER_WRAPPER_CLASS } from "@/lib/filter-styles"
 import { AIButton } from "@/components/ai-button"
 import { ExportButton } from "@/components/export-button"
 
@@ -34,38 +23,13 @@ const SHOW_METRICS_CONTENT = false
 
 export default function Page() {
   const {
-    loading: configLoading,
-    error: configError,
     variety,
     block,
     puc,
     season,
-    setVariety,
-    setBlock,
-    setPuc,
-    setSeason,
-    resetVariety,
-    resetBlock,
-    resetPuc,
-    resetSeason,
-    lockVariety,
-    lockBlock,
-    lockPuc,
-    lockSeason,
-    setLockVariety,
-    setLockBlock,
-    setLockPuc,
-    setLockSeason,
-    varietyOptions,
-    blockOptions,
-    pucOptions,
     seasonOptions,
     formatLabel,
     formatBlockLabel,
-    defaultVarietyValue,
-    defaultBlockValue,
-    defaultPucValue,
-    defaultSeasonValue,
     allVarietiesValue,
     allBlocksValue,
     allPucsValue,
@@ -79,17 +43,6 @@ export default function Page() {
 
   const [hydrated, setHydrated] = React.useState(false)
   React.useEffect(() => { setHydrated(true) }, [])
-
-  const loadingOrError = configLoading || Boolean(configError)
-  const varietyDisabled = lockVariety || loadingOrError
-  const blockDisabled = lockBlock || loadingOrError
-  const pucDisabled = lockPuc || loadingOrError
-  const seasonDisabled = lockSeason || seasonOptions.length === 0
-
-  const isVarietyDefault = variety === defaultVarietyValue
-  const isBlockDefault = block === defaultBlockValue
-  const isPucDefault = puc === defaultPucValue
-  const isSeasonDefault = season === defaultSeasonValue
 
   const varietyLabel =
     variety === allVarietiesValue
