@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2025-10-31T18:25:31.090791",
+    "scrape_success": true,
+    "analysis_success": true,
+    "config": {
+      "occupancy_mode": true,
+      "days_ahead": 90,
+      "guests": 2,
+      "rooms": 1,
+      "reference_property": "Ukanyi Luxury Villa",
+      "timestamp": "2025-10-31T18:25:31.090791"
+    }
+  },
+  {
+    "timestamp": "2025-11-10T19:49:54.522608",
+    "scrape_success": true,
+    "analysis_success": true,
+    "config": {
+      "occupancy_mode": true,
+      "days_ahead": 90,
+      "guests": 2,
+      "rooms": 1,
+      "reference_property": "Ukanyi Luxury Villa",
+      "timestamp": "2025-11-10T19:49:54.522608"
+    }
+  }
+]

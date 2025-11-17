@@ -1,0 +1,737 @@
+hotel_name,hotel_slug,check_in_date,check_out_date,nights,guests,rooms,day_offset,availability,total_price,original_price,price_per_night,has_discount,discount_percentage,rating_score,review_count,total_room_types,available_room_types,sold_out_room_types,property_occupancy_rate,min_room_price,max_room_price,avg_room_price,room_names,scrape_timestamp
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:30:59.143846
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-02,2025-11-04,2,2,1,2,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:31:07.995170
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-04,2025-11-06,2,2,1,4,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:31:18.436765
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-06,2025-11-08,2,2,1,6,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:31:30.623668
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-08,2025-11-10,2,2,1,8,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:31:41.363676
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-10,2025-11-12,2,2,1,10,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:31:51.747034
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-12,2025-11-14,2,2,1,12,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:32:00.829103
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-14,2025-11-16,2,2,1,14,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:32:09.877789
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-16,2025-11-18,2,2,1,16,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:32:18.211049
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-18,2025-11-20,2,2,1,18,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:32:27.529558
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-20,2025-11-22,2,2,1,20,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:32:36.765027
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-22,2025-11-24,2,2,1,22,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:32:43.214976
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-24,2025-11-26,2,2,1,24,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:32:51.364297
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-26,2025-11-28,2,2,1,26,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:32:57.941208
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-28,2025-11-30,2,2,1,28,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:33:05.241692
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-11-30,2025-12-02,2,2,1,30,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:33:12.436418
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-02,2025-12-04,2,2,1,32,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:33:18.717146
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-04,2025-12-06,2,2,1,34,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:33:26.763837
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-06,2025-12-08,2,2,1,36,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:33:37.485963
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-08,2025-12-10,2,2,1,38,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:33:44.387453
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-10,2025-12-12,2,2,1,40,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:33:50.467367
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-12,2025-12-14,2,2,1,42,available,80472.0,100590.0,40236.0,True,20.0,,,1,1,0,0.0,80472.0,80472.0,80472.0,Three-Bedroom Villa,2025-10-31T16:33:56.434575
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-14,2025-12-16,2,2,1,44,available,81477.9,90531.0,40738.95,True,10.0,,,1,1,0,0.0,81477.9,81477.9,81477.9,Three-Bedroom Villa,2025-10-31T16:34:03.778976
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-16,2025-12-18,2,2,1,46,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:34:11.568815
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-18,2025-12-20,2,2,1,48,available,90531.0,,45265.5,False,,,,1,1,0,0.0,90531.0,90531.0,90531.0,Three-Bedroom Villa,2025-10-31T16:34:18.146213
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-20,2025-12-22,2,2,1,50,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:34:26.058479
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-22,2025-12-24,2,2,1,52,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:34:36.474762
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:34:45.447402
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-26,2025-12-28,2,2,1,56,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:34:56.234187
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:35:06.907087
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:35:16.201902
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-01,2026-01-03,2,2,1,62,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:35:25.122290
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-03,2026-01-05,2,2,1,64,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:35:34.072825
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-05,2026-01-07,2,2,1,66,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:35:43.240561
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-07,2026-01-09,2,2,1,68,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:35:54.380858
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-09,2026-01-11,2,2,1,70,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:36:03.618126
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-11,2026-01-13,2,2,1,72,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:36:13.108124
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-13,2026-01-15,2,2,1,74,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:36:22.829178
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-15,2026-01-17,2,2,1,76,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:36:32.031143
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-17,2026-01-19,2,2,1,78,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:36:42.775267
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-19,2026-01-21,2,2,1,80,available,107179.2,,53589.6,False,,,,1,1,0,0.0,107179.2,107179.2,107179.2,Three-Bedroom Villa,2025-10-31T16:36:50.832820
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-21,2026-01-23,2,2,1,82,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:36:59.126304
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-23,2026-01-25,2,2,1,84,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:37:10.025957
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-25,2026-01-27,2,2,1,86,available,107179.2,,53589.6,False,,,,1,1,0,0.0,107179.2,107179.2,107179.2,Three-Bedroom Villa,2025-10-31T16:37:18.589383
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-27,2026-01-29,2,2,1,88,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:37:28.479233
+Ukanyi Luxury Villa,ukanyi-luxury-villa-hoedspruit,2026-01-29,2026-01-31,2,2,1,90,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:37:37.387404
+Moditlo River Lodge,moditlo-river-lodge,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:37:48.530144
+Moditlo River Lodge,moditlo-river-lodge,2025-11-02,2025-11-04,2,2,1,2,available,34668.0,,17334.0,False,,,,1,1,0,0.0,34668.0,34668.0,34668.0,Luxury Twin Room including two game drives per day,2025-10-31T16:37:56.499617
+Moditlo River Lodge,moditlo-river-lodge,2025-11-04,2025-11-06,2,2,1,4,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:38:05.642857
+Moditlo River Lodge,moditlo-river-lodge,2025-11-06,2025-11-08,2,2,1,6,available,34668.0,,17334.0,False,,,,2,2,0,0.0,34668.0,34668.0,34668.0,"Luxury Twin Room including two game drives per day, Luxury Double Room including two games drives per day",2025-10-31T16:38:15.844569
+Moditlo River Lodge,moditlo-river-lodge,2025-11-08,2025-11-10,2,2,1,8,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:38:26.123135
+Moditlo River Lodge,moditlo-river-lodge,2025-11-10,2025-11-12,2,2,1,10,available,34668.0,,17334.0,False,,,,1,1,0,0.0,34668.0,34668.0,34668.0,Luxury Twin Room including two game drives per day,2025-10-31T16:38:34.173752
+Moditlo River Lodge,moditlo-river-lodge,2025-11-12,2025-11-14,2,2,1,12,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:38:44.437370
+Moditlo River Lodge,moditlo-river-lodge,2025-11-14,2025-11-16,2,2,1,14,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:38:55.238504
+Moditlo River Lodge,moditlo-river-lodge,2025-11-16,2025-11-18,2,2,1,16,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:39:04.249783
+Moditlo River Lodge,moditlo-river-lodge,2025-11-18,2025-11-20,2,2,1,18,available,34668.0,,17334.0,False,,,,1,1,0,0.0,34668.0,34668.0,34668.0,Luxury Twin Room including two game drives per day,2025-10-31T16:39:11.315181
+Moditlo River Lodge,moditlo-river-lodge,2025-11-20,2025-11-22,2,2,1,20,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:39:19.584076
+Moditlo River Lodge,moditlo-river-lodge,2025-11-22,2025-11-24,2,2,1,22,available,34668.0,,17334.0,False,,,,2,2,0,0.0,34668.0,34668.0,34668.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:39:27.520168
+Moditlo River Lodge,moditlo-river-lodge,2025-11-24,2025-11-26,2,2,1,24,available,34668.0,,17334.0,False,,,,2,2,0,0.0,34668.0,34668.0,34668.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:39:34.457810
+Moditlo River Lodge,moditlo-river-lodge,2025-11-26,2025-11-28,2,2,1,26,available,34668.0,,17334.0,False,,,,2,2,0,0.0,34668.0,34668.0,34668.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:39:41.132149
+Moditlo River Lodge,moditlo-river-lodge,2025-11-28,2025-11-30,2,2,1,28,available,34668.0,,17334.0,False,,,,1,1,0,0.0,34668.0,34668.0,34668.0,Luxury Twin Room including two game drives per day,2025-10-31T16:39:47.243638
+Moditlo River Lodge,moditlo-river-lodge,2025-11-30,2025-12-02,2,2,1,30,available,31201.2,34668.0,15600.6,True,10.0,,,2,2,0,0.0,31201.2,31201.2,31201.2,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:39:53.429458
+Moditlo River Lodge,moditlo-river-lodge,2025-12-02,2025-12-04,2,2,1,32,available,30816.0,38520.0,15408.0,True,20.0,,,2,2,0,0.0,30816.0,30816.0,30816.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:40:01.312253
+Moditlo River Lodge,moditlo-river-lodge,2025-12-04,2025-12-06,2,2,1,34,available,30816.0,38520.0,15408.0,True,20.0,,,2,2,0,0.0,30816.0,30816.0,30816.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:40:08.675918
+Moditlo River Lodge,moditlo-river-lodge,2025-12-06,2025-12-08,2,2,1,36,available,30816.0,38520.0,15408.0,True,20.0,,,2,2,0,0.0,30816.0,30816.0,30816.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:40:16.764483
+Moditlo River Lodge,moditlo-river-lodge,2025-12-08,2025-12-10,2,2,1,38,available,30816.0,38520.0,15408.0,True,20.0,,,2,2,0,0.0,30816.0,30816.0,30816.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:40:23.877990
+Moditlo River Lodge,moditlo-river-lodge,2025-12-10,2025-12-12,2,2,1,40,available,30816.0,38520.0,15408.0,True,20.0,,,2,2,0,0.0,30816.0,30816.0,30816.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:40:30.003691
+Moditlo River Lodge,moditlo-river-lodge,2025-12-12,2025-12-14,2,2,1,42,available,30816.0,38520.0,15408.0,True,20.0,,,2,2,0,0.0,30816.0,30816.0,30816.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:40:36.651828
+Moditlo River Lodge,moditlo-river-lodge,2025-12-14,2025-12-16,2,2,1,44,available,30816.0,38520.0,15408.0,True,20.0,,,2,2,0,0.0,30816.0,30816.0,30816.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:40:43.488487
+Moditlo River Lodge,moditlo-river-lodge,2025-12-16,2025-12-18,2,2,1,46,available,30816.0,38520.0,15408.0,True,20.0,,,1,1,0,0.0,30816.0,30816.0,30816.0,Luxury Double Room including two games drives per day,2025-10-31T16:40:50.378638
+Moditlo River Lodge,moditlo-river-lodge,2025-12-18,2025-12-20,2,2,1,48,available,30816.0,38520.0,15408.0,True,20.0,,,2,2,0,0.0,30816.0,30816.0,30816.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:40:56.488013
+Moditlo River Lodge,moditlo-river-lodge,2025-12-20,2025-12-22,2,2,1,50,available,38871.0,,19435.5,False,,,,2,2,0,0.0,38871.0,38871.0,38871.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:41:04.208142
+Moditlo River Lodge,moditlo-river-lodge,2025-12-22,2025-12-24,2,2,1,52,available,38871.0,,19435.5,False,,,,2,2,0,0.0,38871.0,38871.0,38871.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:41:09.601208
+Moditlo River Lodge,moditlo-river-lodge,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:41:17.708719
+Moditlo River Lodge,moditlo-river-lodge,2025-12-26,2025-12-28,2,2,1,56,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:41:26.991571
+Moditlo River Lodge,moditlo-river-lodge,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:41:36.154660
+Moditlo River Lodge,moditlo-river-lodge,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:41:46.716043
+Moditlo River Lodge,moditlo-river-lodge,2026-01-01,2026-01-03,2,2,1,62,available,38871.0,,19435.5,False,,,,1,1,0,0.0,38871.0,38871.0,38871.0,Luxury Twin Room including two game drives per day,2025-10-31T16:41:53.479284
+Moditlo River Lodge,moditlo-river-lodge,2026-01-03,2026-01-05,2,2,1,64,available,38871.0,,19435.5,False,,,,2,2,0,0.0,38871.0,38871.0,38871.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:41:59.697516
+Moditlo River Lodge,moditlo-river-lodge,2026-01-05,2026-01-07,2,2,1,66,available,38871.0,,19435.5,False,,,,1,1,0,0.0,38871.0,38871.0,38871.0,Luxury Twin Room including two game drives per day,2025-10-31T16:42:07.067144
+Moditlo River Lodge,moditlo-river-lodge,2026-01-07,2026-01-09,2,2,1,68,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:42:14.990112
+Moditlo River Lodge,moditlo-river-lodge,2026-01-09,2026-01-11,2,2,1,70,available,41800.0,,20900.0,False,,,,1,1,0,0.0,41800.0,41800.0,41800.0,Luxury Twin Room including two game drives per day,2025-10-31T16:42:21.784789
+Moditlo River Lodge,moditlo-river-lodge,2026-01-11,2026-01-13,2,2,1,72,available,37620.0,,18810.0,False,,,,2,2,0,0.0,37620.0,37620.0,37620.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:42:27.817519
+Moditlo River Lodge,moditlo-river-lodge,2026-01-13,2026-01-15,2,2,1,74,available,37620.0,,18810.0,False,,,,1,1,0,0.0,37620.0,37620.0,37620.0,Luxury Twin Room including two game drives per day,2025-10-31T16:42:33.779019
+Moditlo River Lodge,moditlo-river-lodge,2026-01-15,2026-01-17,2,2,1,76,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:42:41.664499
+Moditlo River Lodge,moditlo-river-lodge,2026-01-17,2026-01-19,2,2,1,78,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:42:51.932807
+Moditlo River Lodge,moditlo-river-lodge,2026-01-19,2026-01-21,2,2,1,80,available,37620.0,,18810.0,False,,,,2,2,0,0.0,37620.0,37620.0,37620.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:42:59.877149
+Moditlo River Lodge,moditlo-river-lodge,2026-01-21,2026-01-23,2,2,1,82,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:43:07.920397
+Moditlo River Lodge,moditlo-river-lodge,2026-01-23,2026-01-25,2,2,1,84,available,37620.0,,18810.0,False,,,,1,1,0,0.0,37620.0,37620.0,37620.0,Luxury Double Room including two games drives per day,2025-10-31T16:43:15.872574
+Moditlo River Lodge,moditlo-river-lodge,2026-01-25,2026-01-27,2,2,1,86,available,37620.0,,18810.0,False,,,,2,2,0,0.0,37620.0,37620.0,37620.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:43:21.599780
+Moditlo River Lodge,moditlo-river-lodge,2026-01-27,2026-01-29,2,2,1,88,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:43:31.020649
+Moditlo River Lodge,moditlo-river-lodge,2026-01-29,2026-01-31,2,2,1,90,available,37620.0,,18810.0,False,,,,2,2,0,0.0,37620.0,37620.0,37620.0,"Luxury Double Room including two games drives per day, Luxury Twin Room including two game drives per day",2025-10-31T16:43:37.996423
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:43:48.547290
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-02,2025-11-04,2,2,1,2,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:43:59.418521
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-04,2025-11-06,2,2,1,4,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:44:10.177467
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-06,2025-11-08,2,2,1,6,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:44:19.407122
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-08,2025-11-10,2,2,1,8,available,33162.75,39015.0,16581.375,True,15.0,,,1,1,0,0.0,33162.75,33162.75,33162.75,Two-Bedroom Villa,2025-10-31T16:44:26.235506
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-10,2025-11-12,2,2,1,10,available,33162.75,39015.0,16581.375,True,15.0,,,1,1,0,0.0,33162.75,33162.75,33162.75,Two-Bedroom Villa,2025-10-31T16:44:33.619758
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-12,2025-11-14,2,2,1,12,available,33162.75,39015.0,16581.375,True,15.0,,,1,1,0,0.0,33162.75,33162.75,33162.75,Two-Bedroom Villa,2025-10-31T16:44:41.661356
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-14,2025-11-16,2,2,1,14,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:44:51.133963
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-16,2025-11-18,2,2,1,16,available,33162.75,39015.0,16581.375,True,15.0,,,1,1,0,0.0,33162.75,33162.75,33162.75,Two-Bedroom Villa,2025-10-31T16:44:58.610642
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-18,2025-11-20,2,2,1,18,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:45:08.503282
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-20,2025-11-22,2,2,1,20,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:45:17.540429
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-22,2025-11-24,2,2,1,22,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:45:26.701029
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-24,2025-11-26,2,2,1,24,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:45:37.335936
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-26,2025-11-28,2,2,1,26,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:45:48.231217
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-28,2025-11-30,2,2,1,28,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:45:57.348843
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-11-30,2025-12-02,2,2,1,30,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:46:06.636447
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-02,2025-12-04,2,2,1,32,available,33162.75,39015.0,16581.375,True,15.0,,,1,1,0,0.0,33162.75,33162.75,33162.75,Two-Bedroom Villa,2025-10-31T16:46:14.697701
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-04,2025-12-06,2,2,1,34,available,22722.63,26733.0,11361.315,True,15.0,,,3,3,0,0.0,22722.63,34391.0,30092.13,"Tent, Two-Bedroom Villa, King Room",2025-10-31T16:46:22.201848
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-06,2025-12-08,2,2,1,36,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:46:32.154430
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-08,2025-12-10,2,2,1,38,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:46:41.219682
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-10,2025-12-12,2,2,1,40,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:46:51.629780
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-12,2025-12-14,2,2,1,42,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:47:02.203224
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-14,2025-12-16,2,2,1,44,available,22722.63,26733.0,11361.315,True,15.0,,,3,3,0,0.0,22722.63,33162.75,26202.67,"Tent, Double Room with Garden View, Two-Bedroom Villa",2025-10-31T16:47:09.497154
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-16,2025-12-18,2,2,1,46,available,22722.63,26733.0,11361.315,True,15.0,,,1,1,0,0.0,22722.63,22722.63,22722.63,Double Room with Garden View,2025-10-31T16:47:15.043737
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-18,2025-12-20,2,2,1,48,available,22722.63,26733.0,11361.315,True,15.0,,,2,2,0,0.0,22722.63,22722.63,22722.63,"Tent, Double Room with Garden View",2025-10-31T16:47:22.321942
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-20,2025-12-22,2,2,1,50,available,31450.0,,15725.0,False,,,,2,2,0,0.0,31450.0,31450.0,31450.0,"Tent, Double Room with Garden View",2025-10-31T16:47:32.614648
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-22,2025-12-24,2,2,1,52,available,31450.0,,15725.0,False,,,,3,3,0,0.0,31450.0,45900.0,36266.67,"Tent, Double Room with Garden View, Two-Bedroom Villa",2025-10-31T16:47:43.815587
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-24,2025-12-26,2,2,1,54,available,31450.0,,15725.0,False,,,,3,3,0,0.0,31450.0,45900.0,36266.67,"Tent, Double Room with Garden View, Two-Bedroom Villa",2025-10-31T16:47:51.024054
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-26,2025-12-28,2,2,1,56,available,31450.0,,15725.0,False,,,,2,2,0,0.0,31450.0,47600.0,39525.0,"Tent, King Room",2025-10-31T16:47:58.224260
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-28,2025-12-30,2,2,1,58,available,31450.0,,15725.0,False,,,,2,2,0,0.0,31450.0,47600.0,39525.0,"Tent, King Room",2025-10-31T16:48:06.261123
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:48:20.172923
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-01,2026-01-03,2,2,1,62,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:48:35.019835
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-03,2026-01-05,2,2,1,64,available,45900.0,,22950.0,False,,,,2,2,0,0.0,45900.0,47600.0,46750.0,"Two-Bedroom Villa, King Room",2025-10-31T16:48:43.572100
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-05,2026-01-07,2,2,1,66,available,45900.0,,22950.0,False,,,,1,1,0,0.0,45900.0,45900.0,45900.0,Two-Bedroom Villa,2025-10-31T16:48:54.669903
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-07,2026-01-09,2,2,1,68,available,31450.0,,15725.0,False,,,,1,1,0,0.0,31450.0,31450.0,31450.0,Double Room with Garden View,2025-10-31T16:49:03.654820
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-09,2026-01-11,2,2,1,70,available,31450.0,,15725.0,False,,,,2,2,0,0.0,31450.0,45900.0,38675.0,"Tent, Two-Bedroom Villa",2025-10-31T16:49:14.343781
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-11,2026-01-13,2,2,1,72,available,31450.0,,15725.0,False,,,,2,2,0,0.0,31450.0,47600.0,39525.0,"Tent, King Room",2025-10-31T16:49:23.931278
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-13,2026-01-15,2,2,1,74,available,31450.0,,15725.0,False,,,,2,2,0,0.0,31450.0,31450.0,31450.0,"Tent, Double Room with Garden View",2025-10-31T16:49:34.202725
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-15,2026-01-17,2,2,1,76,available,31450.0,,15725.0,False,,,,3,3,0,0.0,31450.0,45900.0,36266.67,"Tent, Double Room with Garden View, Two-Bedroom Villa",2025-10-31T16:49:44.410090
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-17,2026-01-19,2,2,1,78,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:49:58.464282
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-19,2026-01-21,2,2,1,80,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:50:12.719725
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-21,2026-01-23,2,2,1,82,available,45900.0,,22950.0,False,,,,1,1,0,0.0,45900.0,45900.0,45900.0,Two-Bedroom Villa,2025-10-31T16:50:23.665965
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-23,2026-01-25,2,2,1,84,available,31450.0,,15725.0,False,,,,2,2,0,0.0,31450.0,45900.0,38675.0,"Tent, Two-Bedroom Villa",2025-10-31T16:50:35.219552
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-25,2026-01-27,2,2,1,86,available,31450.0,,15725.0,False,,,,3,3,0,0.0,31450.0,47600.0,41650.0,"Double Room with Garden View, Two-Bedroom Villa, King Room",2025-10-31T16:50:47.074110
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-27,2026-01-29,2,2,1,88,available,45900.0,,22950.0,False,,,,1,1,0,0.0,45900.0,45900.0,45900.0,Two-Bedroom Villa,2025-10-31T16:50:55.670665
+MILIMA Big 5 Safari Lodge,elephant-hills-big-5-safari-lodge-phalaborwa,2026-01-29,2026-01-31,2,2,1,90,available,31450.0,,15725.0,False,,,,2,2,0,0.0,31450.0,45900.0,38675.0,"Tent, Two-Bedroom Villa",2025-10-31T16:51:05.195755
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-10-31,2025-11-02,2,2,1,0,available,15360.0,19200.0,7680.0,True,20.0,,,1,1,0,0.0,15360.0,15360.0,15360.0,Premier Villa,2025-10-31T16:51:14.554607
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-02,2025-11-04,2,2,1,2,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,28800.0,23253.33,"Premier Villa, Suite with Private Pool, Suite with River View",2025-10-31T16:51:26.718376
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-04,2025-11-06,2,2,1,4,available,15360.0,19200.0,7680.0,True,20.0,,,5,5,0,0.0,15360.0,28800.0,20096.0,"Luxury Villa, Premier Villa, King Suite with Balcony, Suite with Private Pool, Suite with River View",2025-10-31T16:51:37.376733
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-06,2025-11-08,2,2,1,6,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,28800.0,19840.0,"Luxury Villa, Premier Villa, Suite with River View",2025-10-31T16:53:38.203357
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-08,2025-11-10,2,2,1,8,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,28800.0,19840.0,"Luxury Villa, Premier Villa, Suite with River View",2025-10-31T16:53:49.749806
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-10,2025-11-12,2,2,1,10,available,15360.0,19200.0,7680.0,True,20.0,,,1,1,0,0.0,15360.0,15360.0,15360.0,Premier Villa,2025-10-31T16:54:01.728385
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-12,2025-11-14,2,2,1,12,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,25600.0,18773.33,"King Suite with Balcony, Premier Villa, Suite with Private Pool",2025-10-31T16:54:14.254726
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-14,2025-11-16,2,2,1,14,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,28800.0,23253.33,"King Suite with Balcony, Suite with Private Pool, Suite with Private Pool",2025-10-31T16:54:25.963153
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-16,2025-11-18,2,2,1,16,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,28800.0,19840.0,"Luxury Villa, King Suite with Balcony, Suite with Private Pool",2025-10-31T16:54:34.744030
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-18,2025-11-20,2,2,1,18,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,15360.0,15360.0,"Premier Villa, Luxury Villa, King Suite with Balcony",2025-10-31T16:54:46.746840
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-20,2025-11-22,2,2,1,20,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,25600.0,18773.33,"Premier Villa, King Suite with Balcony, Suite with Private Pool",2025-10-31T16:54:58.768119
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-22,2025-11-24,2,2,1,22,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,25600.0,18773.33,"Premier Villa, King Suite with Balcony, Suite with Private Pool",2025-10-31T16:55:10.613427
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-24,2025-11-26,2,2,1,24,available,15360.0,19200.0,7680.0,True,20.0,,,5,5,0,0.0,15360.0,28800.0,22784.0,"Premier Villa, King Suite with Balcony, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:55:20.052528
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-26,2025-11-28,2,2,1,26,available,19200.0,,9600.0,False,,,,4,4,0,0.0,19200.0,36000.0,27600.0,"Premier Villa, Luxury Villa, Suite with River View, Suite with Private Pool",2025-10-31T16:55:32.136327
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-28,2025-11-30,2,2,1,28,available,15360.0,19200.0,7680.0,True,20.0,,,4,4,0,0.0,15360.0,28800.0,22080.0,"Premier Villa, Luxury Villa, Suite with River View, Suite with Private Pool",2025-10-31T16:55:40.717317
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-11-30,2025-12-02,2,2,1,30,available,15360.0,19200.0,7680.0,True,20.0,,,5,5,0,0.0,15360.0,28800.0,22784.0,"Premier Villa, Luxury Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:55:51.133831
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-02,2025-12-04,2,2,1,32,available,19200.0,,9600.0,False,,,,2,2,0,0.0,19200.0,32000.0,25600.0,"Premier Villa, Suite with Private Pool",2025-10-31T16:56:00.901058
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-04,2025-12-06,2,2,1,34,available,15360.0,19200.0,7680.0,True,20.0,,,1,1,0,0.0,15360.0,15360.0,15360.0,Premier Villa,2025-10-31T16:56:10.035757
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-06,2025-12-08,2,2,1,36,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,15360.0,15360.0,"King Suite with Balcony, Luxury Villa, Premier Villa",2025-10-31T16:56:19.393885
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-08,2025-12-10,2,2,1,38,available,15360.0,19200.0,7680.0,True,20.0,,,6,6,0,0.0,15360.0,28800.0,21546.67,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:56:29.654279
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-10,2025-12-12,2,2,1,40,available,15360.0,19200.0,7680.0,True,20.0,,,6,6,0,0.0,15360.0,28800.0,21546.67,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:56:42.867229
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-12,2025-12-14,2,2,1,42,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,28800.0,19840.0,"King Suite with Balcony, Luxury Villa, Suite with River View",2025-10-31T16:56:52.347916
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-14,2025-12-16,2,2,1,44,available,15360.0,19200.0,7680.0,True,20.0,,,4,4,0,0.0,15360.0,28800.0,24640.0,"Luxury Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:57:01.313290
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-16,2025-12-18,2,2,1,46,available,15360.0,19200.0,7680.0,True,20.0,,,6,6,0,0.0,15360.0,28800.0,21546.67,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:57:13.719849
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-18,2025-12-20,2,2,1,48,available,15360.0,19200.0,7680.0,True,20.0,,,6,6,0,0.0,15360.0,28800.0,21546.67,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:57:27.408893
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-20,2025-12-22,2,2,1,50,available,15360.0,19200.0,7680.0,True,20.0,,,6,6,0,0.0,15360.0,28800.0,21546.67,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:57:39.524381
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-22,2025-12-24,2,2,1,52,available,15360.0,19200.0,7680.0,True,20.0,,,5,5,0,0.0,15360.0,28800.0,22784.0,"Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:57:51.855509
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-24,2025-12-26,2,2,1,54,available,15360.0,19200.0,7680.0,True,20.0,,,5,5,0,0.0,15360.0,28800.0,22784.0,"Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:58:04.119324
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-26,2025-12-28,2,2,1,56,available,15360.0,19200.0,7680.0,True,20.0,,,6,6,0,0.0,15360.0,28800.0,21546.67,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T16:58:15.158204
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-28,2025-12-30,2,2,1,58,available,15360.0,19200.0,7680.0,True,20.0,,,3,3,0,0.0,15360.0,28800.0,23253.33,"Premier Villa, Suite with Private Pool, Suite with River View",2025-10-31T16:58:24.833513
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T16:58:40.290729
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-01,2026-01-03,2,2,1,62,available,15360.0,19200.0,7680.0,True,20.0,,,1,1,0,0.0,15360.0,15360.0,15360.0,Luxury Villa,2025-10-31T16:58:51.199287
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-03,2026-01-05,2,2,1,64,available,15360.0,19200.0,7680.0,True,20.0,,,4,4,0,0.0,15360.0,28800.0,21280.0,"Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View",2025-10-31T16:59:03.393219
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-05,2026-01-07,2,2,1,66,available,15360.0,19200.0,7680.0,True,20.0,,,4,4,0,0.0,15360.0,28800.0,22080.0,"King Suite with Balcony, Premier Villa, Suite with River View, Suite with Private Pool",2025-10-31T16:59:13.402435
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-07,2026-01-09,2,2,1,68,available,19200.0,,9600.0,False,,,,1,1,0,0.0,19200.0,19200.0,19200.0,Premier Villa,2025-10-31T16:59:24.484427
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-09,2026-01-11,2,2,1,70,available,19200.0,,9600.0,False,,,,3,3,0,0.0,19200.0,32000.0,23466.67,"Luxury Villa, Premier Villa, Suite with Private Pool",2025-10-31T16:59:33.392498
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-11,2026-01-13,2,2,1,72,available,19200.0,,9600.0,False,,,,5,5,0,0.0,19200.0,36000.0,25920.0,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with River View, Suite with Private Pool",2025-10-31T16:59:43.737443
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-13,2026-01-15,2,2,1,74,available,19200.0,,9600.0,False,,,,5,5,0,0.0,19200.0,36000.0,25920.0,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with River View, Suite with Private Pool",2025-10-31T16:59:53.228223
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-15,2026-01-17,2,2,1,76,available,19200.0,,9600.0,False,,,,5,5,0,0.0,19200.0,36000.0,25920.0,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with River View, Suite with Private Pool",2025-10-31T17:00:06.634194
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-17,2026-01-19,2,2,1,78,available,19200.0,,9600.0,False,,,,4,4,0,0.0,19200.0,36000.0,30800.0,"Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T17:00:15.256228
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-19,2026-01-21,2,2,1,80,available,32000.0,,16000.0,False,,,,3,3,0,0.0,32000.0,36000.0,34666.67,"Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T17:00:25.587908
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-21,2026-01-23,2,2,1,82,available,19200.0,,9600.0,False,,,,5,5,0,0.0,19200.0,36000.0,28480.0,"King Suite with Balcony, Luxury Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T17:00:35.164014
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-23,2026-01-25,2,2,1,84,available,19200.0,,9600.0,False,,,,3,3,0,0.0,19200.0,36000.0,29066.67,"Luxury Villa, Suite with Private Pool, Suite with River View",2025-10-31T17:00:47.522939
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-25,2026-01-27,2,2,1,86,available,19200.0,,9600.0,False,,,,3,3,0,0.0,19200.0,36000.0,29066.67,"Premier Villa, Suite with Private Pool, Suite with River View",2025-10-31T17:00:59.427413
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-27,2026-01-29,2,2,1,88,available,19200.0,,9600.0,False,,,,5,5,0,0.0,19200.0,36000.0,25120.0,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View",2025-10-31T17:01:09.422975
+Maroelani Lodge – Greater Kruger,maroelani-lodge,2026-01-29,2026-01-31,2,2,1,90,available,19200.0,,9600.0,False,,,,6,6,0,0.0,19200.0,36000.0,26933.33,"King Suite with Balcony, Luxury Villa, Premier Villa, Suite with Private Pool, Suite with River View, Suite with Private Pool",2025-10-31T17:01:18.850516
+Oase by 7 Star Lodges,7-star-lodges,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:01:33.409887
+Oase by 7 Star Lodges,7-star-lodges,2025-11-02,2025-11-04,2,2,1,2,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:01:44.728224
+Oase by 7 Star Lodges,7-star-lodges,2025-11-04,2025-11-06,2,2,1,4,available,28187.33,35234.0,14093.665,True,20.0,,,1,1,0,0.0,28187.33,28187.33,28187.33,Superior Villa,2025-10-31T17:01:53.997624
+Oase by 7 Star Lodges,7-star-lodges,2025-11-06,2025-11-08,2,2,1,6,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:02:08.656592
+Oase by 7 Star Lodges,7-star-lodges,2025-11-08,2025-11-10,2,2,1,8,available,23300.13,29125.0,11650.065,True,20.0,,,2,2,0,0.0,23300.13,28680.61,25990.37,"Suite with Private Pool, Superior Villa",2025-10-31T17:02:20.006969
+Oase by 7 Star Lodges,7-star-lodges,2025-11-10,2025-11-12,2,2,1,10,available,29090.16,36363.0,14545.08,True,20.0,,,1,1,0,0.0,29090.16,29090.16,29090.16,Suite with Private Pool,2025-10-31T17:02:30.914707
+Oase by 7 Star Lodges,7-star-lodges,2025-11-12,2025-11-14,2,2,1,12,available,21681.41,27102.0,10840.705,True,20.0,,,3,3,0,0.0,21681.41,29090.16,24690.57,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool",2025-10-31T17:02:44.918216
+Oase by 7 Star Lodges,7-star-lodges,2025-11-14,2025-11-16,2,2,1,14,available,21681.41,27102.0,10840.705,True,20.0,,,4,4,0,0.0,21681.41,42171.28,33095.91,"Suite with Private Pool, Superior Villa, Villa with Private Pool, Two-Bedroom Villa",2025-10-31T17:02:58.816888
+Oase by 7 Star Lodges,7-star-lodges,2025-11-16,2025-11-18,2,2,1,16,available,25728.64,32161.0,12864.32,True,20.0,,,2,2,0,0.0,25728.64,28187.33,26957.99,"Suite with Private Pool, Superior Villa",2025-10-31T17:03:52.619157
+Oase by 7 Star Lodges,7-star-lodges,2025-11-18,2025-11-20,2,2,1,18,available,24086.54,30108.0,12043.27,True,20.0,,,3,3,0,0.0,24086.54,26334.0,25383.06,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool",2025-10-31T17:04:02.273929
+Oase by 7 Star Lodges,7-star-lodges,2025-11-20,2025-11-22,2,2,1,20,available,22837.24,28547.0,11418.62,True,20.0,,,2,2,0,0.0,22837.24,23705.02,23271.13,"Suite with Private Pool, Suite with Private Pool",2025-10-31T17:04:12.785658
+Oase by 7 Star Lodges,7-star-lodges,2025-11-22,2025-11-24,2,2,1,22,available,29173.89,36467.0,14586.945,True,20.0,,,1,1,0,0.0,29173.89,29173.89,29173.89,Superior Villa,2025-10-31T17:04:22.927875
+Oase by 7 Star Lodges,7-star-lodges,2025-11-24,2025-11-26,2,2,1,24,available,29173.89,36467.0,14586.945,True,20.0,,,1,1,0,0.0,29173.89,29173.89,29173.89,Superior Villa,2025-10-31T17:04:34.755137
+Oase by 7 Star Lodges,7-star-lodges,2025-11-26,2025-11-28,2,2,1,26,available,29173.89,36467.0,14586.945,True,20.0,,,1,1,0,0.0,29173.89,29173.89,29173.89,Superior Villa,2025-10-31T17:04:44.038557
+Oase by 7 Star Lodges,7-star-lodges,2025-11-28,2025-11-30,2,2,1,28,available,23230.03,29038.0,11615.015,True,20.0,,,3,3,0,0.0,23230.03,29173.89,27164.69,"Suite with Private Pool, Suite with Private Pool, Superior Villa",2025-10-31T17:04:56.282779
+Oase by 7 Star Lodges,7-star-lodges,2025-11-30,2025-12-02,2,2,1,30,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:05:09.024316
+Oase by 7 Star Lodges,7-star-lodges,2025-12-02,2025-12-04,2,2,1,32,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:05:20.595862
+Oase by 7 Star Lodges,7-star-lodges,2025-12-04,2025-12-06,2,2,1,34,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:05:29.634899
+Oase by 7 Star Lodges,7-star-lodges,2025-12-06,2025-12-08,2,2,1,36,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:05:38.915229
+Oase by 7 Star Lodges,7-star-lodges,2025-12-08,2025-12-10,2,2,1,38,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:05:47.902398
+Oase by 7 Star Lodges,7-star-lodges,2025-12-10,2025-12-12,2,2,1,40,available,24644.9,30806.0,12322.45,True,20.0,,,3,3,0,0.0,24644.9,35763.76,28937.97,"Suite with Private Pool, Suite with Private Pool, Superior Villa",2025-10-31T17:05:55.898783
+Oase by 7 Star Lodges,7-star-lodges,2025-12-12,2025-12-14,2,2,1,42,available,33223.56,,16611.78,False,,,,2,2,0,0.0,33223.56,35596.6,34410.08,"Suite with Private Pool, Suite with Private Pool",2025-10-31T17:06:01.504842
+Oase by 7 Star Lodges,7-star-lodges,2025-12-14,2025-12-16,2,2,1,44,available,32099.98,,16049.99,False,,,,3,3,0,0.0,32099.98,43068.96,36520.59,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool",2025-10-31T17:06:08.588449
+Oase by 7 Star Lodges,7-star-lodges,2025-12-16,2025-12-18,2,2,1,46,available,32099.98,,16049.99,False,,,,3,3,0,0.0,32099.98,43068.96,36520.59,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool",2025-10-31T17:06:14.550471
+Oase by 7 Star Lodges,7-star-lodges,2025-12-18,2025-12-20,2,2,1,48,available,32661.77,,16330.885,False,,,,4,4,0,0.0,32661.77,43948.82,38856.99,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool, Superior Villa",2025-10-31T17:06:21.743102
+Oase by 7 Star Lodges,7-star-lodges,2025-12-20,2025-12-22,2,2,1,50,available,32661.77,,16330.885,False,,,,2,2,0,0.0,32661.77,43822.67,38242.22,"Suite with Private Pool, Suite with Private Pool",2025-10-31T17:06:28.599542
+Oase by 7 Star Lodges,7-star-lodges,2025-12-22,2025-12-24,2,2,1,52,available,32099.98,,16049.99,False,,,,2,2,0,0.0,32099.98,43068.96,37584.47,"Suite with Private Pool, Suite with Private Pool",2025-10-31T17:06:35.648314
+Oase by 7 Star Lodges,7-star-lodges,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:06:43.884443
+Oase by 7 Star Lodges,7-star-lodges,2025-12-26,2025-12-28,2,2,1,56,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:06:54.322679
+Oase by 7 Star Lodges,7-star-lodges,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:07:04.787989
+Oase by 7 Star Lodges,7-star-lodges,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:07:15.302889
+Oase by 7 Star Lodges,7-star-lodges,2026-01-01,2026-01-03,2,2,1,62,available,36575.0,,18287.5,False,,,,1,1,0,0.0,36575.0,36575.0,36575.0,Suite with Private Pool,2025-10-31T17:07:22.213985
+Oase by 7 Star Lodges,7-star-lodges,2026-01-03,2026-01-05,2,2,1,64,available,,,,False,,,,0,0,0,,,,,,2025-10-31T17:07:29.707567
+Oase by 7 Star Lodges,7-star-lodges,2026-01-05,2026-01-07,2,2,1,66,available,33718.46,,16859.23,False,,,,2,2,0,0.0,33718.46,42346.0,38032.23,"Suite with Private Pool, Superior Villa",2025-10-31T17:07:37.092435
+Oase by 7 Star Lodges,7-star-lodges,2026-01-07,2026-01-09,2,2,1,68,available,31470.58,,15735.29,False,,,,3,3,0,0.0,31470.58,42346.0,35845.01,"Suite with Private Pool, Suite with Private Pool, Superior Villa",2025-10-31T17:07:44.506300
+Oase by 7 Star Lodges,7-star-lodges,2026-01-09,2026-01-11,2,2,1,70,available,32571.98,,16285.99,False,,,,4,4,0,0.0,32571.98,43828.06,38750.27,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool, Superior Villa",2025-10-31T17:07:51.309227
+Oase by 7 Star Lodges,7-star-lodges,2026-01-11,2026-01-13,2,2,1,72,available,31470.58,,15735.29,False,,,,4,4,0,0.0,31470.58,42346.0,37439.89,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool, Superior Villa",2025-10-31T17:07:57.128104
+Oase by 7 Star Lodges,7-star-lodges,2026-01-13,2026-01-15,2,2,1,74,available,31470.58,,15735.29,False,,,,3,3,0,0.0,31470.58,42346.0,38680.36,"Suite with Private Pool, Suite with Private Pool, Superior Villa",2025-10-31T17:08:04.546851
+Oase by 7 Star Lodges,7-star-lodges,2026-01-15,2026-01-17,2,2,1,76,available,32021.28,,16010.64,False,,,,3,3,0,0.0,32021.28,75122.9,50035.87,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool",2025-10-31T17:08:11.829026
+Oase by 7 Star Lodges,7-star-lodges,2026-01-17,2026-01-19,2,2,1,78,available,42963.43,,21481.715,False,,,,2,2,0,0.0,42963.43,75122.9,59043.16,"Suite with Private Pool, Suite with Private Pool",2025-10-31T17:08:17.637871
+Oase by 7 Star Lodges,7-star-lodges,2026-01-19,2026-01-21,2,2,1,80,available,75122.9,,37561.45,False,,,,1,1,0,0.0,75122.9,75122.9,75122.9,Suite with Private Pool,2025-10-31T17:08:24.599897
+Oase by 7 Star Lodges,7-star-lodges,2026-01-21,2026-01-23,2,2,1,82,available,42346.0,,21173.0,False,,,,2,2,0,0.0,42346.0,75122.9,58734.45,"Superior Villa, Suite with Private Pool",2025-10-31T17:08:30.080838
+Oase by 7 Star Lodges,7-star-lodges,2026-01-23,2026-01-25,2,2,1,84,available,43828.06,,21914.03,False,,,,2,2,0,0.0,43828.06,75122.9,59475.48,"Superior Villa, Suite with Private Pool",2025-10-31T17:08:36.735101
+Oase by 7 Star Lodges,7-star-lodges,2026-01-25,2026-01-27,2,2,1,86,available,42346.0,,21173.0,False,,,,2,2,0,0.0,42346.0,75122.9,58734.45,"Superior Villa, Suite with Private Pool",2025-10-31T17:08:44.024017
+Oase by 7 Star Lodges,7-star-lodges,2026-01-27,2026-01-29,2,2,1,88,available,32032.52,,16016.26,False,,,,3,3,0,0.0,32032.52,71366.74,47875.99,"Suite with Private Pool, Superior Villa, Suite with Private Pool",2025-10-31T17:08:50.258797
+Oase by 7 Star Lodges,7-star-lodges,2026-01-29,2026-01-31,2,2,1,90,available,30420.21,,15210.105,False,,,,5,5,0,0.0,30420.21,71366.74,43225.61,"Suite with Private Pool, Suite with Private Pool, Suite with Private Pool, Superior Villa, Suite with Private Pool",2025-10-31T17:08:57.313228
+Phelwana Game Lodge,phelwana-game-lodge,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:09:05.499822
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-02,2025-11-04,2,2,1,2,available,17721.6,22152.0,8860.8,True,20.0,,,1,1,0,0.0,17721.6,17721.6,17721.6,Tent,2025-10-31T17:09:13.187058
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-04,2025-11-06,2,2,1,4,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:09:22.840808
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-06,2025-11-08,2,2,1,6,available,13520.0,16900.0,6760.0,True,20.0,,,3,3,0,0.0,13520.0,13520.0,13520.0,"Villa, Villa, Villa",2025-10-31T17:09:32.023571
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-08,2025-11-10,2,2,1,8,available,13520.0,22152.0,6760.0,True,38.97,,,4,4,0,0.0,13520.0,17721.6,14570.4,"Tent, Villa, Villa, Villa",2025-10-31T17:09:41.192837
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-10,2025-11-12,2,2,1,10,available,13520.0,22152.0,6760.0,True,38.97,,,4,4,0,0.0,13520.0,17721.6,14570.4,"Tent, Villa, Villa, Villa",2025-10-31T17:09:50.433702
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-12,2025-11-14,2,2,1,12,available,13520.0,22152.0,6760.0,True,38.97,,,4,4,0,0.0,13520.0,17721.6,14570.4,"Tent, Villa, Villa, Villa",2025-10-31T17:10:00.811012
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-14,2025-11-16,2,2,1,14,available,12168.0,19937.0,6084.0,True,38.97,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Tent, Villa, Villa, Villa",2025-10-31T17:10:09.576699
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-16,2025-11-18,2,2,1,16,available,12168.0,19937.0,6084.0,True,38.97,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Tent, Villa, Villa, Villa",2025-10-31T17:10:18.799570
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-18,2025-11-20,2,2,1,18,available,12168.0,19937.0,6084.0,True,38.97,,,3,3,0,0.0,12168.0,15949.44,13428.48,"Tent, Villa, Villa",2025-10-31T17:10:27.672432
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-20,2025-11-22,2,2,1,20,available,12168.0,19937.0,6084.0,True,38.97,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Tent, Villa, Villa, Villa",2025-10-31T17:10:35.705181
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-22,2025-11-24,2,2,1,22,available,12168.0,19937.0,6084.0,True,38.97,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Tent, Villa, Villa, Villa",2025-10-31T17:10:45.010023
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-24,2025-11-26,2,2,1,24,available,12168.0,19937.0,6084.0,True,38.97,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Tent, Villa, Villa, Villa",2025-10-31T17:10:56.706915
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-26,2025-11-28,2,2,1,26,available,12168.0,19937.0,6084.0,True,38.97,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Tent, Villa, Villa, Villa",2025-10-31T17:11:06.309068
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-28,2025-11-30,2,2,1,28,available,12168.0,19937.0,6084.0,True,38.97,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Tent, Villa, Villa, Villa",2025-10-31T17:11:15.462680
+Phelwana Game Lodge,phelwana-game-lodge,2025-11-30,2025-12-02,2,2,1,30,available,12168.0,19937.0,6084.0,True,38.97,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Tent, Villa, Villa, Villa",2025-10-31T17:11:23.676913
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-02,2025-12-04,2,2,1,32,available,12168.0,15210.0,6084.0,True,20.0,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Villa, Villa, Villa, Tent",2025-10-31T17:11:30.390251
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-04,2025-12-06,2,2,1,34,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:11:40.544986
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-06,2025-12-08,2,2,1,36,available,12168.0,15210.0,6084.0,True,20.0,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Villa, Villa, Villa, Tent",2025-10-31T17:11:49.913306
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-08,2025-12-10,2,2,1,38,available,12168.0,15210.0,6084.0,True,20.0,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Villa, Villa, Villa, Tent",2025-10-31T17:11:57.841903
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-10,2025-12-12,2,2,1,40,available,12168.0,15210.0,6084.0,True,20.0,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Villa, Villa, Villa, Tent",2025-10-31T17:12:06.043399
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-12,2025-12-14,2,2,1,42,available,12168.0,15210.0,6084.0,True,20.0,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Villa, Villa, Villa, Tent",2025-10-31T17:12:13.725270
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-14,2025-12-16,2,2,1,44,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:12:21.575629
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-16,2025-12-18,2,2,1,46,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:12:31.664816
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-18,2025-12-20,2,2,1,48,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:12:39.127343
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-20,2025-12-22,2,2,1,50,available,15210.0,,7605.0,False,,,,3,3,0,0.0,15210.0,19936.8,16785.6,"Villa, Villa, Tent",2025-10-31T17:12:47.704936
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-22,2025-12-24,2,2,1,52,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:12:56.321311
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-24,2025-12-26,2,2,1,54,available,15210.0,,7605.0,False,,,,3,3,0,0.0,15210.0,19936.8,16785.6,"Villa, Villa, Tent",2025-10-31T17:13:05.200011
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-26,2025-12-28,2,2,1,56,available,15210.0,,7605.0,False,,,,3,3,0,0.0,15210.0,19936.8,16785.6,"Villa, Villa, Tent",2025-10-31T17:13:12.323508
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-28,2025-12-30,2,2,1,58,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:13:18.799631
+Phelwana Game Lodge,phelwana-game-lodge,2025-12-30,2026-01-01,2,2,1,60,available,15210.0,,7605.0,False,,,,3,3,0,0.0,15210.0,19936.8,16785.6,"Villa, Villa, Tent",2025-10-31T17:13:25.198029
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-01,2026-01-03,2,2,1,62,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:13:33.631818
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-03,2026-01-05,2,2,1,64,available,15210.0,,7605.0,False,,,,3,3,0,0.0,15210.0,19936.8,16785.6,"Villa, Villa, Tent",2025-10-31T17:13:43.736542
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-05,2026-01-07,2,2,1,66,available,12168.0,15210.0,6084.0,True,20.0,,,4,4,0,0.0,12168.0,15949.44,13113.36,"Villa, Villa, Villa, Tent",2025-10-31T17:13:52.880199
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-07,2026-01-09,2,2,1,68,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:14:01.493848
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-09,2026-01-11,2,2,1,70,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:14:11.800467
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-11,2026-01-13,2,2,1,72,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:14:20.503596
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-13,2026-01-15,2,2,1,74,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:14:28.807721
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-15,2026-01-17,2,2,1,76,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:14:37.113851
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-17,2026-01-19,2,2,1,78,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:14:45.361070
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-19,2026-01-21,2,2,1,80,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:14:55.022759
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-21,2026-01-23,2,2,1,82,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:15:04.236452
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-23,2026-01-25,2,2,1,84,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:15:13.097327
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-25,2026-01-27,2,2,1,86,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:15:21.308027
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-27,2026-01-29,2,2,1,88,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:15:28.270237
+Phelwana Game Lodge,phelwana-game-lodge,2026-01-29,2026-01-31,2,2,1,90,available,15210.0,,7605.0,False,,,,4,4,0,0.0,15210.0,19936.8,16391.7,"Villa, Villa, Villa, Tent",2025-10-31T17:15:36.379634
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:15:46.735182
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-02,2025-11-04,2,2,1,2,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:15:57.589831
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-04,2025-11-06,2,2,1,4,available,24480.0,30600.0,12240.0,True,20.0,,,1,1,0,0.0,24480.0,24480.0,24480.0,River Bungalow,2025-10-31T17:16:04.777456
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-06,2025-11-08,2,2,1,6,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:16:13.525890
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-08,2025-11-10,2,2,1,8,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:16:23.709795
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-10,2025-11-12,2,2,1,10,available,48960.0,61200.0,24480.0,True,20.0,,,1,1,0,0.0,48960.0,48960.0,48960.0,Olifant Villa Suite,2025-10-31T17:16:32.467823
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-12,2025-11-14,2,2,1,12,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:16:43.358436
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-14,2025-11-16,2,2,1,14,available,24480.0,30600.0,12240.0,True,20.0,,,2,2,0,0.0,24480.0,48960.0,36720.0,"Luxury Tent, Olifant Villa Suite",2025-10-31T17:16:52.749904
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-16,2025-11-18,2,2,1,16,available,48960.0,61200.0,24480.0,True,20.0,,,1,1,0,0.0,48960.0,48960.0,48960.0,Olifant Villa Suite,2025-10-31T17:17:00.639962
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-18,2025-11-20,2,2,1,18,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:17:08.981846
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-20,2025-11-22,2,2,1,20,available,48960.0,61200.0,24480.0,True,20.0,,,1,1,0,0.0,48960.0,48960.0,48960.0,Olifant Villa Suite,2025-10-31T17:17:17.790100
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-22,2025-11-24,2,2,1,22,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:17:26.310618
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-24,2025-11-26,2,2,1,24,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:17:37.200211
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-26,2025-11-28,2,2,1,26,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:17:46.430047
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-28,2025-11-30,2,2,1,28,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:17:55.616315
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-11-30,2025-12-02,2,2,1,30,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:18:04.775820
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-02,2025-12-04,2,2,1,32,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:18:18.198714
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-04,2025-12-06,2,2,1,34,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:18:32.286962
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-06,2025-12-08,2,2,1,36,available,24480.0,30600.0,12240.0,True,20.0,,,1,1,0,0.0,24480.0,24480.0,24480.0,River Bungalow,2025-10-31T17:18:41.101598
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-08,2025-12-10,2,2,1,38,available,24480.0,30600.0,12240.0,True,20.0,,,1,1,0,0.0,24480.0,24480.0,24480.0,River Bungalow,2025-10-31T17:18:50.503461
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-10,2025-12-12,2,2,1,40,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:19:04.708257
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-12,2025-12-14,2,2,1,42,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:19:18.532605
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-14,2025-12-16,2,2,1,44,available,24480.0,30600.0,12240.0,True,20.0,,,3,3,0,0.0,24480.0,48960.0,32640.0,"River Bungalow, Luxury Tent, Olifants Villa 2",2025-10-31T17:19:30.102962
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-16,2025-12-18,2,2,1,46,available,24480.0,30600.0,12240.0,True,20.0,,,4,4,0,0.0,24480.0,48960.0,36720.0,"River Bungalow, Luxury Tent, Olifant Villa Suite, Olifants Villa 2",2025-10-31T17:19:39.966674
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-18,2025-12-20,2,2,1,48,available,24480.0,30600.0,12240.0,True,20.0,,,4,4,0,0.0,24480.0,48960.0,36720.0,"River Bungalow, Luxury Tent, Olifant Villa Suite, Olifants Villa 2",2025-10-31T17:19:50.292906
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-20,2025-12-22,2,2,1,50,available,24480.0,30600.0,12240.0,True,20.0,,,2,2,0,0.0,24480.0,24480.0,24480.0,"River Bungalow, Luxury Tent",2025-10-31T17:20:00.300791
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-22,2025-12-24,2,2,1,52,available,30600.0,,15300.0,False,,,,1,1,0,0.0,30600.0,30600.0,30600.0,Luxury Tent,2025-10-31T17:20:11.280264
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:20:24.370435
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-26,2025-12-28,2,2,1,56,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:20:37.740134
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:20:48.929913
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:21:01.115103
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-01,2026-01-03,2,2,1,62,available,30600.0,,15300.0,False,,,,1,1,0,0.0,30600.0,30600.0,30600.0,River Bungalow,2025-10-31T17:21:09.234373
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-03,2026-01-05,2,2,1,64,available,30600.0,,15300.0,False,,,,3,3,0,0.0,30600.0,61200.0,40800.0,"River Bungalow, Luxury Tent, Olifants Villa 2",2025-10-31T17:21:19.959499
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-05,2026-01-07,2,2,1,66,available,30600.0,,15300.0,False,,,,2,2,0,0.0,30600.0,30600.0,30600.0,"River Bungalow, Luxury Tent",2025-10-31T17:21:28.609491
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-07,2026-01-09,2,2,1,68,available,61200.0,,30600.0,False,,,,1,1,0,0.0,61200.0,61200.0,61200.0,Olifant Villa Suite,2025-10-31T17:21:37.379050
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-09,2026-01-11,2,2,1,70,available,30600.0,,15300.0,False,,,,3,3,0,0.0,30600.0,61200.0,51000.0,"River Bungalow, Olifant Villa Suite, Olifants Villa 2",2025-10-31T17:21:49.888907
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-11,2026-01-13,2,2,1,72,available,30600.0,,15300.0,False,,,,3,3,0,0.0,30600.0,61200.0,51000.0,"River Bungalow, Olifant Villa Suite, Olifants Villa 2",2025-10-31T17:21:58.887936
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-13,2026-01-15,2,2,1,74,available,61200.0,,30600.0,False,,,,2,2,0,0.0,61200.0,61200.0,61200.0,"Olifant Villa Suite, Olifants Villa 2",2025-10-31T17:22:10.707421
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-15,2026-01-17,2,2,1,76,available,61200.0,,30600.0,False,,,,2,2,0,0.0,61200.0,61200.0,61200.0,"Olifant Villa Suite, Olifants Villa 2",2025-10-31T17:22:20.145058
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-17,2026-01-19,2,2,1,78,available,61200.0,,30600.0,False,,,,1,1,0,0.0,61200.0,61200.0,61200.0,Olifant Villa Suite,2025-10-31T17:22:31.670664
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-19,2026-01-21,2,2,1,80,available,61200.0,,30600.0,False,,,,1,1,0,0.0,61200.0,61200.0,61200.0,Olifant Villa Suite,2025-10-31T17:22:41.390817
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-21,2026-01-23,2,2,1,82,available,30600.0,,15300.0,False,,,,3,3,0,0.0,30600.0,61200.0,40800.0,"River Bungalow, Luxury Tent, Olifant Villa Suite",2025-10-31T17:22:51.026400
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-23,2026-01-25,2,2,1,84,available,30600.0,,15300.0,False,,,,2,2,0,0.0,30600.0,61200.0,45900.0,"Luxury Tent, Olifant Villa Suite",2025-10-31T17:23:03.221102
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-25,2026-01-27,2,2,1,86,available,30600.0,,15300.0,False,,,,2,2,0,0.0,30600.0,61200.0,45900.0,"Luxury Tent, Olifant Villa Suite",2025-10-31T17:23:12.032636
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-27,2026-01-29,2,2,1,88,available,30600.0,,15300.0,False,,,,2,2,0,0.0,30600.0,61200.0,45900.0,"Luxury Tent, Olifant Villa Suite",2025-10-31T17:23:20.496488
+Nyati Safari Lodge,nyati-safari-lodge-parblowa,2026-01-29,2026-01-31,2,2,1,90,available,30600.0,,15300.0,False,,,,2,2,0,0.0,30600.0,61200.0,45900.0,"Luxury Tent, Olifant Villa Suite",2025-10-31T17:23:29.264301
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:23:41.809978
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-02,2025-11-04,2,2,1,2,available,9984.0,13080.0,4992.0,True,23.67,,,3,3,0,0.0,9984.0,10464.0,10144.0,"Family Suite, Family Suite, Classic Tent",2025-10-31T17:23:51.701144
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-04,2025-11-06,2,2,1,4,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:24:04.410763
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-06,2025-11-08,2,2,1,6,available,9984.0,13080.0,4992.0,True,23.67,,,3,3,0,0.0,9984.0,10464.0,10144.0,"Suite, Double Room, Classic Tent",2025-10-31T17:24:16.165058
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-08,2025-11-10,2,2,1,8,available,9984.0,12480.0,4992.0,True,20.0,,,2,2,0,0.0,9984.0,26136.0,18060.0,"Classic Tent, Tent",2025-10-31T17:24:25.146467
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-10,2025-11-12,2,2,1,10,available,9984.0,12480.0,4992.0,True,20.0,,,1,1,0,0.0,9984.0,9984.0,9984.0,Classic Tent,2025-10-31T17:24:36.451572
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-12,2025-11-14,2,2,1,12,available,9984.0,13080.0,4992.0,True,23.67,,,3,3,0,0.0,9984.0,10464.0,10304.0,"Suite, Family Suite, Classic Tent",2025-10-31T17:24:45.812491
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-14,2025-11-16,2,2,1,14,available,9984.0,13080.0,4992.0,True,23.67,,,4,4,0,0.0,9984.0,10464.0,10224.0,"Suite, Double Room, Family Suite, Suite",2025-10-31T17:25:00.629677
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-16,2025-11-18,2,2,1,16,available,9984.0,13080.0,4992.0,True,23.67,,,7,7,0,0.0,9984.0,26136.0,12631.54,"Family Suite, Suite, Double Room, Suite, Classic Tent, Suite, Tent",2025-10-31T17:25:10.948253
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-18,2025-11-20,2,2,1,18,available,9984.0,13080.0,4992.0,True,23.67,,,5,5,0,0.0,9984.0,26136.0,13406.4,"Family Suite, Suite, Suite, Classic Tent, Tent",2025-10-31T17:25:21.543008
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-20,2025-11-22,2,2,1,20,available,10464.0,13080.0,5232.0,True,20.0,,,4,4,0,0.0,10464.0,26136.0,14617.2,"Family Suite, Suite, Suite, Tent",2025-10-31T17:25:32.150232
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-22,2025-11-24,2,2,1,22,available,9984.0,13080.0,4992.0,True,23.67,,,7,7,0,0.0,9984.0,26136.0,12631.54,"Family Suite, Suite, Double Room, Family Suite, Classic Tent, Suite, Tent",2025-10-31T17:25:42.731323
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-24,2025-11-26,2,2,1,24,available,9984.0,13080.0,4992.0,True,23.67,,,4,4,0,0.0,9984.0,26136.0,14262.0,"Family Suite, Suite, Classic Tent, Tent",2025-10-31T17:25:55.677540
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-26,2025-11-28,2,2,1,26,available,9984.0,13080.0,4992.0,True,23.67,,,4,4,0,0.0,9984.0,26136.0,14262.0,"Family Suite, Suite, Classic Tent, Tent",2025-10-31T17:26:06.915763
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-28,2025-11-30,2,2,1,28,available,9984.0,13080.0,4992.0,True,23.67,,,5,5,0,0.0,9984.0,10464.0,10080.0,"Suite, Double Room, Family Suite, Suite, Classic Tent",2025-10-31T17:26:20.167402
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-11-30,2025-12-02,2,2,1,30,available,9984.0,13080.0,4992.0,True,23.67,,,8,8,0,0.0,9984.0,27444.0,12464.1,"Family Suite, Suite, Double Room, Family Suite, Suite, Classic Tent, Suite, Tent",2025-10-31T17:26:34.175701
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-02,2025-12-04,2,2,1,32,available,9984.0,12480.0,4992.0,True,20.0,,,5,5,0,0.0,9984.0,28752.0,14213.76,"Classic Tent, Family Suite, Suite, Suite, Tent",2025-10-31T17:26:46.122355
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-04,2025-12-06,2,2,1,34,available,9984.0,12480.0,4992.0,True,20.0,,,5,5,0,0.0,9984.0,28752.0,13929.6,"Family Suite, Classic Tent, Family Suite, Suite, Tent",2025-10-31T17:26:59.046753
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-06,2025-12-08,2,2,1,36,available,9984.0,12480.0,4992.0,True,20.0,,,7,7,0,0.0,9984.0,28752.0,12802.29,"Family Suite, Suite, Double Room, Classic Tent, Family Suite, Suite, Tent",2025-10-31T17:27:12.204369
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-08,2025-12-10,2,2,1,38,available,9984.0,12480.0,4992.0,True,20.0,,,8,8,0,0.0,9984.0,28752.0,12627.6,"Family Suite, Suite, Double Room, Classic Tent, Family Suite, Suite, Suite, Tent",2025-10-31T17:27:21.922604
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-10,2025-12-12,2,2,1,40,available,9984.0,12480.0,4992.0,True,20.0,,,6,6,0,0.0,9984.0,28752.0,13272.0,"Family Suite, Double Room, Classic Tent, Family Suite, Suite, Tent",2025-10-31T17:27:31.473424
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-12,2025-12-14,2,2,1,42,available,9984.0,12480.0,4992.0,True,20.0,,,7,7,0,0.0,9984.0,28752.0,13005.26,"Suite, Double Room, Classic Tent, Family Suite, Suite, Suite, Tent",2025-10-31T17:27:45.022626
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-14,2025-12-16,2,2,1,44,available,9984.0,12480.0,4992.0,True,20.0,,,7,7,0,0.0,9984.0,28752.0,13005.26,"Suite, Double Room, Classic Tent, Family Suite, Suite, Suite, Tent",2025-10-31T17:27:56.684579
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-16,2025-12-18,2,2,1,46,available,9984.0,12480.0,4992.0,True,20.0,,,6,6,0,0.0,9984.0,28752.0,13508.8,"Family Suite, Classic Tent, Family Suite, Suite, Suite, Tent",2025-10-31T17:28:05.937970
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-18,2025-12-20,2,2,1,48,available,9984.0,12480.0,4992.0,True,20.0,,,7,7,0,0.0,9984.0,28752.0,13005.26,"Family Suite, Double Room, Classic Tent, Family Suite, Suite, Suite, Tent",2025-10-31T17:28:17.338101
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-20,2025-12-22,2,2,1,50,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:28:30.833439
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-22,2025-12-24,2,2,1,52,available,9984.0,12480.0,4992.0,True,20.0,,,5,5,0,0.0,9984.0,28752.0,14117.76,"Family Suite, Double Room, Suite, Suite, Tent",2025-10-31T17:28:41.451418
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:28:53.785723
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-26,2025-12-28,2,2,1,56,available,9185.28,12480.0,4592.64,True,26.4,,,2,2,0,0.0,9185.28,26451.84,17818.56,"Classic Tent, Tent",2025-10-31T17:29:03.218050
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-28,2025-12-30,2,2,1,58,available,9984.0,12480.0,4992.0,True,20.0,,,3,3,0,0.0,9984.0,28752.0,16240.0,"Suite, Classic Tent, Tent",2025-10-31T17:29:15.607134
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2025-12-30,2026-01-01,2,2,1,60,available,9984.0,12480.0,4992.0,True,20.0,,,5,5,0,0.0,9984.0,28752.0,14213.76,"Classic Tent, Family Suite, Suite, Suite, Tent",2025-10-31T17:29:28.009726
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-01,2026-01-03,2,2,1,62,available,23001.6,28752.0,11500.8,True,20.0,,,5,5,0,0.0,23001.6,28752.0,25173.63,"Classic Tent, Family Suite, Suite, Suite, Tent",2025-10-31T17:29:37.201249
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-03,2026-01-05,2,2,1,64,available,23001.6,28752.0,11500.8,True,20.0,,,6,6,0,0.0,23001.6,28752.0,24424.43,"Suite, Double Room, Classic Tent, Family Suite, Suite, Tent",2025-10-31T17:29:46.455076
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-05,2026-01-07,2,2,1,66,available,23001.6,28752.0,11500.8,True,20.0,,,6,6,0,0.0,23001.6,28752.0,24424.43,"Suite, Double Room, Classic Tent, Family Suite, Suite, Tent",2025-10-31T17:29:59.227561
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-07,2026-01-09,2,2,1,68,available,28752.0,,14376.0,False,,,,6,6,0,0.0,28752.0,30494.4,29332.53,"Suite, Double Room, Classic Tent, Tent, Family Suite, Suite",2025-10-31T17:30:11.946013
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-09,2026-01-11,2,2,1,70,available,28752.0,,14376.0,False,,,,6,6,0,0.0,28752.0,31656.0,29816.53,"Double Room, Classic Tent, Tent, Family Suite, Suite, Suite",2025-10-31T17:30:21.227536
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-11,2026-01-13,2,2,1,72,available,28752.0,,14376.0,False,,,,5,5,0,0.0,28752.0,31656.0,30029.44,"Classic Tent, Tent, Family Suite, Suite, Suite",2025-10-31T17:30:31.125378
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-13,2026-01-15,2,2,1,74,available,28752.0,,14376.0,False,,,,6,6,0,0.0,28752.0,30494.4,29332.53,"Family Suite, Suite, Double Room, Classic Tent, Family Suite, Suite",2025-10-31T17:30:46.553245
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-15,2026-01-17,2,2,1,76,available,28752.0,,14376.0,False,,,,3,3,0,0.0,28752.0,30494.4,29332.8,"Double Room, Classic Tent, Suite",2025-10-31T17:30:56.007964
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-17,2026-01-19,2,2,1,78,available,28752.0,,14376.0,False,,,,3,3,0,0.0,28752.0,28752.0,28752.0,"Double Room, Classic Tent, Tent",2025-10-31T17:31:05.492842
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-19,2026-01-21,2,2,1,80,available,28752.0,,14376.0,False,,,,1,1,0,0.0,28752.0,28752.0,28752.0,Tent,2025-10-31T17:31:16.485713
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-21,2026-01-23,2,2,1,82,available,28752.0,,14376.0,False,,,,2,2,0,0.0,28752.0,30494.4,29623.2,"Tent, Suite",2025-10-31T17:31:25.567622
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-23,2026-01-25,2,2,1,84,available,28752.0,,14376.0,False,,,,8,8,0,0.0,28752.0,31656.0,29550.4,"Family Suite, Suite, Double Room, Classic Tent, Tent, Family Suite, Suite, Suite",2025-10-31T17:31:35.717938
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-25,2026-01-27,2,2,1,86,available,28752.0,,14376.0,False,,,,8,8,0,0.0,28752.0,31656.0,29550.4,"Family Suite, Suite, Double Room, Classic Tent, Tent, Family Suite, Suite, Suite",2025-10-31T17:31:49.468782
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-27,2026-01-29,2,2,1,88,available,28752.0,,14376.0,False,,,,8,8,0,0.0,28752.0,31656.0,29550.4,"Family Suite, Suite, Double Room, Classic Tent, Tent, Family Suite, Suite, Suite",2025-10-31T17:31:58.260420
+Khaya Ndlovu Safari Manor,khaya-ndlovu-manor-house,2026-01-29,2026-01-31,2,2,1,90,available,28752.0,,14376.0,False,,,,8,8,0,0.0,28752.0,31656.0,29550.4,"Family Suite, Suite, Double Room, Classic Tent, Tent, Family Suite, Suite, Suite",2025-10-31T17:32:10.422490
+AM Lodge – Hoedspruit,am-luxury-villa,2025-10-31,2025-11-02,2,2,1,0,available,48019.66,56494.0,24009.83,True,15.0,,,2,2,0,0.0,48019.66,58023.11,53021.39,"Luxury Suite, Superior Suite",2025-10-31T17:32:20.996048
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-02,2025-11-04,2,2,1,2,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:32:32.754992
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-04,2025-11-06,2,2,1,4,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:32:43.756913
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-06,2025-11-08,2,2,1,6,available,53355.18,62771.0,26677.59,True,15.0,,,2,2,0,0.0,53355.18,64470.12,58912.65,"Luxury Suite, Superior Suite",2025-10-31T17:32:55.302172
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-08,2025-11-10,2,2,1,8,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:33:04.817915
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-10,2025-11-12,2,2,1,10,available,56493.72,,28246.86,False,,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:33:17.295008
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-12,2025-11-14,2,2,1,12,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:33:29.699358
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-14,2025-11-16,2,2,1,14,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:33:38.723199
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-16,2025-11-18,2,2,1,16,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:33:48.670799
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-18,2025-11-20,2,2,1,18,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:33:58.411150
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-20,2025-11-22,2,2,1,20,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:34:12.761122
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-22,2025-11-24,2,2,1,22,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:34:22.319195
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-24,2025-11-26,2,2,1,24,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:34:32.265992
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-26,2025-11-28,2,2,1,26,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:34:44.613589
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-28,2025-11-30,2,2,1,28,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:35:02.510208
+AM Lodge – Hoedspruit,am-luxury-villa,2025-11-30,2025-12-02,2,2,1,30,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:35:13.634859
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-02,2025-12-04,2,2,1,32,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:35:22.602887
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-04,2025-12-06,2,2,1,34,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:35:31.527953
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-06,2025-12-08,2,2,1,36,available,56493.72,,28246.86,False,,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:35:40.478747
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-08,2025-12-10,2,2,1,38,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:35:54.059405
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-10,2025-12-12,2,2,1,40,available,56493.72,,28246.86,False,,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:36:06.159391
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-12,2025-12-14,2,2,1,42,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:36:16.394323
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-14,2025-12-16,2,2,1,44,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:36:28.961866
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-16,2025-12-18,2,2,1,46,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:36:39.079988
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-18,2025-12-20,2,2,1,48,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:36:49.811088
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-20,2025-12-22,2,2,1,50,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:37:02.687132
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-22,2025-12-24,2,2,1,52,available,53355.18,62771.0,26677.59,True,15.0,,,2,2,0,0.0,53355.18,64470.12,58912.65,"Luxury Suite, Superior Suite",2025-10-31T17:37:12.073293
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-24,2025-12-26,2,2,1,54,available,53355.18,62771.0,26677.59,True,15.0,,,2,2,0,0.0,53355.18,64470.12,58912.65,"Luxury Suite, Superior Suite",2025-10-31T17:37:24.077516
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-26,2025-12-28,2,2,1,56,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:37:33.226697
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-28,2025-12-30,2,2,1,58,available,64470.12,75847.0,32235.06,True,15.0,,,1,1,0,0.0,64470.12,64470.12,64470.12,Superior Suite,2025-10-31T17:37:42.705874
+AM Lodge – Hoedspruit,am-luxury-villa,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:37:54.118030
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-01,2026-01-03,2,2,1,62,available,53355.18,62771.0,26677.59,True,15.0,,,1,1,0,0.0,53355.18,53355.18,53355.18,Luxury Suite,2025-10-31T17:38:03.787915
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-03,2026-01-05,2,2,1,64,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:38:15.773579
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-05,2026-01-07,2,2,1,66,available,53355.18,62771.0,26677.59,True,15.0,,,3,3,0,0.0,53355.18,94481.33,70768.88,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:38:26.530517
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-07,2026-01-09,2,2,1,68,available,56493.72,66463.0,28246.86,True,15.0,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:38:38.766239
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-09,2026-01-11,2,2,1,70,available,56493.72,66463.0,28246.86,True,15.0,,,2,2,0,0.0,56493.72,68262.48,62378.1,"Luxury Suite, Superior Suite",2025-10-31T17:38:50.537429
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-11,2026-01-13,2,2,1,72,available,56493.72,,28246.86,False,,,,2,2,0,0.0,56493.72,68262.48,62378.1,"Luxury Suite, Superior Suite",2025-10-31T17:39:02.466365
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-13,2026-01-15,2,2,1,74,available,56493.72,66463.0,28246.86,True,15.0,,,2,2,0,0.0,56493.72,68262.48,62378.1,"Luxury Suite, Superior Suite",2025-10-31T17:39:14.384387
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-15,2026-01-17,2,2,1,76,available,56493.72,66463.0,28246.86,True,15.0,,,2,2,0,0.0,56493.72,68262.48,62378.1,"Luxury Suite, Superior Suite",2025-10-31T17:39:23.792350
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-17,2026-01-19,2,2,1,78,available,56493.72,66463.0,28246.86,True,15.0,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:39:34.558549
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-19,2026-01-21,2,2,1,80,available,56493.72,66463.0,28246.86,True,15.0,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:39:46.576632
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-21,2026-01-23,2,2,1,82,available,56493.72,66463.0,28246.86,True,15.0,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:39:59.333515
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-23,2026-01-25,2,2,1,84,available,56493.72,66463.0,28246.86,True,15.0,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:40:08.754703
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-25,2026-01-27,2,2,1,86,available,56493.72,66463.0,28246.86,True,15.0,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:40:21.024648
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-27,2026-01-29,2,2,1,88,available,56493.72,66463.0,28246.86,True,15.0,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:40:32.764503
+AM Lodge – Hoedspruit,am-luxury-villa,2026-01-29,2026-01-31,2,2,1,90,available,56493.72,66463.0,28246.86,True,15.0,,,3,3,0,0.0,56493.72,100039.05,74931.75,"Luxury Suite, Superior Suite, Villa",2025-10-31T17:40:44.381914
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:40:57.921393
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-02,2025-11-04,2,2,1,2,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:41:10.822367
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-04,2025-11-06,2,2,1,4,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:41:21.939441
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-06,2025-11-08,2,2,1,6,available,75136.0,93920.0,37568.0,True,20.0,,,1,1,0,0.0,75136.0,75136.0,75136.0,Four-Bedroom Villa,2025-10-31T17:41:32.603654
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-08,2025-11-10,2,2,1,8,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:41:45.459537
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-10,2025-11-12,2,2,1,10,available,75136.0,93920.0,37568.0,True,20.0,,,1,1,0,0.0,75136.0,75136.0,75136.0,Four-Bedroom Villa,2025-10-31T17:41:53.617140
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-12,2025-11-14,2,2,1,12,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:42:05.899307
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-14,2025-11-16,2,2,1,14,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:42:18.800276
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-16,2025-11-18,2,2,1,16,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:42:32.235096
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-18,2025-11-20,2,2,1,18,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:42:43.089417
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-20,2025-11-22,2,2,1,20,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:42:54.184363
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-22,2025-11-24,2,2,1,22,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:43:06.943302
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-24,2025-11-26,2,2,1,24,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:43:21.150505
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-26,2025-11-28,2,2,1,26,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:43:33.803393
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-28,2025-11-30,2,2,1,28,available,75136.0,93920.0,37568.0,True,20.0,,,1,1,0,0.0,75136.0,75136.0,75136.0,Four-Bedroom Villa,2025-10-31T17:43:42.019113
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-11-30,2025-12-02,2,2,1,30,available,75136.0,93920.0,37568.0,True,20.0,,,1,1,0,0.0,75136.0,75136.0,75136.0,Four-Bedroom Villa,2025-10-31T17:43:51.723761
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-02,2025-12-04,2,2,1,32,available,75136.0,93920.0,37568.0,True,20.0,,,1,1,0,0.0,75136.0,75136.0,75136.0,Four-Bedroom Villa,2025-10-31T17:44:02.974960
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-04,2025-12-06,2,2,1,34,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:44:14.192053
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-06,2025-12-08,2,2,1,36,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:44:25.065899
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-08,2025-12-10,2,2,1,38,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:44:38.309058
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-10,2025-12-12,2,2,1,40,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:44:51.336126
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-12,2025-12-14,2,2,1,42,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:45:04.495129
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-14,2025-12-16,2,2,1,44,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:45:15.100101
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-16,2025-12-18,2,2,1,46,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:45:28.109459
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-18,2025-12-20,2,2,1,48,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:45:38.978021
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-20,2025-12-22,2,2,1,50,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:45:52.298024
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-22,2025-12-24,2,2,1,52,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:46:05.750463
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:46:16.214277
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-26,2025-12-28,2,2,1,56,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:46:29.697008
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:46:41.442890
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:46:50.426911
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-01,2026-01-03,2,2,1,62,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:46:59.612008
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-03,2026-01-05,2,2,1,64,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:47:08.597703
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-05,2026-01-07,2,2,1,66,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:47:17.852275
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-07,2026-01-09,2,2,1,68,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:47:29.354663
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-09,2026-01-11,2,2,1,70,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:47:39.571122
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-11,2026-01-13,2,2,1,72,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:47:48.512631
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-13,2026-01-15,2,2,1,74,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:47:58.969868
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-15,2026-01-17,2,2,1,76,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:48:09.275243
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-17,2026-01-19,2,2,1,78,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:48:19.751966
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-19,2026-01-21,2,2,1,80,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:48:30.295585
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-21,2026-01-23,2,2,1,82,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:48:39.546062
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-23,2026-01-25,2,2,1,84,available,95701.39,106335.0,47850.695,True,10.0,,,1,1,0,0.0,95701.39,95701.39,95701.39,Four-Bedroom Villa,2025-10-31T17:48:47.398793
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-25,2026-01-27,2,2,1,86,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:48:56.595798
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-27,2026-01-29,2,2,1,88,available,95701.39,106335.0,47850.695,True,10.0,,,1,1,0,0.0,95701.39,95701.39,95701.39,Four-Bedroom Villa,2025-10-31T17:49:05.276215
+Rhino's Rest Private Luxury Villa,rhinos-rest-luxury-self-catering-home,2026-01-29,2026-01-31,2,2,1,90,available,95701.39,106335.0,47850.695,True,10.0,,,1,1,0,0.0,95701.39,95701.39,95701.39,Four-Bedroom Villa,2025-10-31T17:49:10.825383
+Simbavati River Lodge,timbavati-river-lodge,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:49:19.074141
+Simbavati River Lodge,timbavati-river-lodge,2025-11-02,2025-11-04,2,2,1,2,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:49:29.208870
+Simbavati River Lodge,timbavati-river-lodge,2025-11-04,2025-11-06,2,2,1,4,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:49:39.494598
+Simbavati River Lodge,timbavati-river-lodge,2025-11-06,2025-11-08,2,2,1,6,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:49:48.479479
+Simbavati River Lodge,timbavati-river-lodge,2025-11-08,2025-11-10,2,2,1,8,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:49:57.734780
+Simbavati River Lodge,timbavati-river-lodge,2025-11-10,2025-11-12,2,2,1,10,available,50000.0,,25000.0,False,,,,1,1,0,0.0,50000.0,50000.0,50000.0,Tent,2025-10-31T17:50:05.398777
+Simbavati River Lodge,timbavati-river-lodge,2025-11-12,2025-11-14,2,2,1,12,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:50:16.323263
+Simbavati River Lodge,timbavati-river-lodge,2025-11-14,2025-11-16,2,2,1,14,available,,,,False,,,,0,0,0,,,,,,2025-10-31T17:50:26.919912
+Simbavati River Lodge,timbavati-river-lodge,2025-11-16,2025-11-18,2,2,1,16,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:50:36.341993
+Simbavati River Lodge,timbavati-river-lodge,2025-11-18,2025-11-20,2,2,1,18,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:50:48.380454
+Simbavati River Lodge,timbavati-river-lodge,2025-11-20,2025-11-22,2,2,1,20,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:51:00.539537
+Simbavati River Lodge,timbavati-river-lodge,2025-11-22,2025-11-24,2,2,1,22,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:51:12.380391
+Simbavati River Lodge,timbavati-river-lodge,2025-11-24,2025-11-26,2,2,1,24,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:51:22.918196
+Simbavati River Lodge,timbavati-river-lodge,2025-11-26,2025-11-28,2,2,1,26,error,,,,,,,,,,,,,,,,2025-10-31T17:51:35.644116
+Simbavati River Lodge,timbavati-river-lodge,2025-11-28,2025-11-30,2,2,1,28,available,50000.0,,25000.0,False,,,,2,2,0,0.0,50000.0,50000.0,50000.0,"Tent, Suite",2025-10-31T17:51:43.652433
+Simbavati River Lodge,timbavati-river-lodge,2025-11-30,2025-12-02,2,2,1,30,available,50000.0,,25000.0,False,,,,3,3,0,0.0,50000.0,68750.0,56250.0,"Tent, Suite, Family Room",2025-10-31T17:51:50.786929
+Simbavati River Lodge,timbavati-river-lodge,2025-12-02,2025-12-04,2,2,1,32,available,50000.0,,25000.0,False,,,,2,2,0,0.0,50000.0,68750.0,59375.0,"Tent, Family Room",2025-10-31T17:51:57.741118
+Simbavati River Lodge,timbavati-river-lodge,2025-12-04,2025-12-06,2,2,1,34,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:52:05.965109
+Simbavati River Lodge,timbavati-river-lodge,2025-12-06,2025-12-08,2,2,1,36,available,50000.0,,25000.0,False,,,,1,1,0,0.0,50000.0,50000.0,50000.0,Tent,2025-10-31T17:52:14.028464
+Simbavati River Lodge,timbavati-river-lodge,2025-12-08,2025-12-10,2,2,1,38,available,50000.0,,25000.0,False,,,,1,1,0,0.0,50000.0,50000.0,50000.0,Tent,2025-10-31T17:52:19.809819
+Simbavati River Lodge,timbavati-river-lodge,2025-12-10,2025-12-12,2,2,1,40,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:52:28.225277
+Simbavati River Lodge,timbavati-river-lodge,2025-12-12,2025-12-14,2,2,1,42,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:52:39.345425
+Simbavati River Lodge,timbavati-river-lodge,2025-12-14,2025-12-16,2,2,1,44,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:52:48.512623
+Simbavati River Lodge,timbavati-river-lodge,2025-12-16,2025-12-18,2,2,1,46,available,50000.0,,25000.0,False,,,,1,1,0,0.0,50000.0,50000.0,50000.0,Tent,2025-10-31T17:52:56.843631
+Simbavati River Lodge,timbavati-river-lodge,2025-12-18,2025-12-20,2,2,1,48,available,50000.0,,25000.0,False,,,,2,2,0,0.0,50000.0,50000.0,50000.0,"Tent, Suite",2025-10-31T17:53:02.638787
+Simbavati River Lodge,timbavati-river-lodge,2025-12-20,2025-12-22,2,2,1,50,available,52500.0,,26250.0,False,,,,2,2,0,0.0,52500.0,52500.0,52500.0,"Tent, Suite",2025-10-31T17:53:10.361943
+Simbavati River Lodge,timbavati-river-lodge,2025-12-22,2025-12-24,2,2,1,52,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:53:18.963657
+Simbavati River Lodge,timbavati-river-lodge,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:53:28.207427
+Simbavati River Lodge,timbavati-river-lodge,2025-12-26,2025-12-28,2,2,1,56,available,55000.0,,27500.0,False,,,,2,2,0,0.0,55000.0,55000.0,55000.0,"Tent, Suite",2025-10-31T17:53:36.606852
+Simbavati River Lodge,timbavati-river-lodge,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:53:44.537598
+Simbavati River Lodge,timbavati-river-lodge,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:53:53.627317
+Simbavati River Lodge,timbavati-river-lodge,2026-01-01,2026-01-03,2,2,1,62,available,55000.0,,27500.0,False,,,,1,1,0,0.0,55000.0,55000.0,55000.0,Tent,2025-10-31T17:54:00.435449
+Simbavati River Lodge,timbavati-river-lodge,2026-01-03,2026-01-05,2,2,1,64,available,55000.0,,27500.0,False,,,,1,1,0,0.0,55000.0,55000.0,55000.0,Suite,2025-10-31T17:54:06.414525
+Simbavati River Lodge,timbavati-river-lodge,2026-01-05,2026-01-07,2,2,1,66,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:54:16.185255
+Simbavati River Lodge,timbavati-river-lodge,2026-01-07,2026-01-09,2,2,1,68,available,55000.0,,27500.0,False,,,,2,2,0,0.0,55000.0,55000.0,55000.0,"Tent, Suite",2025-10-31T17:54:24.260871
+Simbavati River Lodge,timbavati-river-lodge,2026-01-09,2026-01-11,2,2,1,70,available,55000.0,,27500.0,False,,,,1,1,0,0.0,55000.0,55000.0,55000.0,Suite,2025-10-31T17:54:31.301648
+Simbavati River Lodge,timbavati-river-lodge,2026-01-11,2026-01-13,2,2,1,72,available,55000.0,,27500.0,False,,,,1,1,0,0.0,55000.0,55000.0,55000.0,Suite,2025-10-31T17:54:38.446992
+Simbavati River Lodge,timbavati-river-lodge,2026-01-13,2026-01-15,2,2,1,74,available,55000.0,,27500.0,False,,,,2,2,0,0.0,55000.0,55000.0,55000.0,"Tent, Suite",2025-10-31T17:54:45.677993
+Simbavati River Lodge,timbavati-river-lodge,2026-01-15,2026-01-17,2,2,1,76,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:54:53.712153
+Simbavati River Lodge,timbavati-river-lodge,2026-01-17,2026-01-19,2,2,1,78,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:55:04.570809
+Simbavati River Lodge,timbavati-river-lodge,2026-01-19,2026-01-21,2,2,1,80,available,55000.0,,27500.0,False,,,,2,2,0,0.0,55000.0,55000.0,55000.0,"Tent, Suite",2025-10-31T17:55:11.813371
+Simbavati River Lodge,timbavati-river-lodge,2026-01-21,2026-01-23,2,2,1,82,available,55000.0,,27500.0,False,,,,1,1,0,0.0,55000.0,55000.0,55000.0,Tent,2025-10-31T17:55:19.179337
+Simbavati River Lodge,timbavati-river-lodge,2026-01-23,2026-01-25,2,2,1,84,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:55:28.864237
+Simbavati River Lodge,timbavati-river-lodge,2026-01-25,2026-01-27,2,2,1,86,available,55000.0,,27500.0,False,,,,3,3,0,0.0,55000.0,75626.0,68750.67,"Suite, Chalet, Family Room",2025-10-31T17:55:36.783697
+Simbavati River Lodge,timbavati-river-lodge,2026-01-27,2026-01-29,2,2,1,88,available,55000.0,,27500.0,False,,,,1,1,0,0.0,55000.0,55000.0,55000.0,Suite,2025-10-31T17:55:43.830353
+Simbavati River Lodge,timbavati-river-lodge,2026-01-29,2026-01-31,2,2,1,90,available,75626.0,,37813.0,False,,,,1,1,0,0.0,75626.0,75626.0,75626.0,Chalet,2025-10-31T17:55:51.114215
+Thornybush Game Lodge,thornybush-game-lodge,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:56:00.692241
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-02,2025-11-04,2,2,1,2,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:56:09.112120
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-04,2025-11-06,2,2,1,4,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:56:15.839635
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-06,2025-11-08,2,2,1,6,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:56:23.827622
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-08,2025-11-10,2,2,1,8,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:56:33.958873
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-10,2025-11-12,2,2,1,10,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:56:42.086110
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-12,2025-11-14,2,2,1,12,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:56:50.129359
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-14,2025-11-16,2,2,1,14,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:56:59.313876
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-16,2025-11-18,2,2,1,16,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:57:09.720719
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-18,2025-11-20,2,2,1,18,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:57:18.133650
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-20,2025-11-22,2,2,1,20,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:57:26.762849
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-22,2025-11-24,2,2,1,22,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:57:34.984662
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-24,2025-11-26,2,2,1,24,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:57:43.933154
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-26,2025-11-28,2,2,1,26,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:57:52.796292
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-28,2025-11-30,2,2,1,28,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:00.416131
+Thornybush Game Lodge,thornybush-game-lodge,2025-11-30,2025-12-02,2,2,1,30,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:06.596916
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-02,2025-12-04,2,2,1,32,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:12.037883
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-04,2025-12-06,2,2,1,34,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:18.153652
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-06,2025-12-08,2,2,1,36,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:24.667244
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-08,2025-12-10,2,2,1,38,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:31.159254
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-10,2025-12-12,2,2,1,40,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:37.048187
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-12,2025-12-14,2,2,1,42,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:43.146526
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-14,2025-12-16,2,2,1,44,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:50.242661
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-16,2025-12-18,2,2,1,46,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:58:55.822827
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-18,2025-12-20,2,2,1,48,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:59:04.062917
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-20,2025-12-22,2,2,1,50,available,111000.0,,55500.0,False,,,,1,1,0,0.0,111000.0,111000.0,111000.0,Luxury Suite,2025-10-31T17:59:11.545863
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-22,2025-12-24,2,2,1,52,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:59:20.515211
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:59:30.615037
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-26,2025-12-28,2,2,1,56,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:59:39.491954
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:59:48.674312
+Thornybush Game Lodge,thornybush-game-lodge,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T17:59:57.740916
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-01,2026-01-03,2,2,1,62,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:00:07.790878
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-03,2026-01-05,2,2,1,64,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:00:15.208965
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-05,2026-01-07,2,2,1,66,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:00:24.544367
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-07,2026-01-09,2,2,1,68,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:00:32.728133
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-09,2026-01-11,2,2,1,70,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:00:41.147210
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-11,2026-01-13,2,2,1,72,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:00:50.508546
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-13,2026-01-15,2,2,1,74,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:00:57.311237
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-15,2026-01-17,2,2,1,76,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:01:04.733020
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-17,2026-01-19,2,2,1,78,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:01:11.349902
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-19,2026-01-21,2,2,1,80,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:01:17.511253
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-21,2026-01-23,2,2,1,82,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:01:24.942847
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-23,2026-01-25,2,2,1,84,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:01:31.778374
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-25,2026-01-27,2,2,1,86,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:01:40.742504
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-27,2026-01-29,2,2,1,88,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:01:51.431759
+Thornybush Game Lodge,thornybush-game-lodge,2026-01-29,2026-01-31,2,2,1,90,available,118800.0,,59400.0,False,,,,1,1,0,0.0,118800.0,118800.0,118800.0,Luxury Suite,2025-10-31T18:01:58.487513
+Kapama River Lodge,kapama-river-lodge,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:02:06.729187
+Kapama River Lodge,kapama-river-lodge,2025-11-02,2025-11-04,2,2,1,2,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:02:17.375110
+Kapama River Lodge,kapama-river-lodge,2025-11-04,2025-11-06,2,2,1,4,available,46800.0,,23400.0,False,,,,1,1,0,0.0,46800.0,46800.0,46800.0,Standard Courtyard Facing Suite,2025-10-31T18:02:25.529946
+Kapama River Lodge,kapama-river-lodge,2025-11-06,2025-11-08,2,2,1,6,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:02:34.985074
+Kapama River Lodge,kapama-river-lodge,2025-11-08,2025-11-10,2,2,1,8,available,54000.0,,27000.0,False,,,,1,1,0,0.0,54000.0,54000.0,54000.0,Marula Deluxe Suite,2025-10-31T18:02:41.995997
+Kapama River Lodge,kapama-river-lodge,2025-11-10,2025-11-12,2,2,1,10,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:02:50.681161
+Kapama River Lodge,kapama-river-lodge,2025-11-12,2025-11-14,2,2,1,12,available,,,,False,,,,0,0,0,,,,,,2025-10-31T18:02:59.146952
+Kapama River Lodge,kapama-river-lodge,2025-11-14,2025-11-16,2,2,1,14,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:03:08.817786
+Kapama River Lodge,kapama-river-lodge,2025-11-16,2025-11-18,2,2,1,16,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:03:17.884973
+Kapama River Lodge,kapama-river-lodge,2025-11-18,2025-11-20,2,2,1,18,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:03:27.465320
+Kapama River Lodge,kapama-river-lodge,2025-11-20,2025-11-22,2,2,1,20,available,54000.0,,27000.0,False,,,,1,1,0,0.0,54000.0,54000.0,54000.0,Deluxe Suite,2025-10-31T18:03:35.379203
+Kapama River Lodge,kapama-river-lodge,2025-11-22,2025-11-24,2,2,1,22,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:03:44.544848
+Kapama River Lodge,kapama-river-lodge,2025-11-24,2025-11-26,2,2,1,24,available,46800.0,,23400.0,False,,,,1,1,0,0.0,46800.0,46800.0,46800.0,Standard Courtyard Facing Suite,2025-10-31T18:03:51.486553
+Kapama River Lodge,kapama-river-lodge,2025-11-26,2025-11-28,2,2,1,26,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:04:00.908016
+Kapama River Lodge,kapama-river-lodge,2025-11-28,2025-11-30,2,2,1,28,available,54000.0,,27000.0,False,,,,1,1,0,0.0,54000.0,54000.0,54000.0,Deluxe Suite,2025-10-31T18:04:10.390729
+Kapama River Lodge,kapama-river-lodge,2025-11-30,2025-12-02,2,2,1,30,available,46800.0,,23400.0,False,,,,2,2,0,0.0,46800.0,54000.0,50400.0,"Standard Courtyard Facing Suite, Marula Deluxe Suite",2025-10-31T18:04:19.162239
+Kapama River Lodge,kapama-river-lodge,2025-12-02,2025-12-04,2,2,1,32,available,46800.0,,23400.0,False,,,,2,2,0,0.0,46800.0,54000.0,50400.0,"Standard Courtyard Facing Suite, Marula Deluxe Suite",2025-10-31T18:04:27.183470
+Kapama River Lodge,kapama-river-lodge,2025-12-04,2025-12-06,2,2,1,34,available,46800.0,,23400.0,False,,,,1,1,0,0.0,46800.0,46800.0,46800.0,Standard Courtyard Facing Suite,2025-10-31T18:04:32.609216
+Kapama River Lodge,kapama-river-lodge,2025-12-06,2025-12-08,2,2,1,36,available,46800.0,,23400.0,False,,,,2,2,0,0.0,46800.0,54000.0,50400.0,"Standard Courtyard Facing Suite, Marula Deluxe Suite",2025-10-31T18:04:39.164851
+Kapama River Lodge,kapama-river-lodge,2025-12-08,2025-12-10,2,2,1,38,available,46800.0,,23400.0,False,,,,2,2,0,0.0,46800.0,54000.0,50400.0,"Standard Courtyard Facing Suite, Deluxe Suite",2025-10-31T18:04:45.315516
+Kapama River Lodge,kapama-river-lodge,2025-12-10,2025-12-12,2,2,1,40,available,46800.0,,23400.0,False,,,,2,2,0,0.0,46800.0,54000.0,50400.0,"Standard Courtyard Facing Suite, Deluxe Suite",2025-10-31T18:04:52.532294
+Kapama River Lodge,kapama-river-lodge,2025-12-12,2025-12-14,2,2,1,42,available,46800.0,,23400.0,False,,,,1,1,0,0.0,46800.0,46800.0,46800.0,Standard Courtyard Facing Suite,2025-10-31T18:04:58.411088
+Kapama River Lodge,kapama-river-lodge,2025-12-14,2025-12-16,2,2,1,44,available,46800.0,,23400.0,False,,,,2,2,0,0.0,46800.0,54000.0,50400.0,"Standard Courtyard Facing Suite, Deluxe Suite",2025-10-31T18:05:06.378712
+Kapama River Lodge,kapama-river-lodge,2025-12-16,2025-12-18,2,2,1,46,available,46800.0,,23400.0,False,,,,4,4,0,0.0,46800.0,72000.0,56700.0,"Standard Courtyard Facing Suite, Spa Suite, Deluxe Suite, Royal Suite",2025-10-31T18:05:13.806338
+Kapama River Lodge,kapama-river-lodge,2025-12-18,2025-12-20,2,2,1,48,available,46800.0,,23400.0,False,,,,4,4,0,0.0,46800.0,72000.0,56700.0,"Standard Courtyard Facing Suite, Leadwood Deluxe Suite, Marula Deluxe Suite, Royal Suite",2025-10-31T18:05:20.535441
+Kapama River Lodge,kapama-river-lodge,2025-12-20,2025-12-22,2,2,1,50,available,59984.0,65200.0,29992.0,True,8.0,,,4,4,0,0.0,59984.0,80960.0,65297.0,"Leadwood Deluxe Suite, Marula Deluxe Suite, Standard Courtyard Facing Suite, Royal Suite",2025-10-31T18:05:28.429162
+Kapama River Lodge,kapama-river-lodge,2025-12-22,2025-12-24,2,2,1,52,available,65200.0,,32600.0,False,,,,3,3,0,0.0,65200.0,65500.0,65300.0,"Leadwood Deluxe Suite, Marula Deluxe Suite, Standard Courtyard Facing Suite",2025-10-31T18:05:36.930704
+Kapama River Lodge,kapama-river-lodge,2025-12-24,2025-12-26,2,2,1,54,available,65200.0,,32600.0,False,,,,2,2,0,0.0,65200.0,65500.0,65350.0,"Deluxe Suite, Standard Courtyard Facing Suite",2025-10-31T18:05:44.545065
+Kapama River Lodge,kapama-river-lodge,2025-12-26,2025-12-28,2,2,1,56,available,65200.0,,32600.0,False,,,,2,2,0,0.0,65200.0,65500.0,65350.0,"Spa Suite, Standard Courtyard Facing Suite",2025-10-31T18:05:52.371806
+Kapama River Lodge,kapama-river-lodge,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:06:02.738213
+Kapama River Lodge,kapama-river-lodge,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:06:11.993788
+Kapama River Lodge,kapama-river-lodge,2026-01-01,2026-01-03,2,2,1,62,available,65500.0,,32750.0,False,,,,1,1,0,0.0,65500.0,65500.0,65500.0,Standard Courtyard Facing Suite,2025-10-31T18:06:20.347726
+Kapama River Lodge,kapama-river-lodge,2026-01-03,2026-01-05,2,2,1,64,available,65200.0,,32600.0,False,,,,1,1,0,0.0,65200.0,65200.0,65200.0,Deluxe Suite,2025-10-31T18:06:27.280803
+Kapama River Lodge,kapama-river-lodge,2026-01-05,2026-01-07,2,2,1,66,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,76000.0,67000.0,"Deluxe Suite, Royal Suite",2025-10-31T18:06:33.041295
+Kapama River Lodge,kapama-river-lodge,2026-01-07,2026-01-09,2,2,1,68,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,58000.0,58000.0,"Leadwood Deluxe Suite, Marula Deluxe Suite",2025-10-31T18:06:39.281622
+Kapama River Lodge,kapama-river-lodge,2026-01-09,2026-01-11,2,2,1,70,available,50000.0,,25000.0,False,,,,3,3,0,0.0,50000.0,58000.0,55333.33,"Standard Courtyard Facing Suite, Leadwood Deluxe Suite, Marula Deluxe Suite",2025-10-31T18:06:46.085768
+Kapama River Lodge,kapama-river-lodge,2026-01-11,2026-01-13,2,2,1,72,available,50000.0,,25000.0,False,,,,3,3,0,0.0,50000.0,58000.0,55333.33,"Standard Courtyard Facing Suite, Leadwood Deluxe Suite, Marula Deluxe Suite",2025-10-31T18:06:51.908487
+Kapama River Lodge,kapama-river-lodge,2026-01-13,2026-01-15,2,2,1,74,available,58000.0,,29000.0,False,,,,3,2,1,33.33,58000.0,76000.0,67000.0,"Spa Suite, Deluxe Suite, Royal Suite",2025-10-31T18:06:58.911567
+Kapama River Lodge,kapama-river-lodge,2026-01-15,2026-01-17,2,2,1,76,available,50000.0,,25000.0,False,,,,3,3,0,0.0,50000.0,58000.0,55333.33,"Standard Courtyard Facing Suite, Spa Suite, Deluxe Suite",2025-10-31T18:07:05.856045
+Kapama River Lodge,kapama-river-lodge,2026-01-17,2026-01-19,2,2,1,78,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,58000.0,58000.0,"Spa Suite, Deluxe Suite",2025-10-31T18:07:13.009767
+Kapama River Lodge,kapama-river-lodge,2026-01-19,2026-01-21,2,2,1,80,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:07:21.579529
+Kapama River Lodge,kapama-river-lodge,2026-01-21,2026-01-23,2,2,1,82,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,58000.0,58000.0,"Spa Suite, Deluxe Suite",2025-10-31T18:07:29.477794
+Kapama River Lodge,kapama-river-lodge,2026-01-23,2026-01-25,2,2,1,84,available,50000.0,,25000.0,False,,,,3,3,0,0.0,50000.0,58000.0,55333.33,"Standard Courtyard Facing Suite, Spa Suite, Deluxe Suite",2025-10-31T18:07:36.958386
+Kapama River Lodge,kapama-river-lodge,2026-01-25,2026-01-27,2,2,1,86,available,50000.0,,25000.0,False,,,,2,2,0,0.0,50000.0,58000.0,54000.0,"Standard Courtyard Facing Suite, Deluxe Suite",2025-10-31T18:07:43.905568
+Kapama River Lodge,kapama-river-lodge,2026-01-27,2026-01-29,2,2,1,88,available,50000.0,,25000.0,False,,,,2,2,0,0.0,50000.0,58000.0,54000.0,"Standard Courtyard Facing Suite, Marula Deluxe Suite",2025-10-31T18:07:50.927170
+Kapama River Lodge,kapama-river-lodge,2026-01-29,2026-01-31,2,2,1,90,available,50000.0,,25000.0,False,,,,3,3,0,0.0,50000.0,58000.0,55333.33,"Standard Courtyard Facing Suite, Spa Suite, Deluxe Suite",2025-10-31T18:07:56.670727
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:08:04.966681
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-02,2025-11-04,2,2,1,2,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:08:15.142248
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-04,2025-11-06,2,2,1,4,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:08:23.045106
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-06,2025-11-08,2,2,1,6,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:08:28.772801
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-08,2025-11-10,2,2,1,8,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:08:36.015243
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-10,2025-11-12,2,2,1,10,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:08:45.202976
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-12,2025-11-14,2,2,1,12,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:08:55.496907
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-14,2025-11-16,2,2,1,14,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:09:05.997246
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-16,2025-11-18,2,2,1,16,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:09:16.384226
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-18,2025-11-20,2,2,1,18,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:09:26.943562
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-20,2025-11-22,2,2,1,20,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:09:35.439788
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-22,2025-11-24,2,2,1,22,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:09:43.701838
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-24,2025-11-26,2,2,1,24,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:09:52.792309
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-26,2025-11-28,2,2,1,26,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:10:03.109933
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-28,2025-11-30,2,2,1,28,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:10:13.700718
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-11-30,2025-12-02,2,2,1,30,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:10:20.449263
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-02,2025-12-04,2,2,1,32,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:10:27.528786
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-04,2025-12-06,2,2,1,34,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:10:34.305491
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-06,2025-12-08,2,2,1,36,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:10:40.441220
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-08,2025-12-10,2,2,1,38,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:10:47.806385
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-10,2025-12-12,2,2,1,40,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:10:53.535587
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-12,2025-12-14,2,2,1,42,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:10:59.407281
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-14,2025-12-16,2,2,1,44,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:11:09.153748
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-16,2025-12-18,2,2,1,46,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:11:15.899388
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-18,2025-12-20,2,2,1,48,available,58000.0,,29000.0,False,,,,1,1,0,0.0,58000.0,58000.0,58000.0,Luxury Tent,2025-10-31T18:11:21.903906
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-20,2025-12-22,2,2,1,50,available,70000.0,,35000.0,False,,,,1,1,0,0.0,70000.0,70000.0,70000.0,Luxury Tent,2025-10-31T18:11:27.782846
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-22,2025-12-24,2,2,1,52,available,70000.0,,35000.0,False,,,,1,1,0,0.0,70000.0,70000.0,70000.0,Luxury Tent,2025-10-31T18:11:35.356298
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:11:44.550166
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-26,2025-12-28,2,2,1,56,available,70000.0,,35000.0,False,,,,1,1,0,0.0,70000.0,70000.0,70000.0,Luxury Tent,2025-10-31T18:11:52.319197
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:12:01.760064
+Kapama Buffalo Camp,kapama-buffalo-camp,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:12:10.782952
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-01,2026-01-03,2,2,1,62,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:12:19.726567
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-03,2026-01-05,2,2,1,64,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:12:29.753899
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-05,2026-01-07,2,2,1,66,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:12:37.600169
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-07,2026-01-09,2,2,1,68,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:12:44.856569
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-09,2026-01-11,2,2,1,70,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:12:51.226603
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-11,2026-01-13,2,2,1,72,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:12:56.962823
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-13,2026-01-15,2,2,1,74,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:13:05.038829
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-15,2026-01-17,2,2,1,76,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:13:12.768895
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-17,2026-01-19,2,2,1,78,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:13:19.714993
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-19,2026-01-21,2,2,1,80,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:13:26.360355
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-21,2026-01-23,2,2,1,82,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:13:33.508405
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-23,2026-01-25,2,2,1,84,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:13:39.326286
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-25,2026-01-27,2,2,1,86,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:13:48.998590
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-27,2026-01-29,2,2,1,88,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:13:57.171075
+Kapama Buffalo Camp,kapama-buffalo-camp,2026-01-29,2026-01-31,2,2,1,90,available,62000.0,,31000.0,False,,,,1,1,0,0.0,62000.0,62000.0,62000.0,Luxury Tent,2025-10-31T18:14:08.251585
+Kapama Main Lodge,kapama-private-game-reserve,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:14:18.824926
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-02,2025-11-04,2,2,1,2,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Villa with Private Pool, Standard Suite, Family Villa",2025-10-31T18:14:26.014760
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-04,2025-11-06,2,2,1,4,available,49680.0,87000.0,24840.0,True,42.9,,,3,3,0,0.0,49680.0,129500.0,86406.67,"Villa with Private Pool, Standard Suite, Family Villa",2025-10-31T18:14:33.205423
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-06,2025-11-08,2,2,1,6,available,54000.0,,27000.0,False,,,,2,2,0,0.0,54000.0,129500.0,91750.0,"Standard Suite, Family Villa",2025-10-31T18:14:42.547675
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-08,2025-11-10,2,2,1,8,available,54000.0,,27000.0,False,,,,2,2,0,0.0,54000.0,129500.0,91750.0,"Standard Suite, Family Villa",2025-10-31T18:14:50.004040
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-10,2025-11-12,2,2,1,10,available,129500.0,,64750.0,False,,,,1,1,0,0.0,129500.0,129500.0,129500.0,Family Villa,2025-10-31T18:14:57.554350
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-12,2025-11-14,2,2,1,12,available,87000.0,,43500.0,False,,,,2,2,0,0.0,87000.0,129500.0,108250.0,"Villa with Private Pool, Family Villa",2025-10-31T18:15:05.319089
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-14,2025-11-16,2,2,1,14,available,,,,False,,,,0,0,0,,,,,,2025-10-31T18:15:14.036294
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-16,2025-11-18,2,2,1,16,available,129500.0,,64750.0,False,,,,1,1,0,0.0,129500.0,129500.0,129500.0,Family Villa,2025-10-31T18:15:19.645528
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-18,2025-11-20,2,2,1,18,available,87000.0,,43500.0,False,,,,2,2,0,0.0,87000.0,129500.0,108250.0,"Villa with Private Pool, Family Villa",2025-10-31T18:15:27.606333
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-20,2025-11-22,2,2,1,20,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Villa with Private Pool, Standard Suite, Family Villa",2025-10-31T18:15:34.206745
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-22,2025-11-24,2,2,1,22,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Villa with Private Pool, Standard Suite, Family Villa",2025-10-31T18:15:39.947256
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-24,2025-11-26,2,2,1,24,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Villa with Private Pool, Standard Suite, Family Villa",2025-10-31T18:15:47.158184
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-26,2025-11-28,2,2,1,26,available,54000.0,,27000.0,False,,,,2,2,0,0.0,54000.0,129500.0,91750.0,"Standard Suite, Family Villa",2025-10-31T18:15:53.510921
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-28,2025-11-30,2,2,1,28,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Villa with Private Pool, Standard Suite, Family Villa",2025-10-31T18:16:01.519358
+Kapama Main Lodge,kapama-private-game-reserve,2025-11-30,2025-12-02,2,2,1,30,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Villa with Private Pool, Standard Suite, Family Villa",2025-10-31T18:16:09.866854
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-02,2025-12-04,2,2,1,32,available,87000.0,,43500.0,False,,,,2,2,0,0.0,87000.0,129500.0,108250.0,"Villa with Private Pool, Family Villa",2025-10-31T18:16:15.905778
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-04,2025-12-06,2,2,1,34,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:16:23.164958
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-06,2025-12-08,2,2,1,36,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:16:28.989472
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-08,2025-12-10,2,2,1,38,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:16:35.173547
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-10,2025-12-12,2,2,1,40,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:16:42.066285
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-12,2025-12-14,2,2,1,42,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:16:49.127123
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-14,2025-12-16,2,2,1,44,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:16:55.246430
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-16,2025-12-18,2,2,1,46,available,54000.0,,27000.0,False,,,,2,2,0,0.0,54000.0,87000.0,70500.0,"Standard Suite, Villa with Private Pool",2025-10-31T18:17:02.429263
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-18,2025-12-20,2,2,1,48,available,54000.0,,27000.0,False,,,,3,3,0,0.0,54000.0,129500.0,90166.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:17:08.324882
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-20,2025-12-22,2,2,1,50,available,65200.0,,32600.0,False,,,,3,3,0,0.0,65200.0,155000.0,108066.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:17:15.147084
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-22,2025-12-24,2,2,1,52,available,65200.0,,32600.0,False,,,,2,2,0,0.0,65200.0,104000.0,84600.0,"Standard Suite, Villa with Private Pool",2025-10-31T18:17:20.988525
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-24,2025-12-26,2,2,1,54,available,65200.0,,32600.0,False,,,,2,2,0,0.0,65200.0,104000.0,84600.0,"Standard Suite, Villa with Private Pool",2025-10-31T18:17:27.237418
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-26,2025-12-28,2,2,1,56,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:17:35.522588
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-28,2025-12-30,2,2,1,58,available,104000.0,,52000.0,False,,,,1,1,0,0.0,104000.0,104000.0,104000.0,Villa with Private Pool,2025-10-31T18:17:42.269899
+Kapama Main Lodge,kapama-private-game-reserve,2025-12-30,2026-01-01,2,2,1,60,available,104000.0,,52000.0,False,,,,1,1,0,0.0,104000.0,104000.0,104000.0,Villa with Private Pool,2025-10-31T18:17:49.428790
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-01,2026-01-03,2,2,1,62,available,104000.0,,52000.0,False,,,,1,1,0,0.0,104000.0,104000.0,104000.0,Villa with Private Pool,2025-10-31T18:17:56.265231
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-03,2026-01-05,2,2,1,64,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:18:04.769271
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-05,2026-01-07,2,2,1,66,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,93200.0,75600.0,"Standard Suite, Villa with Private Pool",2025-10-31T18:18:11.614399
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-07,2026-01-09,2,2,1,68,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,93200.0,75600.0,"Standard Suite, Villa with Private Pool",2025-10-31T18:18:18.878124
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-09,2026-01-11,2,2,1,70,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,93200.0,75600.0,"Standard Suite, Villa with Private Pool",2025-10-31T18:18:25.735441
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-11,2026-01-13,2,2,1,72,available,58000.0,,29000.0,False,,,,3,3,0,0.0,58000.0,138800.0,96666.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:18:34.989199
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-13,2026-01-15,2,2,1,74,available,58000.0,,29000.0,False,,,,3,3,0,0.0,58000.0,138800.0,96666.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:18:43.139341
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-15,2026-01-17,2,2,1,76,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,93200.0,75600.0,"Standard Suite, Villa with Private Pool",2025-10-31T18:18:49.216921
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-17,2026-01-19,2,2,1,78,available,93200.0,,46600.0,False,,,,1,1,0,0.0,93200.0,93200.0,93200.0,Villa with Private Pool,2025-10-31T18:18:55.419818
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-19,2026-01-21,2,2,1,80,available,93200.0,,46600.0,False,,,,2,2,0,0.0,93200.0,138800.0,116000.0,"Villa with Private Pool, Family Villa",2025-10-31T18:19:03.030770
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-21,2026-01-23,2,2,1,82,available,58000.0,,29000.0,False,,,,3,3,0,0.0,58000.0,138800.0,96666.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:19:08.811252
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-23,2026-01-25,2,2,1,84,available,58000.0,,29000.0,False,,,,3,3,0,0.0,58000.0,138800.0,96666.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:19:14.802470
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-25,2026-01-27,2,2,1,86,available,58000.0,,29000.0,False,,,,2,2,0,0.0,58000.0,93200.0,75600.0,"Standard Suite, Villa with Private Pool",2025-10-31T18:19:21.051972
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-27,2026-01-29,2,2,1,88,available,58000.0,,29000.0,False,,,,3,3,0,0.0,58000.0,138800.0,96666.67,"Standard Suite, Villa with Private Pool, Family Villa",2025-10-31T18:19:27.963834
+Kapama Main Lodge,kapama-private-game-reserve,2026-01-29,2026-01-31,2,2,1,90,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:19:37.282429
+Kapama Karula Lodge,lodge-kapama-karula,2025-10-31,2025-11-02,2,2,1,0,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:19:46.731595
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-02,2025-11-04,2,2,1,2,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:19:56.291523
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-04,2025-11-06,2,2,1,4,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:20:07.426333
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-06,2025-11-08,2,2,1,6,available,222000.0,,111000.0,False,,,,1,1,0,0.0,222000.0,222000.0,222000.0,Luxury Family Villa - Superior,2025-10-31T18:20:15.960142
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-08,2025-11-10,2,2,1,8,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:20:22.871382
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-10,2025-11-12,2,2,1,10,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:20:28.775969
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-12,2025-11-14,2,2,1,12,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:20:35.315310
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-14,2025-11-16,2,2,1,14,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:20:42.863389
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-16,2025-11-18,2,2,1,16,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:20:50.642645
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-18,2025-11-20,2,2,1,18,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:20:58.458382
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-20,2025-11-22,2,2,1,20,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:21:07.334508
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-22,2025-11-24,2,2,1,22,available,222000.0,,111000.0,False,,,,1,1,0,0.0,222000.0,222000.0,222000.0,Luxury Family Villa - Superior,2025-10-31T18:21:14.413245
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-24,2025-11-26,2,2,1,24,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:21:19.930431
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-26,2025-11-28,2,2,1,26,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:21:26.111786
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-28,2025-11-30,2,2,1,28,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:21:32.594041
+Kapama Karula Lodge,lodge-kapama-karula,2025-11-30,2025-12-02,2,2,1,30,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:21:41.450024
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-02,2025-12-04,2,2,1,32,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:21:48.823744
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-04,2025-12-06,2,2,1,34,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:21:56.699894
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-06,2025-12-08,2,2,1,36,available,222000.0,,111000.0,False,,,,1,1,0,0.0,222000.0,222000.0,222000.0,Luxury Family Villa - Superior,2025-10-31T18:22:04.564683
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-08,2025-12-10,2,2,1,38,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:22:12.072807
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-10,2025-12-12,2,2,1,40,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:22:21.133122
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-12,2025-12-14,2,2,1,42,available,122000.0,,61000.0,False,,,,1,1,0,0.0,122000.0,122000.0,122000.0,Luxury Villa - Superior,2025-10-31T18:22:28.299264
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-14,2025-12-16,2,2,1,44,available,122000.0,,61000.0,False,,,,1,1,0,0.0,122000.0,122000.0,122000.0,Luxury Villa - Superior,2025-10-31T18:22:35.915707
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-16,2025-12-18,2,2,1,46,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:22:42.907173
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-18,2025-12-20,2,2,1,48,available,122000.0,,61000.0,False,,,,2,2,0,0.0,122000.0,222000.0,172000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:22:50.092150
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-20,2025-12-22,2,2,1,50,available,146000.0,,73000.0,False,,,,1,1,0,0.0,146000.0,146000.0,146000.0,Luxury Villa - Superior,2025-10-31T18:23:00.148599
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-22,2025-12-24,2,2,1,52,available,146000.0,,73000.0,False,,,,1,1,0,0.0,146000.0,146000.0,146000.0,Luxury Villa - Superior,2025-10-31T18:23:10.945040
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-24,2025-12-26,2,2,1,54,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:23:21.539658
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-26,2025-12-28,2,2,1,56,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:23:31.082545
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-28,2025-12-30,2,2,1,58,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:23:41.692424
+Kapama Karula Lodge,lodge-kapama-karula,2025-12-30,2026-01-01,2,2,1,60,sold_out,,,,False,,,,0,0,0,,,,,,2025-10-31T18:23:52.075677
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-01,2026-01-03,2,2,1,62,available,146000.0,,73000.0,False,,,,1,1,0,0.0,146000.0,146000.0,146000.0,Luxury Villa - Superior,2025-10-31T18:24:00.169798
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-03,2026-01-05,2,2,1,64,available,146000.0,,73000.0,False,,,,2,2,0,0.0,146000.0,262000.0,204000.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:24:06.194368
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-05,2026-01-07,2,2,1,66,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:24:13.554125
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-07,2026-01-09,2,2,1,68,available,132000.0,,66000.0,False,,,,1,1,0,0.0,132000.0,132000.0,132000.0,Luxury Villa - Superior,2025-10-31T18:24:21.113890
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-09,2026-01-11,2,2,1,70,available,132000.0,,66000.0,False,,,,1,1,0,0.0,132000.0,132000.0,132000.0,Luxury Villa - Superior,2025-10-31T18:24:26.898239
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-11,2026-01-13,2,2,1,72,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:24:33.002940
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-13,2026-01-15,2,2,1,74,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:24:40.531637
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-15,2026-01-17,2,2,1,76,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:24:46.326760
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-17,2026-01-19,2,2,1,78,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:24:52.225359
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-19,2026-01-21,2,2,1,80,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:24:58.220439
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-21,2026-01-23,2,2,1,82,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:25:04.574514
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-23,2026-01-25,2,2,1,84,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:25:10.683630
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-25,2026-01-27,2,2,1,86,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:25:17.794465
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-27,2026-01-29,2,2,1,88,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:25:23.606531
+Kapama Karula Lodge,lodge-kapama-karula,2026-01-29,2026-01-31,2,2,1,90,available,132000.0,,66000.0,False,,,,2,2,0,0.0,132000.0,237000.0,184500.0,"Luxury Villa - Superior, Luxury Family Villa - Superior",2025-10-31T18:25:31.090791

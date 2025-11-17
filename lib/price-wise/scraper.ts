@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto"
 import { spawn } from "child_process"
-import { createWriteStream } from "fs"
+import { createWriteStream, existsSync } from "fs"
 import { promises as fs } from "fs"
 import path from "path"
 
@@ -26,6 +26,74 @@ const DAILY_PROGRESS_FILE = path.join(OUTPUT_DIR, "daily_progress.json")
 const ANALYSIS_JSON = path.join(OUTPUT_DIR, "pricing_analysis.json")
 const PRICING_CSV = path.join(OUTPUT_DIR, "pricing_data.csv")
 const RUN_STATE_FILE = path.join(OUTPUT_DIR, "run_state.json")
+
+const OUTPUT_FALLBACK_DIRS = [
+  path.join(process.cwd(), "public", "data", "price-wise"),
+  path.join(process.cwd(), ".next", "server", "app", "(modules)", "price-wise", "data-acquisition", "outputs"),
+  path.join(process.cwd(), ".next", "standalone", "app", "(modules)", "price-wise", "data-acquisition", "outputs"),
+  path.join(process.cwd(), ".output", "server", "app", "(modules)", "price-wise", "data-acquisition", "outputs"),
+]
+  .filter((value, index, array) => array.indexOf(value) === index)
+
+const ARCHIVE_FALLBACK_DIRS = [
+  path.join(process.cwd(), "public", "data", "price-wise", "archive"),
+  path.join(process.cwd(), ".next", "server", "app", "(modules)", "price-wise", "data-acquisition", "archive"),
+  path.join(process.cwd(), ".next", "standalone", "app", "(modules)", "price-wise", "data-acquisition", "archive"),
+  path.join(process.cwd(), ".output", "server", "app", "(modules)", "price-wise", "data-acquisition", "archive"),
+]
+  .filter((value, index, array) => array.indexOf(value) === index)
+
+const LOGS_FALLBACK_DIRS = [
+  path.join(process.cwd(), ".next", "server", "app", "(modules)", "price-wise", "data-acquisition", "logs"),
+  path.join(process.cwd(), ".next", "standalone", "app", "(modules)", "price-wise", "data-acquisition", "logs"),
+  path.join(process.cwd(), ".output", "server", "app", "(modules)", "price-wise", "data-acquisition", "logs"),
+]
+  .filter((value, index, array) => array.indexOf(value) === index)
+
+function logResolution(message: string, data: Record<string, unknown>) {
+  const parts = Object.entries(data)
+    .map(([key, value]) => `${key}=${value}`)
+    .join(" ")
+  console.info(`[price-wise] ${message} ${parts}`)
+}
+
+function resolveDirectoryWithFallback(primaryDir: string, fallbacks: string[]): string | undefined {
+  if (existsSync(primaryDir)) return primaryDir
+  for (const dir of fallbacks) {
+    if (existsSync(dir)) {
+      logResolution("Resolved fallback directory", { primaryDir, dir })
+      return dir
+    }
+  }
+  logResolution("No readable directory", { primaryDir, fallbacks: fallbacks.length })
+  return undefined
+}
+
+function resolveFileWithFallback(primaryFile: string, fallbacks: string[]): string | undefined {
+  if (existsSync(primaryFile)) return primaryFile
+  const filename = path.basename(primaryFile)
+  for (const dir of fallbacks) {
+    const candidate = path.join(dir, filename)
+    if (existsSync(candidate)) {
+      logResolution("Resolved fallback file", { primaryFile, candidate })
+      return candidate
+    }
+  }
+  logResolution("No readable file", { primaryFile, fallbacks: fallbacks.length })
+  return undefined
+}
+
+function getFallbackCandidates(filePath: string): string[] {
+  if (filePath.startsWith(OUTPUT_DIR)) return OUTPUT_FALLBACK_DIRS
+  if (filePath.startsWith(ARCHIVE_DIR)) return ARCHIVE_FALLBACK_DIRS
+  if (filePath.startsWith(LOGS_DIR)) return LOGS_FALLBACK_DIRS
+  return []
+}
+
+function resolveReadablePath(filePath: string): string | undefined {
+  const resolved = resolveFileWithFallback(filePath, getFallbackCandidates(filePath))
+  return resolved ?? (existsSync(filePath) ? filePath : undefined)
+}
 
 const PYTHON_CMD = process.env.PRICE_WISE_PYTHON || "python"
 const LOG_LINES = 200
@@ -139,7 +207,9 @@ export async function updateScraperConfig(payload: Partial<PriceWiseConfig>) {
 
 async function readJsonFile<T>(filePath: string, fallback: T): Promise<T> {
   try {
-    const raw = await fs.readFile(filePath, "utf-8")
+    const resolvedPath = resolveReadablePath(filePath)
+    if (!resolvedPath) return fallback
+    const raw = await fs.readFile(resolvedPath, "utf-8")
     return JSON.parse(raw) as T
   } catch {
     return fallback
@@ -155,12 +225,22 @@ async function writeRunState(state: RunStateFile) {
 }
 
 async function fileExists(filePath: string): Promise<boolean> {
-  try {
-    await fs.access(filePath)
-    return true
-  } catch {
-    return false
+  const candidates = [filePath]
+  const fallbacks = getFallbackCandidates(filePath)
+  for (const dir of fallbacks) {
+    candidates.push(path.join(dir, path.basename(filePath)))
   }
+
+  for (const candidate of candidates) {
+    try {
+      await fs.access(candidate)
+      return true
+    } catch {
+      // Try next candidate
+    }
+  }
+
+  return false
 }
 
 async function cleanupOldLogs(maxLogs: number = 10): Promise<void> {
@@ -195,9 +275,11 @@ async function cleanupOldLogs(maxLogs: number = 10): Promise<void> {
 
 async function tailFile(filePath: string, maxLines: number): Promise<string[] | undefined> {
   try {
-    const stat = await fs.stat(filePath)
+    const resolvedPath = resolveReadablePath(filePath) ?? filePath
+    if (!existsSync(resolvedPath)) return undefined
+    const stat = await fs.stat(resolvedPath)
     if (stat.size === 0) return []
-    const content = await fs.readFile(filePath, "utf-8")
+    const content = await fs.readFile(resolvedPath, "utf-8")
     const lines = content.split(/\r?\n/).filter(Boolean)
     return lines.slice(-maxLines)
   } catch {
@@ -245,10 +327,11 @@ export async function getDailyPricingData(): Promise<Array<{
   sold_out_room_types?: number | null
   property_occupancy_rate?: number | null
 }>> {
-  if (!(await fileExists(PRICING_CSV))) return []
+  const csvPath = resolveReadablePath(PRICING_CSV)
+  if (!csvPath) return []
   
   try {
-    const csvContent = await fs.readFile(PRICING_CSV, "utf-8")
+    const csvContent = await fs.readFile(csvPath, "utf-8")
     const lines = csvContent.split(/\r?\n/).filter(line => line.trim().length > 0)
 
     if (lines.length < 2) return []
@@ -336,8 +419,12 @@ export async function getScraperStatus(): Promise<PriceWiseStatusPayload> {
 
   // Try to get log from current running state, otherwise use lastRunId to find the log
   let logFilePath = runStateRaw.logFile
+  if (logFilePath) {
+    logFilePath = resolveReadablePath(logFilePath) ?? logFilePath
+  }
   if (!logFilePath && runStateRaw.lastRunId) {
-    logFilePath = path.join(LOGS_DIR, `run-${runStateRaw.lastRunId}.log`)
+    const candidate = path.join(LOGS_DIR, `run-${runStateRaw.lastRunId}.log`)
+    logFilePath = resolveReadablePath(candidate) ?? candidate
   }
   
   const logTail = logFilePath ? await tailFile(logFilePath, LOG_LINES) : undefined
@@ -481,8 +568,10 @@ export async function runAnalyzer(): Promise<void> {
   if (dailyProgress) {
     // Load hotels configuration to check total count
     const hotelsFile = path.join(SCRAPER_ROOT, "config", "urls.json")
+    const resolvedHotelsFile = resolveReadablePath(hotelsFile)
     try {
-      const hotelsData = await fs.readFile(hotelsFile, "utf-8")
+      const filePath = resolvedHotelsFile ?? hotelsFile
+      const hotelsData = await fs.readFile(filePath, "utf-8")
       const hotels = JSON.parse(hotelsData)
       const totalHotels = hotels.length
       const completedCount = dailyProgress.completed_properties?.length || 0
@@ -516,8 +605,10 @@ export async function isAnalysisOutdated(): Promise<boolean> {
     const dailyProgress = await getDailyProgress()
     if (dailyProgress) {
       const hotelsFile = path.join(SCRAPER_ROOT, "config", "urls.json")
+      const resolvedHotelsFile = resolveReadablePath(hotelsFile)
       try {
-        const hotelsData = await fs.readFile(hotelsFile, "utf-8")
+        const filePath = resolvedHotelsFile ?? hotelsFile
+        const hotelsData = await fs.readFile(filePath, "utf-8")
         const hotels = JSON.parse(hotelsData)
         const totalHotels = hotels.length
         const completedCount = dailyProgress.completed_properties?.length || 0
@@ -532,9 +623,13 @@ export async function isAnalysisOutdated(): Promise<boolean> {
       }
     }
 
+    const pricingPath = resolveReadablePath(PRICING_CSV)
+    const analysisPath = resolveReadablePath(ANALYSIS_JSON)
+    if (!pricingPath || !analysisPath) return false
+
     const [pricingStat, analysisStat] = await Promise.all([
-      fs.stat(PRICING_CSV),
-      fs.stat(ANALYSIS_JSON),
+      fs.stat(pricingPath),
+      fs.stat(analysisPath),
     ])
 
     // Analysis is outdated if pricing data is newer AND scraper is complete
@@ -550,7 +645,9 @@ export async function isAnalysisOutdated(): Promise<boolean> {
  */
 async function getLatestArchiveDate(): Promise<string | undefined> {
   try {
-    const files = await fs.readdir(ARCHIVE_DIR)
+    const archiveDir = resolveDirectoryWithFallback(ARCHIVE_DIR, ARCHIVE_FALLBACK_DIRS)
+    if (!archiveDir) return undefined
+    const files = await fs.readdir(archiveDir)
     const archiveFiles = files
       .filter(f => f.startsWith('pricing_data_') && f.endsWith('.csv'))
       .map(f => f.replace('pricing_data_', '').replace('.csv', ''))
@@ -569,11 +666,12 @@ async function getLatestArchiveDate(): Promise<string | undefined> {
  */
 async function parseArchiveAnalysis(dateStr: string): Promise<PriceWiseAnalysis | undefined> {
   const archiveAnalysisPath = path.join(ARCHIVE_DIR, `pricing_analysis_${dateStr}.json`)
+  const resolvedPath = resolveReadablePath(archiveAnalysisPath)
   console.log('[parseArchiveAnalysis] Looking for archive at:', archiveAnalysisPath)
-  const exists = await fileExists(archiveAnalysisPath)
+  const exists = resolvedPath ? await fileExists(resolvedPath) : false
   console.log('[parseArchiveAnalysis] File exists:', exists)
-  if (exists) {
-    const result = await parseJsonToAnalysis(archiveAnalysisPath)
+  if (exists && resolvedPath) {
+    const result = await parseJsonToAnalysis(resolvedPath)
     console.log('[parseArchiveAnalysis] Parse result:', result ? 'Success' : 'Failed')
     return result
   }
@@ -592,9 +690,10 @@ export async function getScraperAnalysis(): Promise<PriceWiseAnalysis | undefine
   // 1. If latest scrape was fully successful AND current analysis exists and valid, use it
   if (latestEntry?.scrape_success && latestEntry?.analysis_success) {
     console.log('[getScraperAnalysis] Latest scrape was successful, checking for analysis file...')
-    if (await fileExists(ANALYSIS_JSON)) {
+    const analysisPath = resolveReadablePath(ANALYSIS_JSON)
+    if (analysisPath && await fileExists(analysisPath)) {
       console.log('[getScraperAnalysis] Analysis file exists, attempting to parse...')
-      const currentAnalysis = await parseJsonToAnalysis(ANALYSIS_JSON)
+      const currentAnalysis = await parseJsonToAnalysis(analysisPath)
       if (currentAnalysis) {
         console.log('[getScraperAnalysis] Successfully parsed current analysis, returning it')
         return currentAnalysis
@@ -654,8 +753,8 @@ export async function getScraperFile(target: string): Promise<{ buffer: Buffer; 
   // Check if it's an archive file (format: archive-YYYYMMDD)
   if (target.startsWith("archive-")) {
     const dateStr = target.replace("archive-", "")
-    const archivePath = path.join(ARCHIVE_DIR, `pricing_data_${dateStr}.csv`)
-    if (!(await fileExists(archivePath))) return undefined
+    const archivePath = resolveReadablePath(path.join(ARCHIVE_DIR, `pricing_data_${dateStr}.csv`))
+    if (!archivePath) return undefined
     const buffer = await fs.readFile(archivePath)
     return { buffer, filename: `pricing_data_${dateStr}.csv`, contentType: "text/csv" }
   }
@@ -667,7 +766,8 @@ export async function getScraperFile(target: string): Promise<{ buffer: Buffer; 
 
   const info = mapping[target]
   if (!info) return undefined
-  if (!(await fileExists(info.path))) return undefined
-  const buffer = await fs.readFile(info.path)
+  const resolvedPath = resolveReadablePath(info.path)
+  if (!resolvedPath || !(await fileExists(resolvedPath))) return undefined
+  const buffer = await fs.readFile(resolvedPath)
   return { buffer, filename: info.filename, contentType: info.contentType }
 }
