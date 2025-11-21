@@ -12,10 +12,15 @@ import { buildSnapshotViews } from "@/lib/price-wise/snapshot-utils"
 import type { PriceWiseSnapshotView } from "@/lib/price-wise/types"
 import { RefreshButton } from "@/components/price-wise-refresh-button"
 import { SimplePriceChart, SimpleOccupancyChart, DailyBookingStatusChart, DailyAvailabilityChart } from "@/components/price-wise/overview-charts"
+import { TrendingUp, TrendingDown } from "lucide-react"
 
 export default async function Page() {
-  const rawSnapshots = await getPriceWiseSnapshots(2)
-  const snapshotViews = buildSnapshotViews(rawSnapshots, ["Current", "Previous"])
+  const rawSnapshots = await getPriceWiseSnapshots(3)
+  const snapshotViews = buildSnapshotViews(rawSnapshots, [
+    "Current (T)",
+    "Previous (T-1)",
+    "Two Periods Back (T-2)",
+  ])
   const latestSnapshot: PriceWiseSnapshotView | null = snapshotViews[0] ?? null
 
   const generatedLabel = latestSnapshot
@@ -29,6 +34,47 @@ export default async function Page() {
   const refOccupancy = referenceProperty
     ? latestSnapshot?.occupancyMetrics.find((metric) => metric.hotel_name === referenceProperty)
     : undefined
+
+  const previousSnapshot = snapshotViews[1] ?? null
+  const prevPricing = referenceProperty && previousSnapshot
+    ? previousSnapshot.pricingMetrics.find((metric) => metric.hotel_name === referenceProperty)
+    : undefined
+  const prevOccupancy = referenceProperty && previousSnapshot
+    ? previousSnapshot.occupancyMetrics.find((metric) => metric.hotel_name === referenceProperty)
+    : undefined
+
+  type DeltaInfo = {
+    delta: number
+    direction: "up" | "down"
+  }
+
+  const formatDelta = (current?: number, previous?: number): DeltaInfo | null => {
+    if (current === undefined || previous === undefined) return null
+    const delta = current - previous
+    if (!Number.isFinite(delta) || delta === 0) return null
+    return {
+      delta,
+      direction: delta > 0 ? "up" : "down",
+    }
+  }
+
+  const renderDeltaBadge = (
+    info: DeltaInfo | null,
+    formatter: (value: number, direction: DeltaInfo["direction"]) => string,
+  ) => {
+    if (!info) return null
+    const { delta, direction } = info
+    const Arrow = direction === "up" ? TrendingUp : TrendingDown
+    const className = direction === "up"
+      ? "flex items-center gap-1 text-xs font-medium text-green-600"
+      : "flex items-center gap-1 text-xs font-medium text-red-600"
+    return (
+      <span className={className}>
+        <Arrow className="h-3 w-3" />
+        {formatter(Math.abs(delta), direction)}
+      </span>
+    )
+  }
 
   const priceChartSnapshots = snapshotViews.map((snapshot) => ({
     id: snapshot.id,
@@ -123,9 +169,15 @@ export default async function Page() {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground mb-2">Average Price/Night</p>
-                        <h3 className="text-3xl font-bold tracking-tight">
-                          R {refPricing.avg_price_per_night.toLocaleString('en-ZA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
-                        </h3>
+                        <div className="flex items-baseline gap-2">
+                          <h3 className="text-3xl font-bold tracking-tight">
+                            R {refPricing.avg_price_per_night.toLocaleString('en-ZA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+                          </h3>
+                          {renderDeltaBadge(
+                            formatDelta(refPricing.avg_price_per_night, prevPricing?.avg_price_per_night),
+                            (value, direction) => `${direction === "up" ? "+" : "-"}R${value.toLocaleString('en-ZA', { maximumFractionDigits: 0 })}`,
+                          )}
+                        </div>
                         <p className="text-xs text-muted-foreground mt-1">
                           {referenceProperty}
                         </p>
@@ -146,9 +198,15 @@ export default async function Page() {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground mb-2">Property Occupancy</p>
-                        <h3 className="text-3xl font-bold tracking-tight">
-                          {refOccupancy.occupancy_rate.toFixed(1)}%
-                        </h3>
+                        <div className="flex items-baseline gap-2">
+                          <h3 className="text-3xl font-bold tracking-tight">
+                            {refOccupancy.occupancy_rate.toFixed(1)}%
+                          </h3>
+                          {renderDeltaBadge(
+                            formatDelta(refOccupancy.occupancy_rate, prevOccupancy?.occupancy_rate),
+                            (value, direction) => `${direction === "up" ? "+" : "-"}${value.toFixed(1)}%`,
+                          )}
+                        </div>
                         <p className="text-xs text-muted-foreground mt-1">
                           Current booking rate
                         </p>
@@ -170,9 +228,18 @@ export default async function Page() {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground mb-2">Property Price Range</p>
-                        <h3 className="text-2xl font-bold tracking-tight">
-                          R {refPricing.min_price.toLocaleString('en-ZA', { minimumFractionDigits: 0 })} - {refPricing.max_price.toLocaleString('en-ZA', { minimumFractionDigits: 0 })}
-                        </h3>
+                        <div className="flex items-baseline gap-2">
+                          <h3 className="text-2xl font-bold tracking-tight">
+                            R {refPricing.min_price.toLocaleString('en-ZA', { minimumFractionDigits: 0 })} - {refPricing.max_price.toLocaleString('en-ZA', { minimumFractionDigits: 0 })}
+                          </h3>
+                          {renderDeltaBadge(
+                            formatDelta(
+                              refPricing.max_price - refPricing.min_price,
+                              prevPricing ? prevPricing.max_price - prevPricing.min_price : undefined,
+                            ),
+                            (value, direction) => `${direction === "up" ? "+" : "-"}R${Math.round(value).toLocaleString('en-ZA', { maximumFractionDigits: 0 })}`,
+                          )}
+                        </div>
                         <p className="text-xs text-muted-foreground mt-1">
                           Min - Max pricing
                         </p>
@@ -195,9 +262,15 @@ export default async function Page() {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground mb-2">Discount Frequency</p>
-                        <h3 className="text-3xl font-bold tracking-tight">
-                          {refPricing.discount_frequency.toFixed(1)}%
-                        </h3>
+                        <div className="flex items-baseline gap-2">
+                          <h3 className="text-3xl font-bold tracking-tight">
+                            {refPricing.discount_frequency.toFixed(1)}%
+                          </h3>
+                          {renderDeltaBadge(
+                            formatDelta(refPricing.discount_frequency, prevPricing?.discount_frequency),
+                            (value, direction) => `${direction === "up" ? "+" : "-"}${value.toFixed(1)}%`,
+                          )}
+                        </div>
                         <p className="text-xs text-muted-foreground mt-1">Discounted listings</p>
                       </div>
                       <div className="rounded-lg bg-pink-500/10 p-3">

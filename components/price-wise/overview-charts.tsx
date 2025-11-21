@@ -140,12 +140,14 @@ export function SimplePriceChart({ snapshots }: SimplePriceChartProps) {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <CardTitle>Average Prices</CardTitle>
             <CardDescription>Average price per night across all properties</CardDescription>
           </div>
-          <SnapshotToggle options={options} value={activeSnapshot.id} onChange={handleSnapshotChange} />
+          <div className="w-full sm:w-auto">
+            <SnapshotToggle options={options} value={activeSnapshot.id} onChange={handleSnapshotChange} />
+          </div>
         </div>
       </CardHeader>
       <CardContent>
@@ -304,12 +306,14 @@ export function SimpleOccupancyChart({ snapshots }: SimpleOccupancyChartProps) {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <CardTitle>Occupancy Rates</CardTitle>
             <CardDescription>Current occupancy percentage for each property</CardDescription>
           </div>
-          <SnapshotToggle options={options} value={activeSnapshot.id} onChange={handleSnapshotChange} />
+          <div className="w-full sm:w-auto">
+            <SnapshotToggle options={options} value={activeSnapshot.id} onChange={handleSnapshotChange} />
+          </div>
         </div>
       </CardHeader>
       <CardContent>
@@ -823,13 +827,15 @@ export function DailyBookingStatusChart({ snapshots }: DailyBookingStatusChartPr
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <CardTitle>90-Day Booking Status Heatmap</CardTitle>
             <CardDescription>White = booked, deeper green = more rooms available</CardDescription>
             <div className="text-xs text-muted-foreground mt-1">{activeSnapshot.fullLabel}</div>
           </div>
-          <SnapshotToggle options={options} value={activeSnapshot.id} onChange={handleSnapshotChange} />
+          <div className="w-full sm:w-auto">
+            <SnapshotToggle options={options} value={activeSnapshot.id} onChange={handleSnapshotChange} />
+          </div>
         </div>
       </CardHeader>
       <CardContent className="p-0">
@@ -1086,13 +1092,15 @@ export function DailyAvailabilityChart({ snapshots }: DailyAvailabilityChartProp
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <CardTitle>Daily Availability Tracking</CardTitle>
             <CardDescription>Properties ranked by booking pressure (lowest availability = highest demand)</CardDescription>
             <div className="text-xs text-muted-foreground mt-1">{activeSnapshot.fullLabel}</div>
           </div>
-          <SnapshotToggle options={options} value={activeSnapshot.id} onChange={handleSnapshotChange} />
+          <div className="w-full sm:w-auto">
+            <SnapshotToggle options={options} value={activeSnapshot.id} onChange={handleSnapshotChange} />
+          </div>
         </div>
       </CardHeader>
       <CardContent>
