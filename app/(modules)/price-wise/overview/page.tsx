@@ -7,112 +7,70 @@ import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { AIButton } from "@/components/ai-button"
 import { Card, CardContent } from "@/components/ui/card"
-import { getScraperAnalysis, getDailyPricingData } from "@/lib/price-wise/scraper"
+import { getPriceWiseSnapshots } from "@/lib/price-wise/scraper"
+import { buildSnapshotViews } from "@/lib/price-wise/snapshot-utils"
+import type { PriceWiseSnapshotView } from "@/lib/price-wise/types"
 import { RefreshButton } from "@/components/price-wise-refresh-button"
 import { SimplePriceChart, SimpleOccupancyChart, DailyBookingStatusChart, DailyAvailabilityChart } from "@/components/price-wise/overview-charts"
 
 export default async function Page() {
-  const analysis = await getScraperAnalysis()
-  const dailyData = await getDailyPricingData()
+  const rawSnapshots = await getPriceWiseSnapshots(2)
+  const snapshotViews = buildSnapshotViews(rawSnapshots, ["Current", "Previous"])
+  const latestSnapshot: PriceWiseSnapshotView | null = snapshotViews[0] ?? null
 
-  const generatedLabel = analysis?.generated_at
-    ? `Generated at ${new Date(analysis.generated_at).toLocaleString()}`
+  const generatedLabel = latestSnapshot
+    ? `Generated ${latestSnapshot.fullLabel}`
     : "No analysis has been produced yet"
 
-  const toNullableNumber = (value: unknown): number | null => {
-    if (typeof value === "number" && Number.isFinite(value)) return value
-    if (typeof value === "string" && value.trim() !== "") {
-      const parsed = Number(value)
-      return Number.isFinite(parsed) ? parsed : null
-    }
-    return null
-  }
+  const referenceProperty = latestSnapshot?.referenceProperty ?? ""
+  const refPricing = referenceProperty
+    ? latestSnapshot?.pricingMetrics.find((metric) => metric.hotel_name === referenceProperty)
+    : undefined
+  const refOccupancy = referenceProperty
+    ? latestSnapshot?.occupancyMetrics.find((metric) => metric.hotel_name === referenceProperty)
+    : undefined
 
-  const toNumberOrZero = (value: unknown): number => toNullableNumber(value) ?? 0
+  const priceChartSnapshots = snapshotViews.map((snapshot) => ({
+    id: snapshot.id,
+    label: snapshot.label,
+    dateLabel: snapshot.dateLabel,
+    fullLabel: snapshot.fullLabel,
+    pricingData: snapshot.pricingMetrics,
+    referenceProperty: snapshot.referenceProperty,
+  }))
 
-  const toHotelName = (value: unknown): string => {
-    if (typeof value === "string") return value.trim()
-    if (typeof value === "number") return value.toString()
-    return ""
-  }
+  const occupancyChartSnapshots = snapshotViews.map((snapshot) => ({
+    id: snapshot.id,
+    label: snapshot.label,
+    dateLabel: snapshot.dateLabel,
+    fullLabel: snapshot.fullLabel,
+    occupancyData: snapshot.occupancyMetrics,
+    roomInventoryData: snapshot.roomInventoryMetrics,
+    referenceProperty: snapshot.referenceProperty,
+  }))
 
-  type PricingMetric = {
-    hotel_name?: string
-    avg_price_per_night?: number | string | null
-    min_price?: number | string | null
-    max_price?: number | string | null
-    discount_frequency?: number | string | null
-    preferred_price_per_night?: number | string | null
-    preferred_price_source?: string | null
-    property_avg_price_per_night?: number | string | null
-    avg_room_price_avg?: number | string | null
-    room_type_count_estimate?: number | string | null
-  }
+  const bookingStatusSnapshots = snapshotViews.map((snapshot) => ({
+    id: snapshot.id,
+    label: snapshot.label,
+    dateLabel: snapshot.dateLabel,
+    fullLabel: snapshot.fullLabel,
+    dailyData: snapshot.dailyData,
+    referenceProperty: snapshot.referenceProperty,
+    roomInventoryData: snapshot.roomInventoryMetrics,
+  }))
 
-  type OccupancyMetric = {
-    hotel_name?: string
-    occupancy_rate?: number | string | null
-    preferred_occupancy_rate?: number | string | null
-    preferred_occupancy_source?: string | null
-    property_occupancy_rate?: number | string | null
-    avg_room_occupancy_rate?: number | string | null
-    sold_out?: number | string | null
-    available?: number | string | null
-    room_type_count_estimate?: number | string | null
-  }
+  const availabilitySnapshots = snapshotViews.map((snapshot) => ({
+    id: snapshot.id,
+    label: snapshot.label,
+    dateLabel: snapshot.dateLabel,
+    fullLabel: snapshot.fullLabel,
+    dailyData: snapshot.dailyData,
+    referenceProperty: snapshot.referenceProperty,
+  }))
 
-  type RoomInventoryMetric = {
-    hotel_name?: string
-    avg_room_occupancy_rate?: number | string | null
-    avg_total_room_types?: number | string | null
-    avg_available_room_types?: number | string | null
-    avg_sold_out_room_types?: number | string | null
-    room_type_count_estimate?: number | string | null
-  }
-
-  const pricingMetrics = ((analysis?.pricing_metrics as PricingMetric[] | undefined) ?? [])
-    .map((entry) => ({
-      hotel_name: toHotelName(entry.hotel_name),
-      avg_price_per_night: toNumberOrZero(entry.avg_price_per_night),
-      min_price: toNumberOrZero(entry.min_price),
-      max_price: toNumberOrZero(entry.max_price),
-      discount_frequency: toNumberOrZero(entry.discount_frequency),
-      preferred_price_per_night: toNullableNumber(entry.preferred_price_per_night),
-      preferred_price_source: entry.preferred_price_source ?? null,
-      property_avg_price_per_night: toNullableNumber(entry.property_avg_price_per_night),
-      avg_room_price_avg: toNullableNumber(entry.avg_room_price_avg),
-      room_type_count_estimate: toNullableNumber(entry.room_type_count_estimate),
-    }))
-    .filter((entry) => entry.hotel_name.length > 0)
-
-  const occupancyMetrics = ((analysis?.occupancy_metrics as OccupancyMetric[] | undefined) ?? [])
-    .map((entry) => ({
-      hotel_name: toHotelName(entry.hotel_name),
-      occupancy_rate: toNumberOrZero(entry.occupancy_rate),
-      preferred_occupancy_rate: toNullableNumber(entry.preferred_occupancy_rate),
-      preferred_occupancy_source: entry.preferred_occupancy_source ?? null,
-      property_occupancy_rate: toNullableNumber(entry.property_occupancy_rate),
-      avg_room_occupancy_rate: toNullableNumber(entry.avg_room_occupancy_rate),
-      sold_out: toNumberOrZero(entry.sold_out),
-      available: toNumberOrZero(entry.available),
-      room_type_count_estimate: toNullableNumber(entry.room_type_count_estimate),
-    }))
-    .filter((entry) => entry.hotel_name.length > 0)
-
-  const roomInventoryMetrics = ((analysis?.room_inventory as RoomInventoryMetric[] | undefined) ?? [])
-    .map((entry) => ({
-      hotel_name: toHotelName(entry.hotel_name),
-      avg_room_occupancy_rate: toNullableNumber(entry.avg_room_occupancy_rate),
-      avg_total_room_types: toNullableNumber(entry.avg_total_room_types),
-      avg_available_room_types: toNullableNumber(entry.avg_available_room_types),
-      avg_sold_out_room_types: toNullableNumber(entry.avg_sold_out_room_types),
-      room_type_count_estimate: toNullableNumber(entry.room_type_count_estimate),
-    }))
-    .filter((entry) => entry.hotel_name.length > 0)
-
-  // Find reference property data
-  const refPricing = pricingMetrics.find((p) => p.hotel_name === analysis?.reference_property)
-  const refOccupancy = occupancyMetrics.find((o) => o.hotel_name === analysis?.reference_property)
+  const hasPricingData = snapshotViews.some((snapshot) => snapshot.pricingMetrics.length > 0)
+  const hasOccupancyData = snapshotViews.some((snapshot) => snapshot.occupancyMetrics.length > 0)
+  const hasDailyData = snapshotViews.some((snapshot) => snapshot.dailyData.length > 0)
 
   return (
     <>
@@ -130,7 +88,7 @@ export default async function Page() {
             </Breadcrumb>
           </div>
           <div className="flex items-center gap-2">
-            <RefreshButton lastUpdated={analysis?.generated_at || null} />
+            <RefreshButton lastUpdated={latestSnapshot?.generatedAt ?? null} />
             <AIButton currentPage="Price-Wise - Overview" />
           </div>
         </div>
@@ -147,7 +105,7 @@ export default async function Page() {
           </div>
         </div>
 
-        {!analysis ? (
+        {snapshotViews.length === 0 ? (
           <Card>
             <CardContent className="py-8">
               <p className="text-sm text-muted-foreground text-center">
@@ -166,10 +124,10 @@ export default async function Page() {
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground mb-2">Average Price/Night</p>
                         <h3 className="text-3xl font-bold tracking-tight">
-                          R {Number(refPricing.avg_price_per_night || 0).toLocaleString('en-ZA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+                          R {refPricing.avg_price_per_night.toLocaleString('en-ZA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                         </h3>
                         <p className="text-xs text-muted-foreground mt-1">
-                          {analysis.reference_property}
+                          {referenceProperty}
                         </p>
                       </div>
                       <div className="rounded-lg bg-primary/10 p-3">
@@ -189,7 +147,7 @@ export default async function Page() {
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground mb-2">Property Occupancy</p>
                         <h3 className="text-3xl font-bold tracking-tight">
-                          {Number(refOccupancy.occupancy_rate || 0).toFixed(1)}%
+                          {refOccupancy.occupancy_rate.toFixed(1)}%
                         </h3>
                         <p className="text-xs text-muted-foreground mt-1">
                           Current booking rate
@@ -213,7 +171,7 @@ export default async function Page() {
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground mb-2">Property Price Range</p>
                         <h3 className="text-2xl font-bold tracking-tight">
-                          R {Number(refPricing.min_price || 0).toLocaleString('en-ZA', { minimumFractionDigits: 0 })} - {Number(refPricing.max_price || 0).toLocaleString('en-ZA', { minimumFractionDigits: 0 })}
+                          R {refPricing.min_price.toLocaleString('en-ZA', { minimumFractionDigits: 0 })} - {refPricing.max_price.toLocaleString('en-ZA', { minimumFractionDigits: 0 })}
                         </h3>
                         <p className="text-xs text-muted-foreground mt-1">
                           Min - Max pricing
@@ -238,7 +196,7 @@ export default async function Page() {
                       <div className="flex-1">
                         <p className="text-sm text-muted-foreground mb-2">Discount Frequency</p>
                         <h3 className="text-3xl font-bold tracking-tight">
-                          {Number(refPricing.discount_frequency || 0).toFixed(1)}%
+                          {refPricing.discount_frequency.toFixed(1)}%
                         </h3>
                         <p className="text-xs text-muted-foreground mt-1">Discounted listings</p>
                       </div>
@@ -260,35 +218,29 @@ export default async function Page() {
 
             {/* Data Overview Charts */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {pricingMetrics.length > 0 && (
+              {hasPricingData && (
                 <SimplePriceChart 
-                  pricingData={pricingMetrics}
-                  referenceProperty={analysis.reference_property}
+                  snapshots={priceChartSnapshots}
                 />
               )}
-              {occupancyMetrics.length > 0 && (
+              {hasOccupancyData && (
                 <SimpleOccupancyChart 
-                  occupancyData={occupancyMetrics}
-                  roomInventoryData={roomInventoryMetrics}
-                  referenceProperty={analysis.reference_property}
+                  snapshots={occupancyChartSnapshots}
                 />
               )}
             </div>
 
             {/* Daily Booking Status with Competitor Comparison */}
-            {dailyData.length > 0 && (
+            {hasDailyData && (
               <DailyBookingStatusChart 
-                dailyData={dailyData}
-                referenceProperty={analysis.reference_property}
-                roomInventoryData={roomInventoryMetrics}
+                snapshots={bookingStatusSnapshots}
               />
             )}
 
             {/* Daily Availability Tracking */}
-            {dailyData.length > 0 && (
+            {hasDailyData && (
               <DailyAvailabilityChart 
-                dailyData={dailyData}
-                referenceProperty={analysis.reference_property}
+                snapshots={availabilitySnapshots}
               />
             )}
           </>

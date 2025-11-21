@@ -72,3 +72,91 @@ export type PriceWiseAnalysis = {
   comparison?: Array<Record<string, number | string | null>>
   room_inventory?: Array<Record<string, number | string | boolean | null>>
 }
+
+export type PriceWiseDailyPricingRecord = {
+  hotel_name: string
+  check_in_date: string
+  availability: string
+  total_price: number | null
+  day_offset: number
+  total_room_types?: number | null
+  available_room_types?: number | null
+  sold_out_room_types?: number | null
+  property_occupancy_rate?: number | null
+}
+
+export type PriceWiseSnapshot = {
+  id: string
+  source: "current" | "archive"
+  generatedAt: string | null
+  analysis: PriceWiseAnalysis
+  dailyData: PriceWiseDailyPricingRecord[]
+}
+
+export type PriceWisePricingMetricView = {
+  hotel_name: string
+  avg_price_per_night: number
+  min_price: number
+  max_price: number
+  discount_frequency: number
+  preferred_price_per_night: number | null
+  preferred_price_source: string | null
+  preferred_price_range: number | null
+  avg_min_room_price: number | null
+  avg_max_room_price: number | null
+  property_avg_price_per_night: number | null
+  property_min_price: number | null
+  property_max_price: number | null
+  avg_room_price_avg: number | null
+  room_type_count_estimate: number | null
+}
+
+export type PriceWiseOccupancyMetricView = {
+  hotel_name: string
+  occupancy_rate: number
+  preferred_occupancy_rate: number | null
+  preferred_occupancy_source: string | null
+  property_occupancy_rate: number | null
+  avg_room_occupancy_rate: number | null
+  sold_out: number
+  available: number
+  room_type_count_estimate: number | null
+}
+
+export type PriceWiseRoomInventoryMetricView = {
+  hotel_name: string
+  avg_room_occupancy_rate: number | null
+  avg_total_room_types: number | null
+  avg_available_room_types: number | null
+  avg_sold_out_room_types: number | null
+  room_type_count_estimate: number | null
+  avg_room_price: number | null
+  avg_room_price_avg: number | null
+  room_price_spread: number | null
+  room_price_spread_pct: number | null
+  uses_room_tiering: boolean
+}
+
+export type PriceWiseComparisonMetricView = {
+  hotel_name: string
+  avg_price: number
+  price_vs_ref: number
+  price_vs_ref_pct: number
+  occupancy: number
+  position: string
+}
+
+export type PriceWiseSnapshotView = {
+  id: string
+  source: "current" | "archive"
+  generatedAt: string | null
+  label: string
+  dateLabel: string
+  fullLabel: string
+  referenceProperty: string
+  pricingMetrics: PriceWisePricingMetricView[]
+  occupancyMetrics: PriceWiseOccupancyMetricView[]
+  roomInventoryMetrics: PriceWiseRoomInventoryMetricView[]
+  comparisonMetrics: PriceWiseComparisonMetricView[]
+  dailyData: PriceWiseDailyPricingRecord[]
+}

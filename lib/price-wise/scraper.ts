@@ -7,9 +7,11 @@ import path from "path"
 import type {
   PriceWiseAnalysis,
   PriceWiseConfig,
+  PriceWiseDailyPricingRecord,
   PriceWiseDailyProgress,
   PriceWiseHistoryEntry,
   PriceWiseRunState,
+  PriceWiseSnapshot,
   PriceWiseStatusPayload,
 } from "./types"
 
@@ -316,22 +318,9 @@ export async function getDailyProgress(): Promise<PriceWiseDailyProgress | undef
   return readJsonFile<PriceWiseDailyProgress | undefined>(DAILY_PROGRESS_FILE, undefined)
 }
 
-export async function getDailyPricingData(): Promise<Array<{
-  hotel_name: string
-  check_in_date: string
-  availability: string
-  total_price: number | null
-  day_offset: number
-  total_room_types?: number | null
-  available_room_types?: number | null
-  sold_out_room_types?: number | null
-  property_occupancy_rate?: number | null
-}>> {
-  const csvPath = resolveReadablePath(PRICING_CSV)
-  if (!csvPath) return []
-  
+async function readDailyPricingCsv(filePath: string): Promise<PriceWiseDailyPricingRecord[]> {
   try {
-    const csvContent = await fs.readFile(csvPath, "utf-8")
+    const csvContent = await fs.readFile(filePath, "utf-8")
     const lines = csvContent.split(/\r?\n/).filter(line => line.trim().length > 0)
 
     if (lines.length < 2) return []
@@ -378,29 +367,38 @@ export async function getDailyPricingData(): Promise<Array<{
       return Number.isFinite(value) ? value : null
     }
 
-    return lines.slice(1).map(line => {
-      const columns = parseLine(line)
-      const totalRooms = parseNumber(columns, "total_room_types")
-      const availableRooms = parseNumber(columns, "available_room_types")
-      const soldRooms = parseNumber(columns, "sold_out_room_types")
-      const dayOffset = parseNumber(columns, "day_offset")
+    return lines
+      .slice(1)
+      .map<PriceWiseDailyPricingRecord>((line) => {
+        const columns = parseLine(line)
+        const totalRooms = parseNumber(columns, "total_room_types")
+        const availableRooms = parseNumber(columns, "available_room_types")
+        const soldRooms = parseNumber(columns, "sold_out_room_types")
+        const dayOffset = parseNumber(columns, "day_offset")
 
-      return {
-        hotel_name: getValue(columns, "hotel_name"),
-        check_in_date: getValue(columns, "check_in_date"),
-        availability: getValue(columns, "availability"),
-        total_price: parseNumber(columns, "total_price"),
-        day_offset: dayOffset != null ? Math.trunc(dayOffset) : 0,
-        total_room_types: totalRooms,
-        available_room_types: availableRooms,
-        sold_out_room_types: soldRooms,
-        property_occupancy_rate: parseNumber(columns, "property_occupancy_rate"),
-      }
-    }).filter(row => row.hotel_name && row.check_in_date)
+        return {
+          hotel_name: getValue(columns, "hotel_name"),
+          check_in_date: getValue(columns, "check_in_date"),
+          availability: getValue(columns, "availability"),
+          total_price: parseNumber(columns, "total_price"),
+          day_offset: dayOffset != null ? Math.trunc(dayOffset) : 0,
+          total_room_types: totalRooms,
+          available_room_types: availableRooms,
+          sold_out_room_types: soldRooms,
+          property_occupancy_rate: parseNumber(columns, "property_occupancy_rate"),
+        }
+      })
+      .filter((row) => row.hotel_name && row.check_in_date)
   } catch (error) {
     console.error("Error reading daily pricing data:", error)
     return []
   }
+}
+
+export async function getDailyPricingData(): Promise<PriceWiseDailyPricingRecord[]> {
+  const csvPath = resolveReadablePath(PRICING_CSV)
+  if (!csvPath) return []
+  return readDailyPricingCsv(csvPath)
 }
 
 export async function getScraperStatus(): Promise<PriceWiseStatusPayload> {
@@ -638,110 +636,106 @@ export async function isAnalysisOutdated(): Promise<boolean> {
     return false
   }
 }
-
-/**
- * Get the latest archive file date from the archive directory
- * Returns YYYYMMDD format or undefined if no archives exist
- */
-async function getLatestArchiveDate(): Promise<string | undefined> {
+async function listArchiveDates(): Promise<string[]> {
   try {
     const archiveDir = resolveDirectoryWithFallback(ARCHIVE_DIR, ARCHIVE_FALLBACK_DIRS)
-    if (!archiveDir) return undefined
+    if (!archiveDir) return []
     const files = await fs.readdir(archiveDir)
-    const archiveFiles = files
-      .filter(f => f.startsWith('pricing_data_') && f.endsWith('.csv'))
-      .map(f => f.replace('pricing_data_', '').replace('.csv', ''))
-      .sort()
-      .reverse()
-    
-    return archiveFiles[0]
+    const dates = files
+      .filter((filename) => filename.startsWith("pricing_analysis_") && filename.endsWith(".json"))
+      .map((filename) => filename.replace("pricing_analysis_", "").replace(".json", ""))
+      .filter(Boolean)
+
+    const unique = Array.from(new Set(dates))
+    return unique.sort((a, b) => b.localeCompare(a))
   } catch {
-    return undefined
+    return []
   }
 }
 
-/**
- * Parse analysis JSON from an archive file
- * This assumes the archive has a corresponding analysis JSON in the archive folder
- */
-async function parseArchiveAnalysis(dateStr: string): Promise<PriceWiseAnalysis | undefined> {
-  const archiveAnalysisPath = path.join(ARCHIVE_DIR, `pricing_analysis_${dateStr}.json`)
-  const resolvedPath = resolveReadablePath(archiveAnalysisPath)
-  console.log('[parseArchiveAnalysis] Looking for archive at:', archiveAnalysisPath)
-  const exists = resolvedPath ? await fileExists(resolvedPath) : false
-  console.log('[parseArchiveAnalysis] File exists:', exists)
-  if (exists && resolvedPath) {
-    const result = await parseJsonToAnalysis(resolvedPath)
-    console.log('[parseArchiveAnalysis] Parse result:', result ? 'Success' : 'Failed')
-    return result
+async function loadSnapshotFromFiles(params: {
+  id: string
+  source: "current" | "archive"
+  analysisPath: string
+  csvPath?: string
+}): Promise<PriceWiseSnapshot | undefined> {
+  const resolvedAnalysisPath = resolveReadablePath(params.analysisPath)
+  if (!resolvedAnalysisPath) return undefined
+
+  const analysis = await parseJsonToAnalysis(resolvedAnalysisPath)
+  if (!analysis) return undefined
+
+  let dailyData: PriceWiseDailyPricingRecord[] = []
+  if (params.csvPath) {
+    const resolvedCsvPath = resolveReadablePath(params.csvPath)
+    if (resolvedCsvPath) {
+      dailyData = await readDailyPricingCsv(resolvedCsvPath)
+    }
   }
-  return undefined
+
+  const generatedAt = analysis.generated_at ? String(analysis.generated_at) : null
+
+  return {
+    id: params.id,
+    source: params.source,
+    generatedAt,
+    analysis,
+    dailyData,
+  }
+}
+
+export async function getPriceWiseSnapshots(limit: number = 2): Promise<PriceWiseSnapshot[]> {
+  const target = Math.max(limit, 1)
+  const snapshots: PriceWiseSnapshot[] = []
+  const seenGeneratedAt = new Set<string>()
+
+  const addSnapshot = (snapshot: PriceWiseSnapshot | undefined) => {
+    if (!snapshot) return false
+    const key = snapshot.generatedAt || snapshot.id
+    if (seenGeneratedAt.has(key)) return false
+    seenGeneratedAt.add(key)
+    snapshots.push(snapshot)
+    return snapshots.length >= target
+  }
+
+  if (addSnapshot(await loadSnapshotFromFiles({
+    id: "current",
+    source: "current",
+    analysisPath: ANALYSIS_JSON,
+    csvPath: PRICING_CSV,
+  }))) {
+    return snapshots
+  }
+
+  const archiveDates = await listArchiveDates()
+  for (const dateStr of archiveDates) {
+    const done = addSnapshot(await loadSnapshotFromFiles({
+      id: `archive-${dateStr}`,
+      source: "archive",
+      analysisPath: path.join(ARCHIVE_DIR, `pricing_analysis_${dateStr}.json`),
+      csvPath: path.join(ARCHIVE_DIR, `pricing_data_${dateStr}.csv`),
+    }))
+    if (done) break
+  }
+
+  if (snapshots.length === 0) {
+    const fallback = await loadSnapshotFromFiles({
+      id: "current",
+      source: "current",
+      analysisPath: ANALYSIS_JSON,
+      csvPath: PRICING_CSV,
+    })
+    if (fallback) {
+      snapshots.push(fallback)
+    }
+  }
+
+  return snapshots
 }
 
 export async function getScraperAnalysis(): Promise<PriceWiseAnalysis | undefined> {
-  // Get scrape history
-  const history = await getScraperHistory()
-  const latestEntry = history[0] // Already sorted by timestamp descending
-  
-  console.log('[getScraperAnalysis] Latest entry:', latestEntry)
-  
-  // Strategy: Always try to find the latest successful analysis, whether it's current or archived
-  
-  // 1. If latest scrape was fully successful AND current analysis exists and valid, use it
-  if (latestEntry?.scrape_success && latestEntry?.analysis_success) {
-    console.log('[getScraperAnalysis] Latest scrape was successful, checking for analysis file...')
-    const analysisPath = resolveReadablePath(ANALYSIS_JSON)
-    if (analysisPath && await fileExists(analysisPath)) {
-      console.log('[getScraperAnalysis] Analysis file exists, attempting to parse...')
-      const currentAnalysis = await parseJsonToAnalysis(analysisPath)
-      if (currentAnalysis) {
-        console.log('[getScraperAnalysis] Successfully parsed current analysis, returning it')
-        return currentAnalysis
-      }
-      console.log('[getScraperAnalysis] Current analysis file is corrupted/empty, will try archive')
-    }
-  }
-  
-  // 2. Find the latest successful scrape from history (could be current or past)
-  console.log('[getScraperAnalysis] Looking for latest successful scrape...')
-  const latestSuccessful = history.find(entry => entry.scrape_success && entry.analysis_success)
-  
-  if (!latestSuccessful) {
-    console.log('[getScraperAnalysis] No successful scrapes found in history')
-    return undefined
-  }
-  
-  console.log('[getScraperAnalysis] Latest successful scrape:', latestSuccessful.timestamp)
-  
-  // 3. Look for archive analysis matching this successful scrape
-  const scrapeDate = new Date(latestSuccessful.timestamp)
-  const dateStr = scrapeDate.toISOString().split('T')[0].replace(/-/g, '') // YYYYMMDD
-  
-  console.log('[getScraperAnalysis] Looking for archive with date:', dateStr)
-  
-  // Check archive for this date
-  const archiveAnalysis = await parseArchiveAnalysis(dateStr)
-  if (archiveAnalysis) {
-    console.log('[getScraperAnalysis] Found archive analysis for date:', dateStr)
-    return archiveAnalysis
-  }
-  
-  console.log('[getScraperAnalysis] No archive found for date:', dateStr)
-  
-  // 4. Last resort: try the most recent archive file
-  console.log('[getScraperAnalysis] Trying most recent archive as last resort...')
-  const latestArchiveDate = await getLatestArchiveDate()
-  if (latestArchiveDate) {
-    console.log('[getScraperAnalysis] Latest archive date:', latestArchiveDate)
-    const finalArchiveAnalysis = await parseArchiveAnalysis(latestArchiveDate)
-    if (finalArchiveAnalysis) {
-      console.log('[getScraperAnalysis] Returning latest archive analysis')
-      return finalArchiveAnalysis
-    }
-  }
-  
-  console.log('[getScraperAnalysis] No analysis available')
-  return undefined
+  const snapshots = await getPriceWiseSnapshots(1)
+  return snapshots[0]?.analysis
 }
 
 export async function getScraperReportMarkdown(): Promise<string | undefined> {
