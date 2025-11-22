@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "sync:pricewise": "node ./scripts/sync-pricewise-data.mjs",
+    "build": "npm run sync:pricewise && next build",
     "start": "next start",
     "lint": "next lint"
   },
