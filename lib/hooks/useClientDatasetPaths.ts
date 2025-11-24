@@ -17,12 +17,14 @@ export type ClientDatasetPaths = {
   clientSlug: string | null
   masterConfigPath: string | null
   logoPath: string | null
+  logoIconPath: string | null
 }
 
 const EMPTY_PATHS: ClientDatasetPaths = {
   clientSlug: null,
   masterConfigPath: null,
   logoPath: null,
+  logoIconPath: null,
 }
 
 function slugifyClient(value: string | null | undefined): string | null {
@@ -65,6 +67,7 @@ function computePaths(cache?: SidebarCacheSnapshot | null): ClientDatasetPaths {
     clientSlug: slug,
     masterConfigPath: `${base}/master-config.csv?v=${MASTER_CONFIG_VERSION}`,
     logoPath: `${base}/logo.png`,
+    logoIconPath: `${base}/logo_icon.png`,
   }
 }
 
@@ -72,7 +75,8 @@ function arePathsEqual(a: ClientDatasetPaths, b: ClientDatasetPaths): boolean {
   return (
     a.clientSlug === b.clientSlug &&
     a.masterConfigPath === b.masterConfigPath &&
-    a.logoPath === b.logoPath
+    a.logoPath === b.logoPath &&
+    a.logoIconPath === b.logoIconPath
   )
 }
 

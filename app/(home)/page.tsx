@@ -114,8 +114,24 @@ export default function Page() {
   const [dataOnlyFlag, setDataOnlyFlag] = useState<'yes' | 'no'>('no')
 
   useEffect(() => {
-    setHeroLogoSrc(logoPath ?? '/logo_avure.png')
+    if (logoPath) {
+      setHeroLogoSrc(logoPath)
+      return
+    }
+    setHeroLogoSrc('/logo_avure.png')
   }, [logoPath])
+
+  const handleHeroLogoError = () => {
+    setHeroLogoSrc((current) => {
+      if (logoPath && current !== logoPath) {
+        return logoPath
+      }
+      if (current !== '/logo_avure.png') {
+        return '/logo_avure.png'
+      }
+      return current
+    })
+  }
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (u) => {
@@ -297,6 +313,7 @@ export default function Page() {
                     width={160}
                     height={44}
                     priority
+                    onError={handleHeroLogoError}
                   />
                 </div>
                 <p className="text-muted-foreground">

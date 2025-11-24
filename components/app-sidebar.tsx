@@ -18,6 +18,7 @@ import {
 
 import { auth, db } from "@/lib/firebaseClient"
 import { computeClientSlug } from "@/lib/slug"
+import { useClientDatasetPaths } from "@/lib/hooks/useClientDatasetPaths"
 import { onAuthStateChanged } from "firebase/auth"
 import {
   collection,
@@ -42,6 +43,7 @@ type SidebarCache = {
   clientSlug: string | null
   clientName: string
   clientLogo: string | null
+  clientIcon: string | null
   teams: { name: string; logo: React.ComponentType; plan: string }[]
   allowedModules: string[]
   showUnsubscribedModules: boolean
@@ -105,6 +107,8 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   } | null>(null)
   const [clientName, setClientName] = React.useState<string>("")
   const [clientLogo, setClientLogo] = React.useState<string | null>(null)
+  const [clientIcon, setClientIcon] = React.useState<string | null>(null)
+  const [sidebarLogoSrc, setSidebarLogoSrc] = React.useState<string>(TRANSPARENT_PNG)
   const [, setTeams] = React.useState<
     { name: string; logo: React.ComponentType; plan: string }[]
   >([])
@@ -131,6 +135,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         setUserInfo(null)
         setClientName("")
         setClientLogo(null)
+        setClientIcon(null)
         setTeams([])
         setAllowedModules([])
         setShowUnsubscribedModules(false)
@@ -144,6 +149,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
       let clientIdFromUser: string | undefined
       let clientSlug: string | null = null
       let cachedLogo: string | null = null
+  let cachedIcon: string | null = null
       let nextDataVisible: "yes" | "no" = "yes"
       let nextDataOnly: "yes" | "no" = "no"
 
@@ -152,6 +158,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         setUserInfo(cached.userInfo)
         setClientName(cached.clientName)
         setClientLogo(cached.clientLogo)
+        setClientIcon(cached.clientIcon ?? null)
         setTeams(cached.teams)
         setAllowedModules(cached.allowedModules)
         setShowUnsubscribedModules(cached.showUnsubscribedModules || false)
@@ -159,6 +166,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         clientIdFromUser = cached.clientId ?? clientIdFromUser
         clientSlug = cached.clientSlug ?? clientSlug
         cachedLogo = cached.clientLogo ?? cachedLogo
+        cachedIcon = cached.clientIcon ?? cachedIcon
         nextDataVisible = cached.dataVisible ?? "yes"
         nextDataOnly = cached.dataOnly ?? "no"
       }
@@ -239,6 +247,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
 
       let cName: string = "Unknown organisation"
       let cLogo: string | null = cachedLogo ?? null
+      let cIcon: string | null = cachedIcon ?? null
       let teamList = [
         { name: "Unknown organisation", logo: GalleryVerticalEnd, plan: "Enterprise" },
       ]
@@ -259,10 +268,12 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
             clientSlug = computeClientSlug(cName, clientIdFromUser ?? null) || clientSlug
             const docLogo = c.logo ? `/${c.logo}` : null
             const derivedLogo = clientSlug ? `/data/${clientSlug}/logo.png` : null
+            const derivedIcon = clientSlug ? `/data/${clientSlug}/logo_icon.png` : null
             const finalLogo = docLogo && !docLogo.startsWith("/logo_")
               ? docLogo
               : derivedLogo ?? docLogo ?? cLogo
             cLogo = finalLogo ?? cLogo
+            cIcon = derivedIcon ?? cIcon
             clientModVisible = c.modVisible?.toLowerCase() === "yes"
             const normalizedDataVisible = (c.dataVisible ?? "yes").toLowerCase() === "no" ? "no" : "yes"
             const normalizedDataOnly = (c.dataOnly ?? "no").toLowerCase() === "yes" ? "yes" : "no"
@@ -272,6 +283,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
 
             setClientName(c.name || "Unknown organisation")
             setClientLogo(cLogo)
+            setClientIcon(cIcon)
             setTeams(teamList)
             setShowUnsubscribedModules(clientModVisible)
             nextDataVisible = normalizedDataVisible
@@ -281,8 +293,11 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
             setClientName("Unknown organisation")
             clientSlug = computeClientSlug(null, clientIdFromUser ?? null) || clientSlug
             const derivedLogo = clientSlug ? `/data/${clientSlug}/logo.png` : null
+            const derivedIcon = clientSlug ? `/data/${clientSlug}/logo_icon.png` : null
             cLogo = derivedLogo ?? cLogo
+            cIcon = derivedIcon ?? cIcon
             setClientLogo(cLogo)
+            setClientIcon(cIcon)
             setTeams(teamList)
             setShowUnsubscribedModules(false)
             nextDataVisible = "yes"
@@ -292,8 +307,11 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
           console.log("[Sidebar] No clientId found for user:", normalizedEmail)
           setClientName("Unknown organisation")
           const derivedLogo = clientSlug ? `/data/${clientSlug}/logo.png` : null
+          const derivedIcon = clientSlug ? `/data/${clientSlug}/logo_icon.png` : null
           cLogo = derivedLogo ?? cLogo
+          cIcon = derivedIcon ?? cIcon
           setClientLogo(cLogo)
+          setClientIcon(cIcon)
           setTeams(teamList)
           setShowUnsubscribedModules(false)
           nextDataVisible = "yes"
@@ -304,8 +322,11 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         setClientName("Unknown organisation")
         clientSlug = computeClientSlug(cName, clientIdFromUser ?? null) || clientSlug
         const derivedLogo = clientSlug ? `/data/${clientSlug}/logo.png` : null
+  const derivedIcon = clientSlug ? `/data/${clientSlug}/logo_icon.png` : null
         cLogo = derivedLogo ?? cLogo
+  cIcon = derivedIcon ?? cIcon
         setClientLogo(cLogo)
+  setClientIcon(cIcon)
         setTeams(teamList)
         setShowUnsubscribedModules(false)
         nextDataVisible = "yes"
@@ -320,6 +341,10 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
       if (!cLogo && clientSlug) {
         cLogo = `/data/${clientSlug}/logo.png`
         setClientLogo(cLogo)
+      }
+      if (!cIcon && clientSlug) {
+        cIcon = `/data/${clientSlug}/logo_icon.png`
+        setClientIcon(cIcon)
       }
 
       const info = {
@@ -340,6 +365,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
         clientSlug: clientSlug ?? null,
         clientName: cName,
         clientLogo: cLogo,
+  clientIcon: cIcon ?? null,
         teams: teamList,
         allowedModules: userModules,
         showUnsubscribedModules: clientModVisible,
@@ -457,18 +483,59 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
 
   const fallbackUser = userInfo ?? { name: "Loading", email: "" }
   const orgLabel = loadingClient ? "Loading" : clientName || "Unknown organisation"
+  const sidebarHasIcon = Boolean(clientIcon && sidebarLogoSrc === clientIcon)
+
+  const { logoPath, logoIconPath } = useClientDatasetPaths()
+
+  React.useEffect(() => {
+    if (logoIconPath) {
+      setClientIcon(logoIconPath)
+    }
+    if (!clientLogo && logoPath) {
+      setClientLogo(logoPath)
+    }
+  }, [logoIconPath, logoPath, clientLogo])
+
+  React.useEffect(() => {
+    if (clientIcon) {
+      setSidebarLogoSrc(clientIcon)
+      return
+    }
+    if (clientLogo) {
+      setSidebarLogoSrc(clientLogo)
+      return
+    }
+    setSidebarLogoSrc(TRANSPARENT_PNG)
+  }, [clientIcon, clientLogo])
+
+  const handleSidebarLogoError = React.useCallback(() => {
+    setSidebarLogoSrc((current) => {
+      if (clientLogo && current !== clientLogo) {
+        return clientLogo
+      }
+      if (current !== TRANSPARENT_PNG) {
+        return TRANSPARENT_PNG
+      }
+      return current
+    })
+  }, [clientLogo])
 
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <Link href="/" aria-label="Home" className="flex items-center gap-2">
-          <div className="flex aspect-square size-8 shrink-0 items-center justify-center rounded-lg border overflow-hidden">
+          <div
+            className={`flex aspect-square size-8 shrink-0 items-center justify-center rounded-lg overflow-hidden ${
+              sidebarHasIcon ? "" : "border"
+            }`}
+          >
             <Image
-              src={clientLogo ?? TRANSPARENT_PNG}
+              src={sidebarLogoSrc}
               alt={orgLabel}
               width={32}
               height={32}
               unoptimized
+              onError={handleSidebarLogoError}
             />
           </div>
           <div className="grid flex-1 text-left text-sm leading-tight group-data-[collapsible=icon]:hidden">
