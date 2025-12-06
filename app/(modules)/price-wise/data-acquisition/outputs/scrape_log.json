@@ -50,5 +50,44 @@
       "reference_property": "Ukanyi Luxury Villa",
       "timestamp": "2025-11-21T20:28:57.654025"
     }
+  },
+  {
+    "timestamp": "2025-11-28T19:29:00.927115",
+    "scrape_success": true,
+    "analysis_success": true,
+    "config": {
+      "occupancy_mode": true,
+      "days_ahead": 90,
+      "guests": 2,
+      "rooms": 1,
+      "reference_property": "Ukanyi Luxury Villa",
+      "timestamp": "2025-11-28T19:29:00.927115"
+    }
+  },
+  {
+    "timestamp": "2025-11-29T17:50:13.438952",
+    "scrape_success": true,
+    "analysis_success": true,
+    "config": {
+      "occupancy_mode": true,
+      "days_ahead": 90,
+      "guests": 2,
+      "rooms": 1,
+      "reference_property": "Ukanyi Luxury Villa",
+      "timestamp": "2025-11-29T17:50:13.438952"
+    }
+  },
+  {
+    "timestamp": "2025-12-06T15:22:48.517498",
+    "scrape_success": true,
+    "analysis_success": true,
+    "config": {
+      "occupancy_mode": true,
+      "days_ahead": 90,
+      "guests": 2,
+      "rooms": 1,
+      "reference_property": "Ukanyi Luxury Villa",
+      "timestamp": "2025-12-06T15:22:48.517498"
+    }
   }
 ]
