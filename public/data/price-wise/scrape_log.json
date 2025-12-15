@@ -89,5 +89,18 @@
       "reference_property": "Ukanyi Luxury Villa",
       "timestamp": "2025-12-06T15:22:48.517498"
     }
+  },
+  {
+    "timestamp": "2025-12-15T13:23:40.088579",
+    "scrape_success": true,
+    "analysis_success": true,
+    "config": {
+      "occupancy_mode": true,
+      "days_ahead": 90,
+      "guests": 2,
+      "rooms": 1,
+      "reference_property": "Ukanyi Luxury Villa",
+      "timestamp": "2025-12-15T13:23:40.088579"
+    }
   }
 ]
